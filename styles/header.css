@@ -1,0 +1,38 @@
+.header{
+    height: 122px;
+    position: relative;
+}
+
+.header .logo
+{
+    position: absolute;
+}
+
+.header .logo.logo-white{
+    width: 89px;
+    height: 71px;
+    background: url("../img/logo-white.png") no-repeat;
+    top: 50px;
+    left: 60px;
+}
+
+a.join-us{
+    display: block;
+    position: absolute;
+    height: 38px;
+    width: 126px;
+    top: 66px;
+    right: 0;
+    background-color: #990000;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.join-us div{
+
+    text-align: center;
+
+    text-transform: uppercase;
+    font-size: 10px;
+    padding-top: 8px;
+}

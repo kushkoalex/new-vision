@@ -1,0 +1,15 @@
+.main-page-content-wrapper {
+    background-color: #ffffff;
+}
+
+.main-page-content-wrapper .header{
+    height: 122px;
+    position: fixed;
+    width: 100%;
+    min-width: 1200px;
+}
+
+.content-blocks
+{
+    height: 500px;
+}
