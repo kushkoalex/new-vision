@@ -36,3 +36,32 @@ a.join-us div{
     font-size: 10px;
     padding-top: 8px;
 }
+
+.main-menu
+{
+    font-size: 12px;
+}
+
+.main-menu ul{
+    position: absolute;
+    left: 120px;
+    right: 100px;
+    top: 66px;
+    text-align: center;
+}
+
+.main-menu ul li{
+    text-align: center;
+    display: inline-block;
+    list-style: none;
+    width: 103px;
+    margin: 0 43px;
+    vertical-align: top;
+    line-height: 16px;
+}
+
+.main-menu ul li a{
+    color: #ffffff;
+    text-transform: uppercase;
+}
+

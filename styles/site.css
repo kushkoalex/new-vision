@@ -18,10 +18,7 @@ body {
 
 
 
-.main-image-wrapper
+.clear
 {
-    background-color: #000000;
-    height: 966px;
-
+    clear: both;
 }
-
