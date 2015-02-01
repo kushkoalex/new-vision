@@ -31,3 +31,27 @@
     width: 696px;
     height: 596px;
 }
+
+.news-block .title-wrapper{
+
+}
+
+.news-block .title-wrapper.top
+{
+    margin-top: 12px;
+}
+
+.news-block .title-wrapper.bottom{
+
+}
+
+.news-block .date{
+    background-color: #921a1d;
+    width: 85px;
+    height: 23px;
+    font-family: 'Lato', Georgia;
+}
+
+.news-block .title{
+
+}
