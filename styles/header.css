@@ -1,27 +1,25 @@
 .header{
-    height: 122px;
+    height: 107px;
     position: relative;
 }
 
 .header .logo
 {
     position: absolute;
+    width: 76px;
+    height: 61px;
+    background: url("../img/logo.png") no-repeat;
+    top: 27px;
+    left: 46px;
 }
 
-.header .logo.logo-white{
-    width: 89px;
-    height: 71px;
-    background: url("../img/logo-white.png") no-repeat;
-    top: 50px;
-    left: 60px;
-}
 
 a.join-us{
     display: block;
     position: absolute;
     height: 38px;
     width: 126px;
-    top: 66px;
+    top: 40px;
     right: 0;
     background-color: #990000;
     color: #ffffff;
@@ -46,7 +44,7 @@ a.join-us div{
     position: absolute;
     left: 120px;
     right: 100px;
-    top: 66px;
+    top: 44px;
     text-align: center;
 }
 
@@ -61,7 +59,8 @@ a.join-us div{
 }
 
 .main-menu ul li a{
-    color: #ffffff;
+
+    color: #666666;
     text-transform: uppercase;
 }
 

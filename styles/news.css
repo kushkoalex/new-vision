@@ -1,0 +1,33 @@
+.news-content-wrapper{
+
+}
+
+.news-blocks{
+
+}
+
+.news-block{
+    margin: 8px;
+    float: left;
+    background-color: #000000;
+}
+
+.news-block-1x1{
+    width: 340px;
+    height: 290px;
+}
+
+.news-block-2x1{
+    width: 696px;
+    height: 290px;
+}
+
+.news-block-1x2{
+    width: 340px;
+    height: 596px;
+}
+
+.news-block-2x2{
+    width: 696px;
+    height: 596px;
+}
