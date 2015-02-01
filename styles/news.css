@@ -50,8 +50,14 @@
     width: 85px;
     height: 23px;
     font-family: 'Lato', Georgia;
+    font-size: 12px;
+    color: #ffffff;
 }
 
 .news-block .title{
+    font-family: 'LatoBlack';
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #ffffff;
 
 }
