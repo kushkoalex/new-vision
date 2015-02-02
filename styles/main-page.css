@@ -17,12 +17,13 @@
     background-color: rgba(0,0,0,0.5);
 }
 
-.main-page-content-wrapper .header .logo.logo-white{
+.main-page-content-wrapper .header .logo{
     width: 89px;
     height: 71px;
     background: url("../img/logo-white.png") no-repeat;
     top: 50px;
     left: 60px;
+    cursor: default;
 }
 
 .main-page-content-wrapper .main-menu ul{
