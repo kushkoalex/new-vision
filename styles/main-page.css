@@ -5,7 +5,7 @@
 .main-image-wrapper
 {
     height: 966px;
-    background: #000000 url("../img/main.jpg");
+    background: #000000 url("../content/main.jpg");
     background-size: cover;
 }
 
@@ -60,12 +60,12 @@
 
 .image0
 {
-    background: url("../img/main-page-block-bg0.jpg");
+    background: url("../content/main-page-block-bg0.jpg");
 }
 
 .image1
 {
-    background: url("../img/main-page-block-bg1.jpg");
+    background: url("../content/main-page-block-bg1.jpg");
 }
 
 .content-block .description .description-content-wrapper{
