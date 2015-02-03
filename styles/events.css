@@ -172,3 +172,34 @@ margin-top: 37px;
     margin: 0 0 0 25px;
     /*margin: 0 0 0 10px;*/
 }
+
+.event-info .stripe-wrapper{
+    padding-top: 38px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.event-info .stripe-wrapper .stripe{
+    height: 24px;
+    display: inline-block;
+}
+
+.event-info .stripe-wrapper .left{
+    width: 22px;
+    background: url("../img/stripe-left-bg.png") no-repeat;
+    padding-top: 5px;
+}
+.event-info .stripe-wrapper .center{
+    background: url("../img/stripe-center-bg.png") repeat-x;
+    padding-top: 5px;
+}
+.event-info .stripe-wrapper .right{
+    width: 21px;
+    background: url("../img/stripe-right-bg.png") no-repeat;
+    padding-top: 5px;
+}
+
+.event-info.with-stripe .date-block-wrapper{
+    padding-top: 30px;
+}
