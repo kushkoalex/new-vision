@@ -1,0 +1,71 @@
+.event-details-content-wrapper {
+
+}
+
+.event-details {
+
+}
+
+.event-details .title-container {
+    background: url("../img/event-info-bg.gif");
+    padding-top: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.event-details .title-wrapper {
+    color: #212121;
+}
+
+.event-details .title-wrapper .title-mini-description {
+    font-size: 13px;
+    font-family: 'Lato-Bold-Italic', Georgia;
+    font-style: italic;
+}
+
+.event-details .title-wrapper .title {
+    margin-top: 5px;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.event-details .title-wrapper .location {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.event-details .title-wrapper .location span {
+    border-bottom: 1px dotted #212121;;
+    cursor: pointer;
+}
+
+.event-details .get-invite-wrapper {
+padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.event-details .get-invite {
+    height: 26px;
+    display: inline-block;
+    padding-top: 6px;
+}
+
+.event-details .get-invite.center {
+    background: url("../img/get-invite-center.png") repeat-x;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-left: 5px;
+    padding-right: 3px;
+
+}
+
+.event-details .get-invite.left {
+    background: url("../img/get-invite-left.png") no-repeat;
+    width: 25px;
+}
+
+.event-details .get-invite.right {
+    background: url("../img/get-invite-right.png") no-repeat;
+    width: 27px;
+}
