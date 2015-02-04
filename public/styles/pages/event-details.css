@@ -10,7 +10,7 @@
 }
 
 .event-details .title-container {
-    background: url("../images/event-info-bg.gif");
+    background: url("../../images/event-info-bg.gif");
     padding-top: 30px;
     text-align: center;
     padding-bottom: 20px;
@@ -55,7 +55,7 @@ padding-top: 20px;
 }
 
 .event-details .get-invite.center {
-    background: url("../images/get-invite-center.png") repeat-x;
+    background: url("../../images/get-invite-center.png") repeat-x;
     text-transform: uppercase;
     color: #ffffff;
     padding-left: 5px;
@@ -64,12 +64,12 @@ padding-top: 20px;
 }
 
 .event-details .get-invite.left {
-    background: url("../images/get-invite-left.png") no-repeat;
+    background: url("../../images/get-invite-left.png") no-repeat;
     width: 25px;
 }
 
 .event-details .get-invite.right {
-    background: url("../images/get-invite-right.png") no-repeat;
+    background: url("../../images/get-invite-right.png") no-repeat;
     width: 27px;
 }
 
@@ -124,13 +124,13 @@ padding-top: 20px;
 
 .event-property-wrapper .event-property-inner.left{
     width: 18px;
-    background: url("../images/event-property-wave-left.png") no-repeat center center;
+    background: url("../../images/event-property-wave-left.png") no-repeat center center;
 
 }
 
 .event-property-wrapper .event-property-inner.right{
     width: 18px;
-    background: url("../images/event-property-wave-right.png") no-repeat center center;
+    background: url("../../images/event-property-wave-right.png") no-repeat center center;
 }
 
 .event-property-wrapper .event-property-inner.center{
@@ -159,53 +159,53 @@ padding-top: 20px;
 
 .event-details .image-slider .slide0
 {
-    background: url("../images/content/gti.jpg");
+    background: url("../../images/content/gti.jpg");
     background-size: cover;
 }
 .event-details .image-slider .slide1
 {
-    background: url("../images/content/10684110_290072504519482_631549677_n.jpg");
+    background: url("../../images/content/10684110_290072504519482_631549677_n.jpg");
     background-size: cover;
 }
 .event-details .image-slider .slide2
 {
-    background: url("../images/content/2048(20).jpg");
+    background: url("../../images/content/2048(20).jpg");
     background-size: cover;
 }
 .event-details .image-slider .slide3
 {
-    background: url("../images/content/2048-.jpg");
+    background: url("../../images/content/2048-.jpg");
     background-size: cover;
 }
 .event-details .image-slider .slide4
 {
-    background: url("../images/content/2048t.jpg");
+    background: url("../../images/content/2048t.jpg");
     background-size: cover;
 }
 .event-details .image-slider .slide5
 {
-    background: url("../images/content/cover_2048.jpg");
+    background: url("../../images/content/cover_2048.jpg");
     background-size: cover;
 }
 .event-details .image-slider .slide6
 {
-    background: url("../images/content/204817.jpg");
+    background: url("../../images/content/204817.jpg");
     background-size: cover;
 }
 .event-details .image-slider .slide7
 {
-    background: url("../images/content/2048(25).jpg");
+    background: url("../../images/content/2048(25).jpg");
     background-size: cover;
 }
 .event-details .image-slider .slide8
 {
-    background: url("../images/content/2048(26).jpg");
+    background: url("../../images/content/2048(26).jpg");
     background-size: cover;
 }
 
 
 .event-details .event-description-container{
-    background: url("../images/event-info-bg.gif");
+    background: url("../../images/event-info-bg.gif");
     padding-top: 70px;
     padding-bottom: 70px;
     text-align: center;
@@ -233,7 +233,7 @@ padding-top: 20px;
     margin-left: 70px;
     margin-top: -66px;
     padding: 0 20px;
-    background: url("../images/event-info-bg.gif");
+    background: url("../../images/event-info-bg.gif");
 }
 
 .event-details .event-description-container .event-description-item .text{
@@ -243,7 +243,7 @@ padding-top: 20px;
 
 
 .event-details .event-description-container .event-description-item .bottom-logo-container{
-    background: url("../images/event-info-bg.gif");
+    background: url("../../images/event-info-bg.gif");
     width: 40px;
     height: 24px;
     position: absolute;
@@ -270,7 +270,7 @@ padding-top: 20px;
 
 
 .event-details .event-description-container .event-description-item .bottom-logo-container .bottom-logo{
-    background: url("../images/logo-small.png") no-repeat center;
+    background: url("../../images/logo-small.png") no-repeat center;
     width: 26px;
     height: 24px;
     position: relative;
@@ -283,7 +283,7 @@ padding-top: 20px;
     margin: 0 auto;
     width: 33px;
     height: 33px;
-    background: url("../images/more-less-btn.png");
+    background: url("../../images/more-less-btn.png");
     cursor: pointer;
 }
 
@@ -300,7 +300,7 @@ padding-top: 20px;
     width: 33px;
     height: 33px;
     cursor: pointer;
-    background: url("../images/more-less-btn.png") 0 33px;
+    background: url("../../images/more-less-btn.png") 0 33px;
 }
 
 .event-details .show-more-button

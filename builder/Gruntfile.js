@@ -16,6 +16,30 @@ module.exports = function (grunt) {
                 cwd: '<%= sourceDir %>',
                 src: ['**/*.html'],
                 dest: '<%= publicDir %>'
+            },
+            images: {
+                expand: true,
+                cwd: '<%= publicDir %>images/',
+                src: '**',
+                dest: '<%= prodBuildDir %>images/'
+            },
+            fonts: {
+                expand: true,
+                cwd: '<%= publicDir %>fonts/',
+                src: '**',
+                dest: '<%= prodBuildDir %>fonts/'
+            },
+            data: {
+                expand: true,
+                cwd: '<%= publicDir %>data/',
+                src: '**',
+                dest: '<%= prodBuildDir %>data/'
+            },
+            htmlSource: {
+                expand: true,
+                cwd: '<%= sourceDir %>',
+                src: ['**/*.html'],
+                dest: '<%= prodBuildDir %>'
             }
         },
         includes:{
@@ -25,6 +49,15 @@ module.exports = function (grunt) {
                         cwd: '<%= publicDir %>',
                         src: '**/*.html',
                         dest: '<%= publicDir %>'
+                    }
+                ]
+            },
+            prod: {
+                files: [
+                    {
+                        cwd: '<%= prodBuildDir %>',
+                        src: '**/*.html',
+                        dest: '<%= prodBuildDir %>'
                     }
                 ]
             }
@@ -89,12 +122,115 @@ module.exports = function (grunt) {
                     '<%= stylesDir %>*.css'
                 ],
                 dest: '<%= publicDir %>includes/styles.html'
+            },
+            buildScripts: {
+                options: {
+                    scriptTemplate: '    <script type="text/javascript" src="{{path}}?v=<%= version %>"></script>',
+                    openTag: '<!-- start script template tags -->',
+                    closeTag: '<!-- end script template tags -->'
+                },
+                src: [
+                    '<%= prodBuildDir %>scripts/main.min.js'
+                ],
+                dest: '<%= prodBuildDir %>includes/scripts.html'
+            },
+            buildLinks: {
+                options: {
+                    linkTemplate: '    <link rel="stylesheet" type="text/css" href="{{path}}?v=<%= version %>" media="screen"/>',
+                    openTag: '<!-- start css template tags -->',
+                    closeTag: '<!-- end css template tags -->'
+                },
+                src: [
+                    '<%= prodBuildDir %>styles/main.min.css'
+                ],
+                dest: '<%= prodBuildDir %>includes/styles.html'
             }
         },
         clean:{
             dev: {
                 options: { force: true },
                 src: ['<%= publicDir %>includes']
+            },
+            prod: {
+                options: { force: true },
+                src: ['<%= prodBuildDir %>includes', '<%= prodBuildDir %>scripts/main.js', '<%= prodBuildDir %>styles/main.css']
+            }
+        },
+        concat:{
+            js:{
+                src: [
+                    //'<%= scriptsDir %>constants/constantsDefine.js',
+                    //'<%= scriptsDir %>constants/**/*.js',
+                    //'<%= scriptsDir %>a9/A9.js',
+                    //'<%= scriptsDir %>a9/helpers/**/*.js',
+                    //'<%= scriptsDir %>a9/UIComponents/**/*.js',
+                    //'<%= scriptsDir %>a9/masking/masking.js',
+                    //'<%= scriptsDir %>a9/masking/masks/decimal.js',
+                    //'<%= scriptsDir %>a9/masking/masks/**/*.js',
+                    //'<%= scriptsDir %>a9/masking/**/*.js',
+                    //'<%= scriptsDir %>a9/validation/validation.js',
+                    //'<%= scriptsDir %>a9/validation/helpers/**/*.js',
+                    //'<%= scriptsDir %>a9/validation/microvalidators/**/*.js',
+                    //'<%= scriptsDir %>a9/validation/validators/dependency/dependency.js',
+                    //'<%= scriptsDir %>a9/validation/validators/**/*.js',
+                    //'<%= scriptsDir %>a9/validation/**/*.js',
+                    //'<%= scriptsDir %>libs/awareness/**/*.js',
+                    //'<%= scriptsDir %>libs/faith/**/*.js',
+                    //'<%= scriptsDir %>libs/cnCt/**/*.js',
+                    //'<%= scriptsDir %>libs/jmForms/jmForms.js',
+                    //'<%= scriptsDir %>libs/jmForms/helpers/**/*.js',
+                    //'<%= scriptsDir %>libs/jmForms/commonTmpls/microTmpls.js',
+                    //'<%= scriptsDir %>libs/jmForms/commonTmpls/**/*.js',
+                    //'<%= scriptsDir %>libs/jmForms/fields/**/*.js',
+                    //'<%= scriptsDir %>libs/jmForms/indications/**/*.js',
+                    //'<%= scriptsDir %>vostokInternetBank/defined/**/*.js',
+                    //'<%= scriptsDir %>vostokInternetBank/VIB.js',
+                    //'<%= scriptsDir %>vostokInternetBank/modules/**/*.js',
+                    //'<%= scriptsDir %>vostokInternetBank/elements/**/*.js',
+                    //'<%= scriptsDir %>vostokInternetBank/**/*.js',
+                    '<%= scriptsDir %>init.js'
+                ],
+                dest: '<%= prodBuildDir %>scripts/main.js'
+            },
+            css: {
+                src: [
+                    //'!<%= stylesDir %>_services/**/*.css',
+                    '<%= stylesDir %>default.css',
+                    //'<%= stylesDir %>ui/default/*.css',
+                    //'<%= stylesDir %>ui/**/*.css',
+                    //'<%= stylesDir %>blocks/**/*.css',
+                    '<%= stylesDir %>layout/*.css',
+                    '<%= stylesDir %>pages/*.css'
+
+                ],
+                dest: '<%= prodBuildDir %>styles/main.css'
+            }
+
+        },
+        replace:{
+            cssFixURLs: {
+                src: '<%= prodBuildDir %>styles/main.css',
+                dest: '<%= prodBuildDir %>styles/main.css',
+                replacements: [
+                    {
+                        from: /(\.\.\/){2,}/g,
+                        to: '../'
+                    }
+                ]
+            }
+        },
+        cssmin:{
+            all: {
+                files: {
+                    '<%= prodBuildDir %>styles/main.min.css': ['<%= prodBuildDir %>styles/main.css']
+                }
+            }
+        },
+        uglify:{
+            all: {
+                files: {
+                    '<%= prodBuildDir %>scripts/main.min.js': ['<%= prodBuildDir %>scripts/main.js']
+                }
             }
         }
     });
@@ -104,6 +240,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-includes');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-script-link-tags');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-text-replace');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
 
     grunt.registerTask('default',
@@ -111,8 +251,26 @@ module.exports = function (grunt) {
             'copy:htmlDevSource',
             'tags:buildDevScripts',
             'tags:buildDevLinks',
-            'includes:dev'//,
-            //'clean:dev'
+            'includes:dev',
+            'clean:dev'
         ]);
-    grunt.registerTask('prod',[]);
+    grunt.registerTask('prod',
+        [
+            'concat',
+            'replace:cssFixURLs',
+            'cssmin',
+            'uglify',
+            'copy:images',
+            'copy:data',
+            'copy:fonts',
+            'copy:htmlSource',
+            'tags:buildScripts',
+            'tags:buildLinks',
+            'includes:prod'
+
+
+
+
+            //,'clean:prod'
+        ]);
 };

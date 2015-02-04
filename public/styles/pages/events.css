@@ -24,17 +24,17 @@
 }
 
 .event-content0 {
-    background: url("../images/content/gti.jpg");
+    background: url("../../images/content/gti.jpg");
     background-size: cover;
 }
 
 .event-content1 {
-    background: url("../images/content/5.jpg");
+    background: url("../../images/content/5.jpg");
     background-size: cover;
 }
 
 .event-content2 {
-    background: url("../images/content/2048.jpg");
+    background: url("../../images/content/2048.jpg");
     background-size: cover;
 }
 
@@ -42,7 +42,7 @@
     height: 500px;
     position: relative;
     margin-right: 788px;
-    background: url("../images/event-info-bg.gif");
+    background: url("../../images/event-info-bg.gif");
     text-align: center;
 }
 
@@ -73,11 +73,11 @@
     width: 18px;
 
     margin-right: 5px;
-    background: url("../images/left-wave.png") no-repeat center center;
+    background: url("../../images/left-wave.png") no-repeat center center;
 }
 
 .event-info .date-block-wrapper .date-wrapper .date.wave.right {
-    background: url("../images/right-wave.png") no-repeat center center;
+    background: url("../../images/right-wave.png") no-repeat center center;
     width: 18px;
     margin-left: 5px;
 }
@@ -119,7 +119,7 @@
     height: 5px;
     position: relative;
     margin: 25px auto 35px auto;
-    background: url("../images/wave.png") no-repeat;
+    background: url("../../images/wave.png") no-repeat;
 }
 
 .event-info .description{
@@ -187,16 +187,16 @@ margin-top: 37px;
 
 .event-info .stripe-wrapper .left{
     width: 22px;
-    background: url("../images/stripe-left-bg.png") no-repeat;
+    background: url("../../images/stripe-left-bg.png") no-repeat;
     padding-top: 5px;
 }
 .event-info .stripe-wrapper .center{
-    background: url("../images/stripe-center-bg.png") repeat-x;
+    background: url("../../images/stripe-center-bg.png") repeat-x;
     padding-top: 5px;
 }
 .event-info .stripe-wrapper .right{
     width: 21px;
-    background: url("../images/stripe-right-bg.png") no-repeat;
+    background: url("../../images/stripe-right-bg.png") no-repeat;
     padding-top: 5px;
 }
 

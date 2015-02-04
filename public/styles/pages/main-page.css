@@ -5,7 +5,7 @@
 .main-image-wrapper
 {
     height: 966px;
-    background: #000000 url("../images/content/main.jpg");
+    background: #000000 url("../../images/content/main.jpg");
     background-size: cover;
 }
 
@@ -20,7 +20,7 @@
 .main-page-content-wrapper .header .logo{
     width: 89px;
     height: 71px;
-    background: url("../images/logo-white.png") no-repeat;
+    background: url("../../images/logo-white.png") no-repeat;
     top: 50px;
     left: 60px;
     cursor: default;
@@ -61,16 +61,16 @@
 
 .image0
 {
-    background: url("../images/content/main-page-block-bg0.jpg");
+    background: url("../../images/content/main-page-block-bg0.jpg");
 }
 
 .image1
 {
-    background: url("../images/content/main-page-block-bg1.jpg");
+    background: url("../../images/content/main-page-block-bg1.jpg");
 }
 
 .content-block .description .description-content-wrapper{
-    background: url("../images/logo-medium.png") no-repeat;
+    background: url("../../images/logo-medium.png") no-repeat;
     text-align: left;
     padding: 35px 40px;
     position: relative;
@@ -140,7 +140,7 @@ margin-top: 30px;
 
 .main-title-wrapper .details .arrow {
     width: 16px;
-    background: url("../images/main-page-details-arrow.png") no-repeat;
+    background: url("../../images/main-page-details-arrow.png") no-repeat;
 }
 
 .main-title-wrapper .details .text {
