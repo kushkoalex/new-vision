@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    (function(vib){
+        var settings;
+        if (vib.settings === null){
+            vib.settings = settings = {};
+        } else{
+            settings = vib.settings;
+        }
+
+        if (!('controlsDescriptors' in settings)){
+            settings.controlsDescriptors = {};
+        }
+
+        if (!('dataModels' in settings)){
+            settings.dataModels = {};
+        }
+
+        settings.hiddenToken = '6e5db10da6b6fcae366bdf4e4ce50f1b';
+        settings.hiddenTokenAPIURL = '/api/user/';
+        settings.hiddenTokenDestructAPIURL = '/api/user/';
+
+        settings.dataPaths = {
+            mfo: '/data/ukrainianMFO.json',
+            countryCode: '/data/countryCode.json'
+        }
+
+    }(VIB));
+</script>
+
+include "../includes/settings/dataModels/user.html"

@@ -112,14 +112,14 @@ module.exports = function (grunt) {
                 },
                 src: [
                     //'!<%= stylesDir %>_services/**/*.css',
-                    //'<%= stylesDir %>default.css',
+                    '<%= stylesDir %>default.css',
                     //'<%= stylesDir %>ui/default/*.css',
                     //'<%= stylesDir %>ui/**/*.css',
                     //'<%= stylesDir %>blocks/**/*.css',
-                    //'<%= stylesDir %>pages/*.css',
-                    //'<%= stylesDir %>layout/*.css'
+                    '<%= stylesDir %>pages/*.css',
+                    '<%= stylesDir %>layout/*.css'
                     //'<%= stylesDir %>fonts/*.css',
-                    '<%= stylesDir %>*.css'
+                    // '<%= stylesDir %>*.css'
                 ],
                 dest: '<%= publicDir %>includes/styles.html'
             },
@@ -271,6 +271,6 @@ module.exports = function (grunt) {
 
 
 
-            //,'clean:prod'
+            ,'clean:prod'
         ]);
 };
