@@ -1,0 +1,13 @@
+{
+  "name": "new-vision",
+  "description": "New Vision Productions",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "version": "0.0.1",
+  "devDependencies":{
+    "grunt":"latest",
+    "grunt-contrib-copy": "latest"
+  }
+}
