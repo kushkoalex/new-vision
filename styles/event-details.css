@@ -213,7 +213,7 @@ padding-top: 20px;
 
 .event-details .event-description-container .event-description-item{
     width: 400px;
-    padding: 55px;
+    padding: 55px 55px 35px 55px;
     border: 1px solid #aaa9a6;
     display: inline-block;
     margin: 0 20px;
@@ -236,6 +236,12 @@ padding-top: 20px;
     background: url("../img/event-info-bg.gif");
 }
 
+.event-details .event-description-container .event-description-item .text{
+    height: 116px;
+    overflow: hidden;
+}
+
+
 .event-details .event-description-container .event-description-item .bottom-logo-container{
     background: url("../img/event-info-bg.gif");
     width: 40px;
@@ -245,6 +251,24 @@ padding-top: 20px;
     left: 180px;
 }
 
+
+.event-description-item.full .show-more-button
+{
+    background-position: 0 0;
+}
+
+.event-description-item.full .grad-panel
+{
+    background:none;
+}
+
+.event-description-item.full .text
+{
+    height: auto !important;
+}
+
+
+
 .event-details .event-description-container .event-description-item .bottom-logo-container .bottom-logo{
     background: url("../img/logo-small.png") no-repeat center;
     width: 26px;
@@ -253,4 +277,41 @@ padding-top: 20px;
     margin:  0 auto;
 }
 
+.event-details .show-more-button
+{
+    position: relative;
+    margin: 0 auto;
+    width: 33px;
+    height: 33px;
+    background: url("../img/more-less-btn.png");
+    cursor: pointer;
+}
 
+.event-details .show-more-button-container
+{
+    position: relative;
+    margin-top: -85px;
+}
+
+.event-details .show-more-button
+{
+    position: relative;
+    margin: 0 auto;
+    width: 33px;
+    height: 33px;
+    cursor: pointer;
+    background: url("../img/more-less-btn.png") 0 33px;
+}
+
+.event-details .show-more-button
+{
+    background-position: 0 33px;
+}
+
+
+
+.event-details .grad-panel{
+    height: 80px;
+    background: linear-gradient(transparent, rgba(231,227,218,.9)); /* Standard syntax */
+    margin-bottom: 20px;
+}

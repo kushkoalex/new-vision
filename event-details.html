@@ -17,6 +17,23 @@
     <link href="styles/header.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="styles/event-details.css" rel="stylesheet" type="text/css">
+    <script src="vendor/scripts/jquery-1.11.2.min.js"></script>
+    <script type="application/javascript">
+        $(function(){
+            $(".show-more-button").click(function(){
+
+                var container = $(this).parent().parent();
+                if(container.hasClass("full"))
+                {
+                    container.removeClass("full");
+                }
+                else{
+                    container.addClass("full");
+                }
+
+            });
+        })
+    </script>
 </head>
 <body>
 <div class="page">
@@ -112,11 +129,22 @@
             <div class="event-description-container">
                 <div class="event-description-item">
                     <div class="title">действо</div>
-                    asdasdas ads asd asd asd asd asd asd aks dlaksdlas dla dla dla dlak dlak dla dla dlas dl
-                    asdasdas ads asd asd asd asd asd asd aks dlaksdlas dla dla dla dlak dlak dla dla dlas dl
-                    asdasdas ads asd asd asd asd asd asd aks dlaksdlas dla dla dla dlak dlak dla dla dlas dl
-                    asdasdas ads asd asd asd asd asd asd aks dlaksdlas dla dla dla dlak dlak dla dla dlas dl
-                    asdasdas ads asd asd asd asd asd asd aks dlaksdlas dla dla dla dlak dlak dla dla dlas dl
+                    <div class="text">
+                        If you want more control over the direction of the gradient, you can define an angle, instead of the predefined directions (to bottom, to top, to right, to left, to bottom right, etc.).
+                        The angle is specified as an angle between a horizontal line and the gradient line, going counter-clockwise. In other words, 0deg creates a bottom to top gradient, while 90deg generates a left to right gradient.
+
+                        The following example shows how to use angles on linear gradients:
+                        CSS3 gradients also support transparency, which can be used to create fading effects.
+
+                        To add transparency, we use the rgba() function to define the color stops. The last parameter in the rgba() function can be a value from 0 to 1, and it defines the transparency of the color: 0 indicates full transparency, 1 indicates full color (no transparency).
+
+                        The following example shows a linear gradient that starts from the left. It starts fully transparent, transitioning to full color red:
+                    </div>
+                    <div class="show-more-button-container">
+                        <div class="grad-panel">
+                        </div>
+                        <div class="show-more-button"></div>
+                    </div>
                     <div class="bottom-logo-container">
                         <div class="bottom-logo"></div>
                     </div>
@@ -124,6 +152,11 @@
                 <div class="event-description-item">
                     <div class="title">локация</div>
                     asdasdas ads asd asd asd asd asd
+                    <div class="show-more-button-container">
+                        <div class="grad-panel">
+                        </div>
+                        <div class="show-more-button"></div>
+                    </div>
                     <div class="bottom-logo-container">
                         <div class="bottom-logo"></div>
                     </div>
@@ -131,6 +164,11 @@
                 <div class="event-description-item">
                     <div class="title">арт группа</div>
                     asdasdas ads asd asd asd asd asd
+                    <div class="show-more-button-container">
+                        <div class="grad-panel">
+                        </div>
+                        <div class="show-more-button"></div>
+                    </div>
                     <div class="bottom-logo-container">
                         <div class="bottom-logo"></div>
                     </div>
