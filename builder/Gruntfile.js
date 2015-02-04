@@ -7,6 +7,7 @@ module.exports = function (grunt) {
         version:pkg.version,
         sourceDir: '../sources/',
         publicDir:publicDir,
+        prodBuildDir: '../../new-vision-build/',
         scriptsDir: publicDir + 'scripts/',
         stylesDir: publicDir + 'styles/',
         copy:{
