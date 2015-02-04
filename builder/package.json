@@ -6,8 +6,11 @@
     "url": ""
   },
   "version": "0.0.1",
-  "devDependencies":{
-    "grunt":"latest",
-    "grunt-contrib-copy": "latest"
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-includes": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-script-link-tags":"latest"
   }
 }

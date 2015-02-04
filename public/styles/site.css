@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../images/site-bg.png");
+    font-family: "Lato", Georgia;
+}
+
+.page {
+    min-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+
+.clear
+{
+    clear: both;
+}

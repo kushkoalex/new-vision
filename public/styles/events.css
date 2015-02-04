@@ -1,0 +1,205 @@
+.events-content-wrapper {
+    /*min-width: 1300px;*/
+    min-width: 1400px;
+    max-width: 1600px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.events {
+
+}
+
+.event {
+    margin-bottom: 4px;
+
+}
+
+.event-content {
+    height: 500px;
+    width: 788px;
+    position: relative;
+    float: right;
+
+}
+
+.event-content0 {
+    background: url("../images/content/gti.jpg");
+    background-size: cover;
+}
+
+.event-content1 {
+    background: url("../images/content/5.jpg");
+    background-size: cover;
+}
+
+.event-content2 {
+    background: url("../images/content/2048.jpg");
+    background-size: cover;
+}
+
+.event-info {
+    height: 500px;
+    position: relative;
+    margin-right: 788px;
+    background: url("../images/event-info-bg.gif");
+    text-align: center;
+}
+
+.event-info .date-block-wrapper {
+    text-transform: uppercase;
+    color: #9e0b0f;
+    padding-top: 55px;
+}
+
+.event-info .date-block-wrapper .title {
+    font-size: 9px;
+}
+
+.event-info .date-block-wrapper .date-wrapper {
+    font-family: 'LatoBlack';
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1px;
+}
+
+.event-info .date-block-wrapper .date-wrapper .date {
+    display: inline-block;
+    position: relative;
+    height: 15px;
+}
+
+.event-info .date-block-wrapper .date-wrapper .date.wave.left {
+    width: 18px;
+
+    margin-right: 5px;
+    background: url("../images/left-wave.png") no-repeat center center;
+}
+
+.event-info .date-block-wrapper .date-wrapper .date.wave.right {
+    background: url("../images/right-wave.png") no-repeat center center;
+    width: 18px;
+    margin-left: 5px;
+}
+
+.event-info .title-wrapper {
+    margin-top: 36px;
+    color: #212121;
+}
+
+.event-info .title-wrapper .title-mini-description {
+    font-size: 12px;
+    font-family: 'LatoMedium', Georgia;
+    /*font-family: 'LatoItalic', Georgia;*/
+    font-style: italic;
+}
+
+.event-info .title-wrapper .title {
+    margin-top: 5px;
+    font-size: 21px;
+    text-transform: uppercase;
+}
+
+.event-info .title-wrapper .location
+{
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.event-info .title-wrapper .location span
+{
+
+    border-bottom:1px dotted #212121;;
+    cursor: pointer;
+}
+
+.event-info .separator-wave{
+    width: 20px;
+    height: 5px;
+    position: relative;
+    margin: 25px auto 35px auto;
+    background: url("../images/wave.png") no-repeat;
+}
+
+.event-info .description{
+    width: 470px;
+    position: relative;
+    margin: 0 auto;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+
+.event-info .buttons-wrapper{
+margin-top: 37px;
+}
+
+.event-info .buttons-wrapper .button{
+    display: inline-block;
+    width: 250px;
+    /*width: 240px;*/
+    height: 40px;
+    border: 1px solid #000000;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: 'LatoSemibold';
+    padding-top: 13px;
+    letter-spacing: 4px;
+    cursor: pointer;
+}
+
+.event-info .buttons-wrapper a.button
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+.event-info .buttons-wrapper .button.disabled
+{
+    color: #b3b1aa;
+    border: 1px solid #b3b1aa;
+    cursor: default;
+}
+
+.event-info .buttons-wrapper .button.left{
+    margin: 0 25px 0 0;
+    /*margin: 0 10px 0 0;*/
+}
+
+.event-info .buttons-wrapper .button.right{
+    margin: 0 0 0 25px;
+    /*margin: 0 0 0 10px;*/
+}
+
+.event-info .stripe-wrapper{
+    padding-top: 38px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.event-info .stripe-wrapper .stripe{
+    height: 24px;
+    display: inline-block;
+}
+
+.event-info .stripe-wrapper .left{
+    width: 22px;
+    background: url("../images/stripe-left-bg.png") no-repeat;
+    padding-top: 5px;
+}
+.event-info .stripe-wrapper .center{
+    background: url("../images/stripe-center-bg.png") repeat-x;
+    padding-top: 5px;
+}
+.event-info .stripe-wrapper .right{
+    width: 21px;
+    background: url("../images/stripe-right-bg.png") no-repeat;
+    padding-top: 5px;
+}
+
+.event-info.with-stripe .date-block-wrapper{
+    padding-top: 30px;
+}
