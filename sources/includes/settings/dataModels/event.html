@@ -4,7 +4,41 @@
                 dataModels = settings.dataModels;
 
         dataModels.event = {
+            date: '',
+            title: '',
+            titleDescription: '',
 
+            location:{
+                title:'',
+                address:'',
+                highlightedTitlePart:''
+            },
+            description: '',
+            expired: true,
+
+            // order
+            // free
+            // invite
+            // noSeats
+            ticketOrderType: '',
+            highlighted: true,
+            highlightText: '',
+
+            previewContent:{
+                // image
+                // video
+                contentType:'',
+                videoSrc:'',
+                contentImages:['','','']
+            },
+
+            content:{
+                action:'',
+                location:'',
+                artGroup:''
+            },
+
+            images:['','','']
         };
 
     }(NV, A9));
