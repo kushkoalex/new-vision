@@ -1,10 +1,10 @@
 <script type="text/javascript">
-    (function(vib){
+    (function(nv){
         var settings;
-        if (vib.settings === null){
-            vib.settings = settings = {};
+        if (nv.settings === null){
+            nv.settings = settings = {};
         } else{
-            settings = vib.settings;
+            settings = nv.settings;
         }
 
         if (!('controlsDescriptors' in settings)){
@@ -24,7 +24,10 @@
             countryCode: '/data/countryCode.json'
         }
 
-    }(VIB));
+    }(NV));
 </script>
 
-include "../includes/settings/dataModels/user.html"
+include "../includes/settings/dataModels/mainMenu.html"
+include "../includes/settings/dataModels/mainPage.html"
+include "../includes/settings/dataModels/events.html"
+include "../includes/settings/dataModels/event.html"
