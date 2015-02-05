@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    (function (nv, a9) {
+        var settings = nv.settings,
+                l10n = a9.l10n;
+
+        if (!('locale' in settings)){
+            settings.locale = 'rus';
+        }
+
+        if (!('dictionary' in settings)){
+            settings.dictionary = {
+                copyright:'&copy; {year} 2014 New Vision Productions',
+                emMadeIn:'Сделано в',
+                emStudio:'Студии Евгения Миллера'
+            }
+        }
+
+        l10n.locale = settings.locale;
+        l10n.dictionary = settings.dictionary;
+
+    }(NV, A9));
+</script>
+

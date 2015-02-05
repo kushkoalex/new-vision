@@ -96,9 +96,9 @@ module.exports = function (grunt) {
                     //'<%= scriptsDir %>libs/jmForms/indications/**/*.js',
                     //'<%= scriptsDir %>vostokInternetBank/defined/**/*.js',
                     '<%= scriptsDir %>newVisionProductions/NV.js',
-                    //'<%= scriptsDir %>vostokInternetBank/modules/**/*.js',
-                    //'<%= scriptsDir %>vostokInternetBank/elements/**/*.js',
-                    //'<%= scriptsDir %>vostokInternetBank/**/*.js',
+                    '<%= scriptsDir %>newVisionProductions/modules/**/*.js',
+                    '<%= scriptsDir %>newVisionProductions/elements/**/*.js',
+                    '<%= scriptsDir %>newVisionProductions/**/*.js',
                     '<%= scriptsDir %>vendor/*.js',
                     '<%= scriptsDir %>init.js'
                 ],
@@ -185,9 +185,9 @@ module.exports = function (grunt) {
                     //'<%= scriptsDir %>libs/jmForms/indications/**/*.js',
                     //'<%= scriptsDir %>vostokInternetBank/defined/**/*.js',
                     '<%= scriptsDir %>newVisionProductions/NV.js',
-                    //'<%= scriptsDir %>vostokInternetBank/modules/**/*.js',
-                    //'<%= scriptsDir %>vostokInternetBank/elements/**/*.js',
-                    //'<%= scriptsDir %>vostokInternetBank/**/*.js',
+                    '<%= scriptsDir %>newVisionProductions/modules/**/*.js',
+                    '<%= scriptsDir %>newVisionProductions/elements/**/*.js',
+                    '<%= scriptsDir %>newVisionProductions/**/*.js',
                     '<%= scriptsDir %>init.js'
                 ],
                 dest: '<%= prodBuildDir %>scripts/main.js'
@@ -251,8 +251,8 @@ module.exports = function (grunt) {
             'copy:htmlDevSource',
             'tags:buildDevScripts',
             'tags:buildDevLinks',
-            'includes:dev'//,
-            //'clean:dev'
+            'includes:dev',
+            'clean:dev'
         ]);
     grunt.registerTask('prod',
         [
@@ -266,11 +266,7 @@ module.exports = function (grunt) {
             'copy:htmlSource',
             'tags:buildScripts',
             'tags:buildLinks',
-            'includes:prod'
-
-
-
-
-            ,'clean:prod'
+            'includes:prod',
+            'clean:prod'
         ]);
 };
