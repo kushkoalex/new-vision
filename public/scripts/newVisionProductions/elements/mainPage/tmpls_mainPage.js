@@ -33,18 +33,28 @@
 
     tmpls.announcements = function (eventAnnouncements) {
 
-        var content = [],
+        var
+            controlsDescriptors = nv.settings.controlsDescriptors,
+            content = [],
             eventAnnouncement,
+            images,
             imageDescriptionPair,
             image,
-            description;
+            description,
+            i,
+            j;
 
-        for (var i = 0; i < eventAnnouncements.length; i++) {
+        for (i = 0; i < eventAnnouncements.length; i++) {
+
+            images = [];
+
+            for (j = 0; j < eventAnnouncements[i].images.length; j++) {
+                images.push({c:'image active',a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + eventAnnouncements[i].images[0] + ')'}})
+            }
 
             image = {
-                c: 'image'
-                ,
-                a: {style: 'background-image: url(../images/content/' + eventAnnouncements[i].images[0] + ')'}
+                c: 'images-container',
+                C: images
             };
 
             description = {
@@ -85,6 +95,10 @@
                 tmpls.imageFrame(mainPageDataModel.mainBanners),
                 tmpls.announcements(mainPageDataModel.eventAnnouncements)]
         }
+    };
+
+    tmpls.mainPageContentWrapper = function(){
+        return{c: 'main-page-content-wrapper'}
     };
 
 }(NV));
