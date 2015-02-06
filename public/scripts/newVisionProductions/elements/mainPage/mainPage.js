@@ -11,7 +11,6 @@ NV.mainPage = function ($parent) {
 
     //nv.imageFrame($parent);
 
-
-    tp('imageFrame', mainPageData.mainBanners , $parent);
+    tp('mainPage', mainPageData.mainBanners , $parent);
 
 };
