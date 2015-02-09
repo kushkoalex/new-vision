@@ -6,13 +6,26 @@ A9.ready(function (a9, global) {
         $ = a9.$,
         $footer = $('footer'),
         $mainPage = $('mainPage'),
+        //domNodesQuery = a9.$cs('showDetails'),
+        //$showDetails = domNodesQuery.showDetails,
+        i,
         u;
+
+
 
     global.cnCt.bindTemplates(nv.tmpls);
 
     if ($mainPage !== null) {
         nv.mainPage($mainPage);
     }
+
+    //console.log(domNodesQuery);
+    //
+    //if ($showDetails[0] !== u) {
+    //    for (i = $showDetails.length; i--;) {
+    //        nv.scrollToTop($showDetails[i]);
+    //    }
+    //}
 
     if ($footer !== null) {
         tp('footer', $footer);

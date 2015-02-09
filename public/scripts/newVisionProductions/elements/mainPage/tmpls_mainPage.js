@@ -24,7 +24,7 @@
                     {c: 'separator'},
                     {c: 'description', H: mainBanner.description},
                     {
-                        e: 'a', h: '#content-blocks', c: 'details', C: {
+                        c: 'details', n: 'showDetails', C: {
                         C: [
                             {c: 'arrow'},
                             {c: 'text', t: l10n('mainPageDetails')},
@@ -90,7 +90,7 @@
             }
 
             eventAnnouncement = {
-                c: 'content-blocks', C: [
+                c: 'content-blocks', a:{id:'contentBlocks'}, C: [
                     {e: 'a', a: {name: 'content-blocks'}},
                     {
                         c: 'content-block', C: [

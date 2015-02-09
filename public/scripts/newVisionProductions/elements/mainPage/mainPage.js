@@ -2,6 +2,7 @@ NV.mainPage = function ($parent) {
     var nv = this,
         global = nv.global,
         a9 = global.A9,
+        eventOnPointerEnd = a9.deviceInfo.eventOnPointerEnd,
         tp = global.cnCt.tp,
         settings = nv.settings,
         mainPageData = settings.dataModels.mainPage,
@@ -12,9 +13,17 @@ NV.mainPage = function ($parent) {
         $mainImage,
         $mainImageContents,
         $contentImages = [],
+        $showDetails,
         i,
         currentVisibleFrameIndex = 0,
-        controlsDescriptors = settings.controlsDescriptors
+        controlsDescriptors = settings.controlsDescriptors,
+        duration = nv.settings.scrollToTopDuration || 200,
+        doc = global.document,
+        startY,
+        finishY,
+        startT,
+        finishT
+
         ;
 
     function buildMainPageForm(mainPageData) {
@@ -22,6 +31,11 @@ NV.mainPage = function ($parent) {
 
         a9.each(mainPageData.mainBanners, function (mainBanner) {
             build = tp('mainImageContent', mainBanner, $fragment);
+
+            $showDetails = build.showDetails;
+
+            a9.addEvent($showDetails, eventOnPointerEnd, showDetails);
+
             $contentImages.push(build.r);
         });
 
@@ -71,6 +85,34 @@ NV.mainPage = function ($parent) {
         updateCurrentVisibleFrameIndex();
         setActiveImage();
         setTimeout(slideImageFrame, controlsDescriptors.site.mainPageSlideTimeout);
+    }
+
+
+    function showDetails(){
+        scrollToTop();
+    }
+
+    function interpolate(source, target, shift) {
+        return (source + ((target - source) * shift));
+    }
+
+    function easing(pos) {
+        return (-Math.cos(pos * Math.PI) / 2) + .5;
+    }
+
+    function animate() {
+        var now = +(new Date()),
+            shift = (now > finishT) ? 1 : (now - startT) / duration;
+        global.scrollTo(0,interpolate(startY, finishY, easing(shift)) );
+        (now > finishT) || setTimeout(animate, 15);
+    }
+
+    function scrollToTop() {
+        finishY = (a9.$('contentBlocks').offsetTop||0);
+        startY = ((global.pageYOffset || doc.scrollTop)||0)  - (doc.clientTop || 0);
+        startT  = +(new Date());
+        finishT = startT + duration;
+        setTimeout(animate, 15);
     }
 
 };
