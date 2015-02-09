@@ -17,45 +17,31 @@ NV.mainPage = function ($parent) {
         controlsDescriptors = settings.controlsDescriptors
         ;
 
-
     function buildMainPageForm(mainPageData) {
-
         $fragment = global.document.createDocumentFragment();
-
-
-        //build = tp('imageFrame', mainPageData.mainBanners, $fragment);
-        //$mainImage = build.mainImageContentWrapper;
 
         a9.each(mainPageData.mainBanners, function (mainBanner) {
             build = tp('mainImageContent', mainBanner, $fragment);
             $contentImages.push(build.r);
         });
 
-
         var $mainImageContentWrapper = tp('imageFrame', $mainPageContentWrapper).mainImageContentWrapper;
         $mainImageContentWrapper.appendChild($fragment);
 
-
         a9.each(mainPageData.eventAnnouncements, function (announcement) {
-
             //console.log(announcement);
-
         });
-
 
         build = tp('announcements', mainPageData.eventAnnouncements, $fragment);
 
-
         $mainPageContentWrapper.appendChild($fragment);
     }
-
 
     var $mainPageContentWrapper = tp('mainPageContentWrapper', $parent).r;
 
     buildMainPageForm(mainPageData);
 
     slideImageFrame();
-
 
     function setInactiveImages() {
         for (i = 0; i < $contentImages.length; i++) {
