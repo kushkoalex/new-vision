@@ -15,7 +15,7 @@ NV.mainPage = function ($parent) {
         $contentImages = [],
         $showDetails,
         i,
-        currentVisibleFrameIndex = 0,
+        currentVisibleFrameIndex = -1,
         controlsDescriptors = settings.controlsDescriptors,
         duration = nv.settings.scrollToTopDuration || 200,
         doc = global.document,
@@ -31,11 +31,8 @@ NV.mainPage = function ($parent) {
 
         a9.each(mainPageData.mainBanners, function (mainBanner) {
             build = tp('mainImageContent', mainBanner, $fragment);
-
             $showDetails = build.showDetails;
-
             a9.addEvent($showDetails, eventOnPointerEnd, showDetails);
-
             $contentImages.push(build.r);
         });
 
@@ -55,7 +52,8 @@ NV.mainPage = function ($parent) {
 
     buildMainPageForm(mainPageData);
 
-    slideImageFrame();
+
+    setTimeout(slideImageFrame, 100);
 
     function setInactiveImages() {
         for (i = 0; i < $contentImages.length; i++) {
@@ -73,7 +71,6 @@ NV.mainPage = function ($parent) {
 
     function setActiveImage(){
         for (i = 0; i < $contentImages.length; i++) {
-
             if (i == currentVisibleFrameIndex) {
                 a9.addClass($contentImages[i], "active");
             }
