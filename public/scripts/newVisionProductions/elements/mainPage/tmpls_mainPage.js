@@ -16,8 +16,11 @@
         return {
             c: 'main-image-content',
             n: 'mainImage',
-            a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc + ')'},
-            C: {
+            //a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc + ')'},
+            C: [{
+                e:'img',a:{src: controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc}
+                //e:'img', a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc + ')'}
+            },{
                 c: 'main-title-wrapper',
                 C: [
                     {c: 'title', H: mainBanner.title, n:'title'},
@@ -32,7 +35,7 @@
 
                     }
                 ]
-            }
+            }]
         }
     };
 
@@ -65,7 +68,7 @@
                 images.push({
                     c: 'image active',
                     a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + eventAnnouncements[i].images[0] + ')'}
-                })
+                });
             }
 
             image = {
