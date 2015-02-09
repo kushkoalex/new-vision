@@ -24,12 +24,12 @@
                     {c: 'separator'},
                     {c: 'description', H: mainBanner.description},
                     {
-                        c: 'details', n: 'showDetails', C: {
+                        c: 'details', n: 'showDetails',
                         C: [
                             {c: 'arrow'},
                             {c: 'text', t: l10n('mainPageDetails')},
                             {c: 'arrow'}]
-                    }
+
                     }
                 ]
             }

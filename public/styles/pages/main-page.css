@@ -178,6 +178,7 @@
 .main-title-wrapper .details {
 margin-top: 30px;
     display: block;
+    cursor: pointer;
 }
 
 .main-title-wrapper .details .arrow,
