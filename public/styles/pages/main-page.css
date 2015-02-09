@@ -2,12 +2,33 @@
     background-color: #ffffff;
 }
 
-.main-image-wrapper
+.main-image-content-wrapper
 {
     height: 966px;
-    background: #000000 url("../../images/content/main.jpg");
-    background-size: cover;
 }
+
+.main-image-content{
+    position: absolute;
+    height: 966px;
+    background-size: cover;
+    width: 100%;
+
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+
+.main-image-content.active{
+    opacity:1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=1);
+}
+
 
 .main-page-content-wrapper .header {
     height: 170px;
@@ -15,6 +36,7 @@
     width: 100%;
     min-width: 1200px;
     background-color: rgba(0,0,0,0.5);
+    z-index: 10001;
 }
 
 .main-page-content-wrapper .header .logo{

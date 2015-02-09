@@ -5,30 +5,43 @@
         u;
 
 
-    tmpls.imageFrame = function (mainBanners) {
-        if (mainBanners[0] !== u) {
-            return {
-                c: 'main-image-wrapper', C: [
-                    tmpls.header(true),
+    tmpls.mainImageContentWrapper = function () {
+        return {c: 'main-image-content-wrapper', n:'mainImageContentWrapper'}
+    };
+
+
+    tmpls.mainImageContent = function (mainBanner) {
+        var controlsDescriptors = nv.settings.controlsDescriptors;
+
+        return {
+            c: 'main-image-content',
+            n: 'mainImage',
+            a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc + ')'},
+            C: {
+                c: 'main-title-wrapper',
+                C: [
+                    {c: 'title', H: mainBanner.title, n:'title'},
+                    {c: 'separator'},
+                    {c: 'description', H: mainBanner.description},
                     {
-                        c: 'main-title-wrapper',
+                        e: 'a', h: '#content-blocks', c: 'details', C: {
                         C: [
-                            {c: 'title', H: mainBanners[0].title},
-                            {c: 'separator'},
-                            {c: 'description', H: mainBanners[0].description},
-                            {
-                                e: 'a', h: '#content-blocks', c: 'details', C: {
-                                C: [
-                                    {c: 'arrow'},
-                                    {c: 'text', t: l10n('mainPageDetails')},
-                                    {c: 'arrow'}]
-                            }
-                            }
-                        ]
+                            {c: 'arrow'},
+                            {c: 'text', t: l10n('mainPageDetails')},
+                            {c: 'arrow'}]
+                    }
                     }
                 ]
             }
         }
+    };
+
+
+    tmpls.imageFrame = function () {
+            return [
+                tmpls.header(true),
+                tmpls.mainImageContentWrapper()
+            ]
     };
 
     tmpls.announcements = function (eventAnnouncements) {
@@ -49,7 +62,10 @@
             images = [];
 
             for (j = 0; j < eventAnnouncements[i].images.length; j++) {
-                images.push({c:'image active',a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + eventAnnouncements[i].images[0] + ')'}})
+                images.push({
+                    c: 'image active',
+                    a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + eventAnnouncements[i].images[0] + ')'}
+                })
             }
 
             image = {
@@ -97,8 +113,8 @@
         }
     };
 
-    tmpls.mainPageContentWrapper = function(){
-        return{c: 'main-page-content-wrapper'}
+    tmpls.mainPageContentWrapper = function () {
+        return {c: 'main-page-content-wrapper'}
     };
 
 }(NV));
