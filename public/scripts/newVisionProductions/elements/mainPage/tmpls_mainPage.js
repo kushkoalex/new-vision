@@ -6,7 +6,7 @@
 
 
     tmpls.mainImageContentWrapper = function () {
-        return {c: 'main-image-content-wrapper', n:'mainImageContentWrapper'}
+        return {c: 'main-image-content-wrapper', n: 'mainImageContentWrapper'}
     };
 
 
@@ -18,12 +18,12 @@
             n: 'mainImage',
             //a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc + ')'},
             C: [{
-                e:'img',a:{src: controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc}
+                e: 'img', a: {src: controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc}
                 //e:'img', a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + mainBanner.imageSrc + ')'}
-            },{
+            }, {
                 c: 'main-title-wrapper',
                 C: [
-                    {c: 'title', H: mainBanner.title, n:'title'},
+                    {c: 'title', H: mainBanner.title, n: 'title'},
                     {c: 'separator'},
                     {c: 'description', H: mainBanner.description},
                     {
@@ -41,70 +41,75 @@
 
 
     tmpls.imageFrame = function () {
-            return [
-                tmpls.header(true),
-                tmpls.mainImageContentWrapper()
-            ]
+        return [
+            tmpls.header(true),
+            tmpls.mainImageContentWrapper()
+        ]
     };
 
-    tmpls.announcements = function (eventAnnouncements) {
+    tmpls.imageControls = function () {
+        return {
+            c: 'image-slider-controls',
+            C: [
+                {c: 'left',n:'slideLeft'},
+                {c: 'right',n:'slideRight'}
+            ]
+        }
+    };
 
+    tmpls.announcement = function(eventAnnouncement){
         var
             controlsDescriptors = nv.settings.controlsDescriptors,
             content = [],
-            eventAnnouncement,
             images,
             imageDescriptionPair,
             image,
             description,
-            i,
-            j;
+            i;
 
-        for (i = 0; i < eventAnnouncements.length; i++) {
+        images = [];
 
-            images = [];
-
-            for (j = 0; j < eventAnnouncements[i].images.length; j++) {
-                images.push({
-                    c: 'image active',
-                    a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + eventAnnouncements[i].images[0] + ')'}
-                });
-            }
-
-            image = {
-                c: 'images-container',
-                C: images
-            };
-
-            description = {
-                c: 'description', C: {
-                    c: 'description-content-wrapper', C: [
-                        {c: 'title', t: eventAnnouncements[i].title},
-                        {c: 'text', H: eventAnnouncements[i].text}
-                    ]
-                }
-            };
-
-            if (i % 2 == 0) {
-                imageDescriptionPair = [description, image];
-            }
-            else {
-                imageDescriptionPair = [image, description];
-            }
-
-            eventAnnouncement = {
-                c: 'content-blocks', a:{id:'contentBlocks'}, C: [
-                    {e: 'a', a: {name: 'content-blocks'}},
-                    {
-                        c: 'content-block', C: [
-                        imageDescriptionPair,
-                        {c: 'clear'}
-                    ]
-                    }]
-            };
-            content.push(eventAnnouncement);
+        for (i = 0; i < eventAnnouncement.images.length; i++) {
+            images.push({
+                c: 'image active',
+                a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + eventAnnouncement.images[i] + ')'}
+            });
         }
-        return content;
+
+        image = {
+            c: 'images-container',
+            C: [
+                images,
+                tmpls.imageControls()
+            ]
+        };
+
+        description = {
+            c: 'description', C: {
+                c: 'description-content-wrapper', C: [
+                    {c: 'title', t: eventAnnouncement.title},
+                    {c: 'text', H: eventAnnouncement.text}
+                ]
+            }
+        };
+
+        if (eventAnnouncement.odd) {
+            imageDescriptionPair = [description, image];
+        }
+        else {
+            imageDescriptionPair = [image, description];
+        }
+
+        return {
+            c: 'content-blocks', a: {id: 'contentBlocks'}, C: [
+                {e: 'a', a: {name: 'content-blocks'}},
+                {
+                    c: 'content-block', C: [
+                    imageDescriptionPair,
+                    {c: 'clear'}
+                ]
+                }]
+        };
     };
 
 

@@ -1,0 +1,26 @@
+.image-slider-controls{
+position: absolute;
+    width: 100%;
+    /*border: 1px solid red;*/
+    height: 100%;
+}
+
+.image-slider-controls .left, .image-slider-controls .right{
+    width: 30px;
+    height: 56px;
+    position: absolute;
+    top: 50%;
+    /*border: 1px solid red;*/
+    cursor: pointer;
+    margin-top: -28px;
+}
+
+.image-slider-controls .left{
+    background: url("../../images/arrow-left.png") no-repeat;
+    left: 15px;
+}
+
+.image-slider-controls .right{
+    background: url("../../images/arrow-right.png") no-repeat;
+    right: 15px;
+}

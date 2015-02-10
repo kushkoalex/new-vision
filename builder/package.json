@@ -5,7 +5,7 @@
     "type": "git",
     "url": ""
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-copy": "latest",

@@ -102,6 +102,7 @@
 .content-block .images-container
 {
     /*background-size: cover;*/
+    position: relative;
 }
 
 .content-block .images-container .image
@@ -109,7 +110,7 @@
     height: 811px;
     background-size: cover;
     position: absolute;
-    width: 50%;
+    width: 100%;
 
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;

@@ -22,7 +22,10 @@ NV.mainPage = function ($parent) {
         startY,
         finishY,
         startT,
-        finishT
+        finishT,
+        eventAnnouncement,
+        $slideLeft,
+        $slideRight
 
         ;
 
@@ -39,11 +42,16 @@ NV.mainPage = function ($parent) {
         var $mainImageContentWrapper = tp('imageFrame', $mainPageContentWrapper).mainImageContentWrapper;
         $mainImageContentWrapper.appendChild($fragment);
 
-        a9.each(mainPageData.eventAnnouncements, function (announcement) {
-            //console.log(announcement);
-        });
 
-        build = tp('announcements', mainPageData.eventAnnouncements, $fragment);
+        for (i = 0; i < mainPageData.eventAnnouncements.length; i++) {
+            eventAnnouncement = mainPageData.eventAnnouncements[i];
+            eventAnnouncement.odd = i % 2 == 0;
+            build = tp('announcement', eventAnnouncement, $fragment);
+            $slideLeft = build.slideLeft;
+            $slideRight = build.slideRight;
+            a9.addEvent($slideLeft, eventOnPointerEnd, slideLeft);
+            a9.addEvent($slideRight, eventOnPointerEnd, slideRight);
+        }
 
         $mainPageContentWrapper.appendChild($fragment);
     }
@@ -61,15 +69,14 @@ NV.mainPage = function ($parent) {
         }
     }
 
-    function updateCurrentVisibleFrameIndex()
-    {
+    function updateCurrentVisibleFrameIndex() {
         currentVisibleFrameIndex++;
         if (currentVisibleFrameIndex >= $contentImages.length) {
             currentVisibleFrameIndex = 0;
         }
     }
 
-    function setActiveImage(){
+    function setActiveImage() {
         for (i = 0; i < $contentImages.length; i++) {
             if (i == currentVisibleFrameIndex) {
                 a9.addClass($contentImages[i], "active");
@@ -85,7 +92,7 @@ NV.mainPage = function ($parent) {
     }
 
 
-    function showDetails(){
+    function showDetails() {
         scrollToTop();
     }
 
@@ -100,16 +107,24 @@ NV.mainPage = function ($parent) {
     function animate() {
         var now = +(new Date()),
             shift = (now > finishT) ? 1 : (now - startT) / duration;
-        global.scrollTo(0,interpolate(startY, finishY, easing(shift)) );
+        global.scrollTo(0, interpolate(startY, finishY, easing(shift)));
         (now > finishT) || setTimeout(animate, 15);
     }
 
     function scrollToTop() {
-        finishY = (a9.$('contentBlocks').offsetTop||0);
-        startY = ((global.pageYOffset || doc.scrollTop)||0)  - (doc.clientTop || 0);
-        startT  = +(new Date());
+        finishY = (a9.$('contentBlocks').offsetTop || 0);
+        startY = ((global.pageYOffset || doc.scrollTop) || 0) - (doc.clientTop || 0);
+        startT = +(new Date());
         finishT = startT + duration;
         setTimeout(animate, 15);
+    }
+
+    function slideLeft() {
+        console.log('left arrow pressed');
+    }
+
+    function slideRight() {
+        console.log('right arrow pressed');
     }
 
 };
