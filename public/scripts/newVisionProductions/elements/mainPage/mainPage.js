@@ -25,11 +25,14 @@ NV.mainPage = function ($parent) {
         finishT,
         eventAnnouncement,
         $slideLeft,
-        $slideRight
-
+        $slideRight,
+        $sliders = [],
+        $sliderItems = [],
+        sliderContainerClass = 'images-container'
         ;
 
     function buildMainPageForm(mainPageData) {
+        var $sliderItem;
         $fragment = global.document.createDocumentFragment();
 
         a9.each(mainPageData.mainBanners, function (mainBanner) {
@@ -42,18 +45,31 @@ NV.mainPage = function ($parent) {
         var $mainImageContentWrapper = tp('imageFrame', $mainPageContentWrapper).mainImageContentWrapper;
         $mainImageContentWrapper.appendChild($fragment);
 
+        $fragment = global.document.createDocumentFragment();
+
+        var $contentBlocks = tp('contentBlocks').r;
 
         for (i = 0; i < mainPageData.eventAnnouncements.length; i++) {
             eventAnnouncement = mainPageData.eventAnnouncements[i];
             eventAnnouncement.odd = i % 2 == 0;
             build = tp('announcement', eventAnnouncement, $fragment);
+
+
             $slideLeft = build.slideLeft;
             $slideRight = build.slideRight;
+
+            $sliderItem = build.imagesContainer;
+            $sliderItem.images = build.img;
+            $sliders.push($sliderItem);
+
+            //console.log(build.img);
+
             a9.addEvent($slideLeft, eventOnPointerEnd, slideLeft);
             a9.addEvent($slideRight, eventOnPointerEnd, slideRight);
+            $contentBlocks.appendChild($fragment);
         }
 
-        $mainPageContentWrapper.appendChild($fragment);
+        $mainPageContentWrapper.appendChild($contentBlocks);
     }
 
     var $mainPageContentWrapper = tp('mainPageContentWrapper', $parent).r;
@@ -120,13 +136,41 @@ NV.mainPage = function ($parent) {
     }
 
     function slideLeft(e) {
-        console.log(e);
-        console.log('left arrow pressed');
+        onSliderClick(e, e.target, 'left');
     }
 
     function slideRight(e) {
-        console.log(e);
-        console.log('right arrow pressed');
+        onSliderClick(e, e.target, 'right');
     }
 
+    function onSliderClick(e, $target, direction) {
+        var $slider = a9.getParentByClass($target, sliderContainerClass, true);
+        if ($slider !== null) {
+
+            if (!$slider.currentSlide) {
+                $slider.currentSlide = 0;
+            }
+
+            console.log($slider.currentSlide);
+            for (i = 0; i < $slider.images.length; i++) {
+                a9.removeClass($slider.images[i], 'active');
+            }
+
+            if (direction == 'right') {
+                if ($slider.currentSlide < $slider.images.length - 1) {
+                    $slider.currentSlide = $slider.currentSlide + 1;
+                } else {
+                    $slider.currentSlide = 0;
+                }
+            } else if (direction == 'left') {
+                if ($slider.currentSlide > 0) {
+                    $slider.currentSlide = $slider.currentSlide - 1;
+                } else {
+                    $slider.currentSlide = $slider.images.length - 1;
+                }
+            }
+            a9.addClass($slider.images[$slider.currentSlide], 'active');
+        }
+        //e.preventDefault();
+    }
 };

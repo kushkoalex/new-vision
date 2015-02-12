@@ -51,33 +51,44 @@
         return {
             c: 'image-slider-controls',
             C: [
-                {c: 'left',n:'slideLeft'},
-                {c: 'right',n:'slideRight'}
+                {c: 'left', n: 'slideLeft'},
+                {c: 'right', n: 'slideRight'}
             ]
         }
     };
 
-    tmpls.announcement = function(eventAnnouncement){
+    tmpls.announcement = function (eventAnnouncement) {
         var
             controlsDescriptors = nv.settings.controlsDescriptors,
             content = [],
             images,
             imageDescriptionPair,
+            imagesContainer,
             image,
             description,
+            activeClassName,
             i;
 
         images = [];
 
         for (i = 0; i < eventAnnouncement.images.length; i++) {
+
+            if (i == 0) {
+                activeClassName = ' active';
+            }else{
+                activeClassName='';
+            }
+
             images.push({
-                c: 'image active',
+                c: 'image' + activeClassName,
+                n: 'img',
                 a: {style: 'background-image: url(' + controlsDescriptors.site.contentImagesPath + eventAnnouncement.images[i] + ')'}
             });
         }
 
-        image = {
+        imagesContainer = {
             c: 'images-container',
+            n: 'imagesContainer',
             C: [
                 images,
                 tmpls.imageControls()
@@ -94,21 +105,23 @@
         };
 
         if (eventAnnouncement.odd) {
-            imageDescriptionPair = [description, image];
+            imageDescriptionPair = [description, imagesContainer];
         }
         else {
-            imageDescriptionPair = [image, description];
+            imageDescriptionPair = [imagesContainer, description];
         }
 
         return {
-            c: 'content-blocks', a: {id: 'contentBlocks'}, C: [
-                {e: 'a', a: {name: 'content-blocks'}},
-                {
-                    c: 'content-block', C: [
-                    imageDescriptionPair,
-                    {c: 'clear'}
-                ]
-                }]
+            c: 'content-block', C: [
+                imageDescriptionPair,
+                {c: 'clear'}
+            ]
+        };
+    };
+
+    tmpls.contentBlocks = function () {
+        return {
+            c: 'content-blocks', a: {id: 'contentBlocks'}
         };
     };
 
