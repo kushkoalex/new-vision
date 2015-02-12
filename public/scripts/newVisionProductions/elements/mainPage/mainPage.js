@@ -119,11 +119,13 @@ NV.mainPage = function ($parent) {
         setTimeout(animate, 15);
     }
 
-    function slideLeft() {
+    function slideLeft(e) {
+        console.log(e);
         console.log('left arrow pressed');
     }
 
-    function slideRight() {
+    function slideRight(e) {
+        console.log(e);
         console.log('right arrow pressed');
     }
 
