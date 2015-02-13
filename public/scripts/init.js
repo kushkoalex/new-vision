@@ -6,6 +6,7 @@ A9.ready(function (a9, global) {
         $ = a9.$,
         $footer = $('footer'),
         $mainPage = $('mainPage'),
+        $events = $('events'),
         //domNodesQuery = a9.$cs('showDetails'),
         //$showDetails = domNodesQuery.showDetails,
         i,
@@ -17,6 +18,10 @@ A9.ready(function (a9, global) {
 
     if ($mainPage !== null) {
         nv.mainPage($mainPage);
+    }
+
+    if($events!==null){
+        nv.events($events);
     }
 
     //console.log(domNodesQuery);

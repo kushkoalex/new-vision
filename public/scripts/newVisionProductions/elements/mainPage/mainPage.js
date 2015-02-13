@@ -151,7 +151,8 @@ NV.mainPage = function ($parent) {
                 $slider.currentSlide = 0;
             }
 
-            console.log($slider.currentSlide);
+            //console.log($slider.currentSlide);
+
             for (i = 0; i < $slider.images.length; i++) {
                 a9.removeClass($slider.images[i], 'active');
             }
