@@ -20,7 +20,9 @@
 
     tmpls.event = function (eventData) {
         var controlsDescriptors = nv.settings.controlsDescriptors,
-            graphicsContent;
+            graphicsContent,
+            eventInfo = [],
+            eventInfoClass = 'event-info';
 
 
         if (eventData.previewContent.contentType == 'image') {
@@ -34,44 +36,57 @@
                 graphicsContent = {e: 'img'}
             }
         } else if (eventData.previewContent.contentType == 'video') {
-            graphicsContent = {e: 'img'}
+            graphicsContent = {e: 'iframe', a:{width:'788', height:'500', src:eventData.previewContent.videoSrc, frameborder:'0'}}
         }
 
-        console.log(graphicsContent);
+
+        if (eventData.highlighted) {
+            eventInfoClass += ' with-stripe';
+            eventInfo.push({
+                c: 'stripe-wrapper', C: [
+                    {c: 'stripe left', H: '&nbsp;'},
+                    {c:'stripe center',H:eventData.highlightText},
+                    {c: 'stripe right', H: '&nbsp;'}
+                ]
+            })
+        }
+
+        eventInfo.push({
+            c: 'date-block-wrapper', C: [
+                {c: 'title', t: l10n('eventWillBe')},
+                {
+                    c: 'date-wrapper', C: [
+                    {c: 'date wave left'},
+                    {c: 'date', t: eventData.date},
+                    {c: 'date wave right'}
+                ]
+                }
+            ]
+        });
+
+        eventInfo.push({
+            c: 'title-wrapper', C: [
+                {c: 'title-mini-description', t: eventData.titleDescription},
+                {c: 'title', t: eventData.title},
+                {c: 'location', H: eventData.location.title}
+            ]
+        });
+
+        eventInfo.push({c: 'separator-wave'});
+        eventInfo.push({c: 'description', H: eventData.description});
+        eventInfo.push({
+            c: 'buttons-wrapper', C: [
+                {e: 'a', h: 'event-details.html', c: 'button left', t: l10n('learnMore')},
+                {e: 'a', h: '#', c: 'button right', t: l10n('orderTicket')}
+            ]
+        });
+
 
         return {
             c: 'event', C: [
                 {c: 'event-content', C: graphicsContent},
                 {
-                    c: 'event-info', C: [
-                    {
-                        c: 'date-block-wrapper', C: [
-                        {c: 'title', t: l10n('eventWillBe')},
-                        {
-                            c: 'date-wrapper', C: [
-                            {c: 'date wave left'},
-                            {c: 'date', t: eventData.date},
-                            {c: 'date wave right'}
-                        ]
-                        }
-                    ]
-                    },
-                    {
-                        c: 'title-wrapper', C: [
-                        {c: 'title-mini-description', t: eventData.titleDescription},
-                        {c: 'title', t: eventData.title},
-                        {c: 'location', H: eventData.location.title}
-                    ]
-                    },
-                    {c: 'separator-wave'},
-                    {c: 'description', H: eventData.description},
-                    {
-                        c: 'buttons-wrapper', C: [
-                        {e: 'a', h: 'event-details.html', c: 'button left', t: l10n('learnMore')},
-                        {e: 'a', h: '#', c: 'button right', t: l10n('orderTicket')}
-                    ]
-                    }
-                ]
+                    c: eventInfoClass, C: eventInfo
                 }
             ]
         }
