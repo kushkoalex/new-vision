@@ -15,7 +15,7 @@
         return {
             c: 'header',
             C: [
-                {c: classLogo},
+                {e:'a', h:'index.html', c: classLogo},
                 {
                     e: 'a', h: '#', c: 'join-us',
                     C: {H: l10n('joinUs')}
