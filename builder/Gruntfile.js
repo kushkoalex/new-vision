@@ -23,6 +23,12 @@ module.exports = function (grunt) {
                 src: '**',
                 dest: '<%= prodBuildDir %>images/'
             },
+            vendorScripts:{
+                expand: true,
+                cwd: '<%= publicDir %>scripts/vendor/',
+                src: '**',
+                dest: '<%= prodBuildDir %>scripts/'
+            },
             fonts: {
                 expand: true,
                 cwd: '<%= publicDir %>fonts/',
@@ -130,6 +136,8 @@ module.exports = function (grunt) {
                     closeTag: '<!-- end script template tags -->'
                 },
                 src: [
+                    '<%= prodBuildDir %>scripts/jquery-1.11.2.min.js',
+                    '<%= prodBuildDir %>scripts/jquery.bxslider.min.js',
                     '<%= prodBuildDir %>scripts/main.min.js'
                 ],
                 dest: '<%= prodBuildDir %>includes/scripts.html'
@@ -264,6 +272,7 @@ module.exports = function (grunt) {
             'copy:data',
             'copy:fonts',
             'copy:htmlSource',
+            'copy:vendorScripts',
             'tags:buildScripts',
             'tags:buildLinks',
             'includes:prod',
