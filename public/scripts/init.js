@@ -7,11 +7,11 @@ A9.ready(function (a9, global) {
         $footer = $('footer'),
         $mainPage = $('mainPage'),
         $events = $('events'),
-        //domNodesQuery = a9.$cs('showDetails'),
-        //$showDetails = domNodesQuery.showDetails,
+        $media = $('media'),
+    //domNodesQuery = a9.$cs('showDetails'),
+    //$showDetails = domNodesQuery.showDetails,
         i,
         u;
-
 
 
     global.cnCt.bindTemplates(nv.tmpls);
@@ -20,9 +20,14 @@ A9.ready(function (a9, global) {
         nv.mainPage($mainPage);
     }
 
-    if($events!==null){
+    if ($events !== null) {
         nv.events($events);
     }
+
+    if ($media !== null) {
+        nv.media($media);
+    }
+
 
     //console.log(domNodesQuery);
     //
