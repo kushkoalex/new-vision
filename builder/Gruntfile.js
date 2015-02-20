@@ -9,6 +9,7 @@ module.exports = function (grunt) {
         publicDir:publicDir,
         prodBuildDir: '../../new-vision-build/',
         scriptsDir: publicDir + 'scripts/',
+        vendorDir: publicDir + 'vendor/',
         stylesDir: publicDir + 'styles/',
         copy:{
             htmlDevSource:{
@@ -25,9 +26,15 @@ module.exports = function (grunt) {
             },
             vendorScripts:{
                 expand: true,
-                cwd: '<%= publicDir %>scripts/vendor/',
+                cwd: '<%= publicDir %>vendor/scripts/',
                 src: '**',
-                dest: '<%= prodBuildDir %>scripts/'
+                dest: '<%= prodBuildDir %>scripts/vendor/'
+            },
+            vendorStyles:{
+                expand: true,
+                cwd: '<%= publicDir %>vendor/styles/',
+                src: '**',
+                dest: '<%= prodBuildDir %>styles/vendor/'
             },
             fonts: {
                 expand: true,
@@ -105,7 +112,9 @@ module.exports = function (grunt) {
                     '<%= scriptsDir %>newVisionProductions/modules/**/*.js',
                     '<%= scriptsDir %>newVisionProductions/elements/**/*.js',
                     '<%= scriptsDir %>newVisionProductions/**/*.js',
-                    '<%= scriptsDir %>vendor/*.js',
+                    '<%= vendorDir %>scripts/jquery-1.11.2.min.js',
+                    '<%= vendorDir %>scripts/jquery.bxslider.min.js',
+                    '<%= vendorDir %>scripts/init.js',
                     '<%= scriptsDir %>init.js'
                 ],
                 dest: '<%= publicDir %>includes/scripts.html'
@@ -123,9 +132,10 @@ module.exports = function (grunt) {
                     //'<%= stylesDir %>ui/**/*.css',
                     '<%= stylesDir %>blocks/**/*.css',
                     '<%= stylesDir %>pages/*.css',
-                    '<%= stylesDir %>layout/*.css'
+                    '<%= stylesDir %>layout/*.css',
                     //'<%= stylesDir %>fonts/*.css',
                     // '<%= stylesDir %>*.css'
+                    '<%= vendorDir %>styles/*.css'
                 ],
                 dest: '<%= publicDir %>includes/styles.html'
             },
@@ -136,8 +146,9 @@ module.exports = function (grunt) {
                     closeTag: '<!-- end script template tags -->'
                 },
                 src: [
-                    '<%= prodBuildDir %>scripts/jquery-1.11.2.min.js',
-                    '<%= prodBuildDir %>scripts/jquery.bxslider.min.js',
+                    '<%= prodBuildDir %>scripts/vendor/jquery-1.11.2.min.js',
+                    '<%= prodBuildDir %>scripts/vendor/jquery.bxslider.min.js',
+                    '<%= prodBuildDir %>scripts/vendor/init.js',
                     '<%= prodBuildDir %>scripts/main.min.js'
                 ],
                 dest: '<%= prodBuildDir %>includes/scripts.html'
@@ -149,7 +160,8 @@ module.exports = function (grunt) {
                     closeTag: '<!-- end css template tags -->'
                 },
                 src: [
-                    '<%= prodBuildDir %>styles/main.min.css'
+                    '<%= prodBuildDir %>styles/main.min.css',
+                    '<%= prodBuildDir %>styles/vendor/*.js'
                 ],
                 dest: '<%= prodBuildDir %>includes/styles.html'
             }
@@ -273,6 +285,7 @@ module.exports = function (grunt) {
             'copy:fonts',
             'copy:htmlSource',
             'copy:vendorScripts',
+            'copy:vendorStyles',
             'tags:buildScripts',
             'tags:buildLinks',
             'includes:prod',

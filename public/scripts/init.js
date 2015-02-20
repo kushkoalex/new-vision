@@ -35,6 +35,4 @@ A9.ready(function (a9, global) {
     if ($footer !== null) {
         tp('footer', $footer);
     }
-
-
 });
