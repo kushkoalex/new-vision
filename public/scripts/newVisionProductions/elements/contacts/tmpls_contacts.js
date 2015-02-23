@@ -11,10 +11,37 @@
         ];
     };
 
-    tmpls.contactsForm = function () {
-        var controlsDescriptors = nv.settings.controlsDescriptors,
-            mapScript = controlsDescriptors.site.mapScript;
+    tmpls.feedbackForm = function () {
+        return {
+            e:'form', a:{action:'/feedback'}, c: 'form-feedback', C: [
+                {c: 'feedback-title', t: l10n('feedbackTitle')},
+                {
+                c: 'feedback-fields', C: [
+                    {
+                        c: 'feedback-field name', C: [
+                        {c: 'title', t: l10n('feedbackFields_Name', 'firstUpper')},
+                        {c: 'input-wrapper', C: {e: 'input',n:'customerName', a: {type: 'text'}}}
+                    ]
+                    },
+                    {
+                        c: 'feedback-field email', C: [
+                        {c: 'title', H: l10n('feedbackFields_Email', 'firstUpper')},
+                        {c: 'input-wrapper', C: {e: 'input',n:'email', a: {type: 'text'}}}
+                    ]
+                    },
+                    {
+                        c: 'feedback-field anti-spam', C: [
+                        {c: 'title', t: l10n('feedbackFields_AntiSpam', 'firstUpper')},
+                        {c: 'input-wrapper', C: {e: 'input',n:'antiSpam', a: {type: 'text'}}}
+                    ]
+                    }
 
+                ]
+            }, {c: 'button', t: 'Отправить', n: 'button'}]
+        }
+    };
+
+    tmpls.contactsForm = function () {
         return [
             {
                 c: 'contacts-form-wrapper', C: [
@@ -26,44 +53,26 @@
                             {
                                 c: 'text', C: [
                                 {c: 'address', H: l10n('address')},
-                                {c: 'feedback-title', t: l10n('feedbackTitle')},
-                                {
-                                    c: 'feedback-fields', C: [
-                                    {
-                                        c: 'feedback-field name', C: [
-                                        {c: 'title', t: l10n('feedbackFields_Name','firstUpper')},
-                                        {c:'input-wrapper',C:{e: 'input', a: {type: 'text'}}}
-                                    ]
-                                    },
-                                    {
-                                        c: 'feedback-field email', C: [
-                                        {c: 'title', H: l10n('feedbackFields_Email','firstUpper')},
-                                        {c:'input-wrapper',C:{e: 'input', a: {type: 'text'}}}
-                                    ]
-                                    },
-                                    {
-                                        c: 'feedback-field anti-spam', C: [
-                                        {c: 'title', t: l10n('feedbackFields_AntiSpam','firstUpper')},
-                                        {c:'input-wrapper',C:{e: 'input', a: {type: 'text'}}}
-                                    ]
-                                    }
 
-                                ]
-                                },
-                                {c:'button',t:'Отправить'}
+                                {n:'formContainer'}
                             ]
                             }
                         ]
                     }
                 }
                 },
-                {c: 'map-wrapper', a:{id:'map'}},
+                {c: 'map-wrapper', a: {id: 'map'}},
                 {c: 'clear'}
             ]
             },
             {a: {id: 'footer'}, C: tmpls.footer()}
         ];
     };
+
+    tmpls.thanks = function(){
+        return{c:'thanks',t:l10n('feedbackFields_thanks','firstUpper')}
+    };
+
 
 
 }(NV));
