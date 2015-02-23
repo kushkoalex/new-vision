@@ -29,7 +29,7 @@ background-color: #ffffff;
     padding: 35px 40px;
     position: relative;
     width: 550px;
-    margin: 140px auto 0;
+    margin: 100px auto 0;
 }
 
 .feedback-form-wrapper .feedback-form .feedback-form-content-wrapper .title
@@ -66,6 +66,14 @@ background-color: #ffffff;
     /*border: 1px solid #ccc;*/
     margin-bottom: 10px;
 }
+.feedback-form .feedback-field.question
+{
+    position: relative;
+    height: auto;
+    /*border: 1px solid #ccc;*/
+    margin-bottom: 0;
+
+}
 
 .feedback-form-wrapper .feedback-form .feedback-form-content-wrapper .feedback-field .title
 {
@@ -93,11 +101,10 @@ background-color: #ffffff;
 }
 .feedback-form .feedback-field.anti-spam .input-wrapper
 {
-    margin-left: 150px;
+    margin-left: 230px;
 }
 
-.feedback-form .feedback-field.name .title,
-.feedback-form .feedback-field.anti-spam .title{
+.feedback-form .feedback-field.name .title{
     padding-top: 10px;
 }
 
@@ -112,9 +119,20 @@ background-color: #ffffff;
     padding: 0 5px;
 }
 
+.feedback-form .feedback-field .input-wrapper textarea{
+    background-color: #f7f7f7;
+    height: 100px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    padding: 0 5px;
+    resize: none;
+}
+
 .feedback-form .button{
     position: relative;
-    margin: 50px auto 0;
+    margin: 30px auto 0;
     width: 160px;
     height: 40px;
     background-color: #e5edf2;

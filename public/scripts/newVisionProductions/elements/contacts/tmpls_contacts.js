@@ -31,9 +31,15 @@
                     },
                     {
                         c: 'feedback-field anti-spam', C: [
-                        {c: 'title', t: l10n('feedbackFields_AntiSpam', 'firstUpper')},
+                        {c: 'title', H: l10n('feedbackFields_AntiSpam', 'firstUpper')},
                         {c: 'input-wrapper', C: {e: 'input',n:'antiSpam', a: {type: 'text'}}}
                     ]
+                    },
+                    {
+                        c: 'feedback-field question', C: [
+                            {c: 'title', t: l10n('feedbackFields_Question', 'firstUpper')},
+                            {c: 'input-wrapper', C: {e: 'textarea',n:'question'}}
+                        ]
                     }
 
                 ]

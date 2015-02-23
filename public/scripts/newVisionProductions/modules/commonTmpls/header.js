@@ -15,9 +15,9 @@
         return {
             c: 'header',
             C: [
-                {e:'a', h:'index.html', c: classLogo},
+                {e:'a', h:controlsDescriptors.mainPageUrl, c: classLogo},
                 {
-                    e: 'a', h: '#', c: 'join-us',
+                    e: 'a', h: controlsDescriptors.joinUsUrl, c: 'join-us',
                     C: {H: l10n('joinUs')}
                 },
                 tmpls.mainMenu(mainMenuData)

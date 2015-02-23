@@ -13,6 +13,8 @@ NV.contacts = function ($parent) {
 
 
     function validateForm(feedbackFormData) {
+
+
         var isValid = true;
 
         if (feedbackFormData.customerName.value == '') {
@@ -31,6 +33,14 @@ NV.contacts = function ($parent) {
             feedbackFormData.email.style.border = 'none';
         }
 
+        if (!a9.validation.validators.email(feedbackFormData.email.value)) {
+            feedbackFormData.email.style.border = '1px solid red';
+            isValid = false;
+        }
+        else {
+            feedbackFormData.email.style.border = 'none';
+        }
+
         if (feedbackFormData.antiSpam.value == '') {
             feedbackFormData.antiSpam.style.border = '1px solid red';
             isValid = false;
@@ -38,6 +48,25 @@ NV.contacts = function ($parent) {
         else {
             feedbackFormData.antiSpam.style.border = 'none';
         }
+
+        if (feedbackFormData.antiSpam.value != settings.controlsDescriptors.site.antiSpamAnswer) {
+            feedbackFormData.antiSpam.style.border = '1px solid red';
+            isValid = false;
+        }
+        else {
+            feedbackFormData.antiSpam.style.border = 'none';
+        }
+
+        if (feedbackFormData.question.value == '') {
+            feedbackFormData.question.style.border = '1px solid red';
+            isValid = false;
+        }
+        else {
+            feedbackFormData.question.style.border = 'none';
+        }
+
+
+
         return isValid;
     }
 
@@ -52,7 +81,8 @@ NV.contacts = function ($parent) {
                 method: 'POST',
                 postData: {
                     name: feedbackData.customerName.value,
-                    email: feedbackData.customerName.value
+                    email: feedbackData.email.value,
+                    question:feedbackData.question.value
                 },
                 url: '/feedback',
                 onSuccess: function (success) {
@@ -66,7 +96,7 @@ NV.contacts = function ($parent) {
             });
         }
         else {
-            alert(a9.l10n('feedbackFields_checkEntries', 'firstUpper'))
+            console.log(a9.l10n('feedbackFields_checkEntries', 'firstUpper'))
         }
     }
 
@@ -86,6 +116,7 @@ NV.contacts = function ($parent) {
         feedbackData.customerName = build.customerName;
         feedbackData.email = build.email;
         feedbackData.antiSpam = build.antiSpam;
+        feedbackData.question = build.question;
 
         $button = build.button;
 
