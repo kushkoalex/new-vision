@@ -11,14 +11,9 @@ NV.partnership = function($parent){
     function buildForm(){
         $fragment = global.document.createDocumentFragment();
 
-
-
         $partnership.appendChild($fragment);
     }
 
-
     var $partnership = tp('partnership', $parent).r;
-
     buildForm();
-
 };

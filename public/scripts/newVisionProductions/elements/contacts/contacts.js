@@ -17,28 +17,25 @@ NV.contacts = function ($parent) {
 
         if (feedbackFormData.customerName.value == '') {
             feedbackFormData.customerName.style.border = '1px solid red';
-            isValid=false;
+            isValid = false;
         }
-        else
-        {
+        else {
             feedbackFormData.customerName.style.border = 'none';
         }
 
         if (feedbackFormData.email.value == '') {
             feedbackFormData.email.style.border = '1px solid red';
-            isValid=false;
+            isValid = false;
         }
-        else
-        {
+        else {
             feedbackFormData.email.style.border = 'none';
         }
 
         if (feedbackFormData.antiSpam.value == '') {
             feedbackFormData.antiSpam.style.border = '1px solid red';
-            isValid=false;
+            isValid = false;
         }
-        else
-        {
+        else {
             feedbackFormData.antiSpam.style.border = 'none';
         }
         return isValid;
@@ -49,16 +46,27 @@ NV.contacts = function ($parent) {
         var isValidForm = validateForm(feedbackData);
 
         if (isValidForm) {
-            $feedbackForm.style.display='none';
-            //a9.request();
+            $feedbackForm.style.display = 'none';
 
-            $fragment = global.document.createDocumentFragment();
-            build = tp('thanks',$fragment);
-
-            $contacts.appendChild($fragment);
+            a9.request({
+                method: 'POST',
+                postData: {
+                    name: feedbackData.customerName.value,
+                    email: feedbackData.customerName.value
+                },
+                url: '/feedback',
+                onSuccess: function (success) {
+                    $fragment = global.document.createDocumentFragment();
+                    build = tp('thanks', $fragment);
+                    $contacts.appendChild($fragment);
+                },
+                onError: function () {
+                    alert('sent message failed');
+                }
+            });
         }
         else {
-            alert(a9.l10n('feedbackFields_checkEntries','firstUpper'))
+            alert(a9.l10n('feedbackFields_checkEntries', 'firstUpper'))
         }
     }
 
