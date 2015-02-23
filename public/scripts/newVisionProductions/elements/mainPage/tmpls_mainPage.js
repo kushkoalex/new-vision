@@ -126,13 +126,13 @@
     };
 
 
-    tmpls.mainPage = function (mainPageDataModel) {
-        return {
-            c: 'main-page-content-wrapper', C: [
-                tmpls.imageFrame(mainPageDataModel.mainBanners),
-                tmpls.announcements(mainPageDataModel.eventAnnouncements)]
-        }
-    };
+    //tmpls.mainPage = function (mainPageDataModel) {
+    //    return {
+    //        c: 'main-page-content-wrapper', C: [
+    //            tmpls.imageFrame(mainPageDataModel.mainBanners),
+    //            tmpls.announcements(mainPageDataModel.eventAnnouncements)]
+    //    }
+    //};
 
     tmpls.mainPageContentWrapper = function () {
         return {c: 'main-page-content-wrapper'}

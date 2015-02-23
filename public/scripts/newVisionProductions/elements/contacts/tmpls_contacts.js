@@ -12,25 +12,53 @@
     };
 
     tmpls.contactsForm = function () {
+        var controlsDescriptors = nv.settings.controlsDescriptors,
+            mapScript = controlsDescriptors.site.mapScript;
+
         return [
             {
                 c: 'contacts-form-wrapper', C: [
-                {c: 'feedback-form-wrapper',C:{
+                {
+                    c: 'feedback-form-wrapper', C: {
                     c: 'feedback-form', C: {
                         c: 'feedback-form-content-wrapper', C: [
                             {c: 'title', t: l10n('contactsTitle')},
-                            {c: 'text',C:[
-                                {c:'address'},
-                                {c:'feedback-title'},
-                                {c:'feedback-fields',C:[
-                                    {C:[{c:'title'},{e:'input',a:{type:'text'}}]}
-                                ]}
-                            ]}
+                            {
+                                c: 'text', C: [
+                                {c: 'address', H: l10n('address')},
+                                {c: 'feedback-title', t: l10n('feedbackTitle')},
+                                {
+                                    c: 'feedback-fields', C: [
+                                    {
+                                        c: 'feedback-field name', C: [
+                                        {c: 'title', t: l10n('feedbackFields_Name','firstUpper')},
+                                        {c:'input-wrapper',C:{e: 'input', a: {type: 'text'}}}
+                                    ]
+                                    },
+                                    {
+                                        c: 'feedback-field email', C: [
+                                        {c: 'title', H: l10n('feedbackFields_Email','firstUpper')},
+                                        {c:'input-wrapper',C:{e: 'input', a: {type: 'text'}}}
+                                    ]
+                                    },
+                                    {
+                                        c: 'feedback-field anti-spam', C: [
+                                        {c: 'title', t: l10n('feedbackFields_AntiSpam','firstUpper')},
+                                        {c:'input-wrapper',C:{e: 'input', a: {type: 'text'}}}
+                                    ]
+                                    }
+
+                                ]
+                                },
+                                {c:'button',t:'Отправить'}
+                            ]
+                            }
                         ]
                     }
-                }},
-                {c: 'map-wrapper'},
-                {c:'clear'}
+                }
+                },
+                {c: 'map-wrapper', a:{id:'map'}},
+                {c: 'clear'}
             ]
             },
             {a: {id: 'footer'}, C: tmpls.footer()}

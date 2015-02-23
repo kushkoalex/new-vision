@@ -8,7 +8,9 @@ A9.ready(function (a9, global) {
         $mainPage = $('mainPage'),
         $events = $('events'),
         $media = $('media'),
+        $partnership = $('partnership'),
         $contacts = $('contacts'),
+
     //domNodesQuery = a9.$cs('showDetails'),
     //$showDetails = domNodesQuery.showDetails,
         i,
@@ -27,6 +29,10 @@ A9.ready(function (a9, global) {
 
     if ($media !== null) {
         nv.media($media);
+    }
+
+    if ($partnership !== null) {
+        nv.partnership($partnership);
     }
 
     if ($contacts !== null) {

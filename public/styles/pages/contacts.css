@@ -24,7 +24,7 @@ background-color: #ffffff;
     padding: 35px 40px;
     position: relative;
     width: 550px;
-    margin: 200px auto 0;
+    margin: 140px auto 0;
 }
 
 .feedback-form-wrapper .feedback-form .feedback-form-content-wrapper .title
@@ -39,3 +39,86 @@ background-color: #ffffff;
     /*font-family: 'Museo Sans Cyrl 300';*/
     margin-top: 25px;
 }
+
+.feedback-form .address{
+    padding-top: 20px;
+    font-size: 14px;
+    line-height: 40px;
+    padding-bottom: 50px;
+}
+
+.feedback-form .feedback-title
+{
+    text-transform: uppercase;
+    font-family: 'Museo Sans Cyrl 900';
+    padding-bottom: 30px;
+}
+
+.feedback-form .feedback-field
+{
+    position: relative;
+    height: 40px;
+    /*border: 1px solid #ccc;*/
+    margin-bottom: 10px;
+}
+
+.feedback-form-wrapper .feedback-form .feedback-form-content-wrapper .feedback-field .title
+{
+    font-size:13px;
+    text-transform: none;
+    font-family: 'Lato-Bold';
+    float: left;
+}
+
+.feedback-form .feedback-field .input-wrapper
+{
+    /*position: absolute;*/
+    /*right: 0;*/
+
+    position: relative;
+}
+
+.feedback-form .feedback-field.name .input-wrapper
+{
+    margin-left: 90px;
+}
+.feedback-form .feedback-field.email .input-wrapper
+{
+    margin-left: 160px;
+}
+.feedback-form .feedback-field.anti-spam .input-wrapper
+{
+    margin-left: 150px;
+}
+
+.feedback-form .feedback-field.name .title,
+.feedback-form .feedback-field.anti-spam .title{
+    padding-top: 10px;
+}
+
+.feedback-form .feedback-field .input-wrapper input
+{
+    background-color: #f7f7f7;
+    height: 30px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.feedback-form .button{
+    position: relative;
+    margin: 50px auto 0;
+    width: 160px;
+    height: 40px;
+    background-color: #e5edf2;
+    cursor: pointer;
+    color: #0072bc;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 13px;
+}
+
+
+
