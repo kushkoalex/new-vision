@@ -15,7 +15,7 @@
         return {
             c: 'header',
             C: [
-                {e:'a', h:controlsDescriptors.mainPageUrl, c: classLogo},
+                {e:'a', h:controlsDescriptors.site.mainPageUrl, c: classLogo},
                 {
                     e: 'a', h: controlsDescriptors.joinUsUrl, c: 'join-us',
                     C: {H: l10n('joinUs')}
