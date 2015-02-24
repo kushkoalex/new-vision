@@ -9,6 +9,7 @@ A9.ready(function (a9, global) {
         $events = $('events'),
         $media = $('media'),
         $partnership = $('partnership'),
+        $news = $('news'),
         $contacts = $('contacts'),
 
     //domNodesQuery = a9.$cs('showDetails'),
@@ -33,6 +34,10 @@ A9.ready(function (a9, global) {
 
     if ($partnership !== null) {
         nv.partnership($partnership);
+    }
+
+    if ($news !== null) {
+        nv.news($news);
     }
 
     if ($contacts !== null) {
