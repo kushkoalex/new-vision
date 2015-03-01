@@ -76,7 +76,7 @@
         eventInfo.push({c: 'description', H: eventData.description});
         eventInfo.push({
             c: 'buttons-wrapper', C: [
-                {e: 'a', h: 'event-details.html', c: 'button left', t: l10n('learnMore')},
+                {e: 'a', h: a9.supplant(controlsDescriptors.site.eventDetailsPageUrl,{id:eventData.id}), c: 'button left', t: l10n('learnMore')},
                 {e: 'a', h: '#', c: 'button right', t: l10n('orderTicket')}
             ]
         });

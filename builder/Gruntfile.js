@@ -146,10 +146,11 @@ module.exports = function (grunt) {
                     closeTag: '<!-- end script template tags -->'
                 },
                 src: [
+                    '<%= prodBuildDir %>scripts/main.min.js',
                     '<%= prodBuildDir %>scripts/vendor/jquery-1.11.2.min.js',
                     '<%= prodBuildDir %>scripts/vendor/jquery.bxslider.min.js',
-                    '<%= prodBuildDir %>scripts/vendor/init.js',
-                    '<%= prodBuildDir %>scripts/main.min.js'
+                    '<%= prodBuildDir %>scripts/vendor/init.js'
+
                 ],
                 dest: '<%= prodBuildDir %>includes/scripts.html'
             },
@@ -161,7 +162,7 @@ module.exports = function (grunt) {
                 },
                 src: [
                     '<%= prodBuildDir %>styles/main.min.css',
-                    '<%= prodBuildDir %>styles/vendor/*.js'
+                    '<%= prodBuildDir %>styles/vendor/*.css'
                 ],
                 dest: '<%= prodBuildDir %>includes/styles.html'
             }

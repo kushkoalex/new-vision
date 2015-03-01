@@ -7,6 +7,7 @@ A9.ready(function (a9, global) {
         $footer = $('footer'),
         $mainPage = $('mainPage'),
         $events = $('events'),
+        $eventDetails = $('eventDetails'),
         $media = $('media'),
         $partnership = $('partnership'),
         $news = $('news'),
@@ -26,6 +27,10 @@ A9.ready(function (a9, global) {
 
     if ($events !== null) {
         nv.events($events);
+    }
+
+    if ($eventDetails !== null) {
+        nv.eventDetails($eventDetails);
     }
 
     if ($media !== null) {

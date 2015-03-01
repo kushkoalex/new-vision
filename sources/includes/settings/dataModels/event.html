@@ -4,41 +4,58 @@
                 dataModels = settings.dataModels;
 
         dataModels.event = {
-            date: '',
-            title: '',
-            titleDescription: '',
+            id:2,
+            date: '16.11.2015',
+            title: 'Ирония судьбы, или с легким паром!',
+            titleDescription: 'Пьеса в трех действиях',
 
             location:{
-                title:'',
+                title:'Харьков, театр &laquo;<span>Современник</span>&raquo;',
                 address:'',
                 highlightedTitlePart:''
             },
-            description: '',
+            description: 'В недалеком будущем раса инопланетян вторгается на Землю. Никакая армия в мире не может противостоять им. Майор Уильям Кейдж умирает в бою, но случается невозможное &mdash; он оказывается во временной петле.',
             expired: true,
 
             // order
             // free
             // invite
             // noSeats
-            ticketOrderType: '',
+            ticketOrderType: 'order',
             highlighted: true,
-            highlightText: '',
+            highlightText: 'Впервые в Украине &mdash; перворманс на вершине моста!',
 
             previewContent:{
                 // image
                 // video
-                contentType:'',
-                videoSrc:'',
-                contentImages:['','','']
+                contentType:'video',
+                videoSrc:'https://www.youtube.com/embed/en4M6nsysxA',
+                //contentImages:['204826.jpg']
+                contentImages:null
             },
 
             content:{
-                action:'',
-                location:'',
-                artGroup:''
+                action:'If you want more control over the direction of the gradient, you can define an angle, instead of the predefined directions (to bottom, to top, to right, to left, to bottom right, etc.). The angle is specified as an angle between a horizontal line and the gradient line, going counter-clockwise. In other words, 0deg creates a bottom to top gradient, while 90deg generates a left to right gradient.The following example shows how to use angles on linear gradients:CSS3 gradients also support transparency, which can be used to create fading effects.To add transparency, we use the rgba() function to define the color stops. The last parameter in the rgba() function can be a value from 0 to 1, and it defines the transparency of the color: 0 indicates full transparency, 1 indicates full color (no transparency).The following example shows a linear gradient that starts from the left. It starts fully transparent, transitioning to full color red:',
+                location:'sdf sdf sd f',
+                artGroup:'sdf sdf sdf '
             },
 
-            images:['','','']
+            images:[
+                '10684110_290072504519482_631549677_n.jpg',
+                '2048.jpg',
+                '20481.jpg',
+                '204817.jpg',
+                '204820.jpg',
+                '204825.jpg',
+                '204826.jpg',
+                '2048t.jpg',
+                '5.jpg',
+                'cover_2048.jpg'
+            ],
+            duration:'156 минут',
+            intervalQuantity:'два антракта',
+            price:'250-300 грн'
+
         };
 
     }(NV, A9));
