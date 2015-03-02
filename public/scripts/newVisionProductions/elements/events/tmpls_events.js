@@ -22,7 +22,37 @@
         var controlsDescriptors = nv.settings.controlsDescriptors,
             graphicsContent,
             eventInfo = [],
-            eventInfoClass = 'event-info';
+            eventInfoClass = 'event-info',
+            orderButtonText,
+            orderButton,
+            eventExpiredClass='';
+
+        if(eventData.expired){
+            eventExpiredClass=' expired';
+        }
+
+        switch (eventData.ticketOrderType) {
+            case 'order':
+                orderButtonText = l10n('ticketType_orderTicket');
+                orderButton = {e: 'a', h: '#', c: 'button right'+eventExpiredClass, t: orderButtonText}
+                break;
+            case 'free':
+                orderButtonText = l10n('ticketType_eventIsFree');
+                orderButton = {c: 'button right'+eventExpiredClass, t: orderButtonText}
+                break;
+            case 'invite':
+                orderButtonText = l10n('ticketType_getInvite');
+                orderButton = {c: 'button right'+eventExpiredClass, t: orderButtonText}
+                break;
+            case 'noSeats':
+                orderButtonText = l10n('ticketType_noSeats');
+                orderButton = {c: 'button right no-seats', t: orderButtonText};
+                break;
+            default :
+                orderButtonText = l10n('ticketType_orderTicket');
+                orderButton = {c: 'button right'+eventExpiredClass, t: orderButtonText};
+                break;
+        }
 
 
         if (eventData.previewContent.contentType == 'image') {
@@ -36,7 +66,10 @@
                 graphicsContent = {e: 'img'}
             }
         } else if (eventData.previewContent.contentType == 'video') {
-            graphicsContent = {e: 'iframe', a:{width:'788', height:'500', src:eventData.previewContent.videoSrc, frameborder:'0'}}
+            graphicsContent = {
+                e: 'iframe',
+                a: {width: '788', height: '500', src: eventData.previewContent.videoSrc, frameborder: '0'}
+            }
         }
 
 
@@ -45,7 +78,7 @@
             eventInfo.push({
                 c: 'stripe-wrapper', C: [
                     {c: 'stripe left', H: '&nbsp;'},
-                    {c:'stripe center',H:eventData.highlightText},
+                    {c: 'stripe center', H: eventData.highlightText},
                     {c: 'stripe right', H: '&nbsp;'}
                 ]
             })
@@ -68,7 +101,11 @@
             c: 'title-wrapper', C: [
                 {c: 'title-mini-description', t: eventData.titleDescription},
                 {c: 'title', t: eventData.title},
-                {c: 'location', H: eventData.location.title}
+                {
+                    c: 'location',
+                    H: eventData.location.title + ' ',
+                    C: {e: 'span', C: {e: 'a', a: {h: '#'}, t: eventData.location.address}}
+                }
             ]
         });
 
@@ -76,8 +113,13 @@
         eventInfo.push({c: 'description', H: eventData.description});
         eventInfo.push({
             c: 'buttons-wrapper', C: [
-                {e: 'a', h: a9.supplant(controlsDescriptors.site.eventDetailsPageUrl,{id:eventData.id}), c: 'button left', t: l10n('learnMore')},
-                {e: 'a', h: '#', c: 'button right', t: l10n('orderTicket')}
+                {
+                    e: 'a',
+                    h: a9.supplant(controlsDescriptors.site.eventDetailsPageUrl, {id: eventData.id}),
+                    c: 'button left',
+                    t: l10n('learnMore')
+                },
+                orderButton
             ]
         });
 

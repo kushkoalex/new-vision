@@ -146,6 +146,18 @@ margin-top: 37px;
     font-family: 'LatoSemibold';
     padding-top: 13px;
     letter-spacing: 4px;
+
+}
+
+.event-info .buttons-wrapper .button.no-seats,
+.event-info .buttons-wrapper .button.expired{
+
+    border: 1px solid #cccccc;
+    color: #cccccc;
+}
+
+.event-info .buttons-wrapper a.button
+{
     cursor: pointer;
 }
 
