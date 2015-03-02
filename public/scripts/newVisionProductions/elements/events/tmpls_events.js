@@ -104,7 +104,7 @@
                 {
                     c: 'location',
                     H: eventData.location.title + ' ',
-                    C: {e: 'span', C: {e: 'a', a: {h: '#'}, t: eventData.location.address}}
+                    C: {e: 'span', C: {e: 'a', h:eventData.location.addressMapUrl, a: { target:'_blank'}, t: eventData.location.address}}
                 }
             ]
         });
