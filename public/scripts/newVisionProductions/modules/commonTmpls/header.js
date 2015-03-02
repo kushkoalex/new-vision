@@ -26,15 +26,30 @@
     };
 
     tmpls.mainMenu = function (menuData) {
-        var menuItems = [], menuItem;
+        var menuItems = [],
+            menuItem,
+        controlsDescriptors = nv.settings.controlsDescriptors;
         for (var i = 0; i < menuData.length; i++) {
-            menuItem = {
-                e: 'li', C:{
-                    e: 'a',
-                    h: menuData[i].url,
-                    t: menuData[i].title
-                }
-            };
+
+
+            if(controlsDescriptors.site.activeMenuItemId&&controlsDescriptors.site.activeMenuItemId==menuData[i].id)
+            {
+                menuItem = {
+                    e: 'li', C: {
+                        t: menuData[i].title
+                    }
+                };
+            }
+            else {
+                menuItem = {
+                    e: 'li', C: {
+                        e: 'a',
+                        h: menuData[i].url,
+                        t: menuData[i].title
+                    }
+                };
+            }
+
             menuItems.push(menuItem);
         }
 

@@ -73,7 +73,7 @@
                     },
                     {
                         c: 'event-property', C: [
-                        //{c:'property-title',t:'проект состоится:'},
+                        {c:'property-title',t:'количество антрактов:'},
                         {
                             c: 'event-property-wrapper', C: [
                             {c: 'event-property-inner left', H: '&nbsp;'},
