@@ -51,6 +51,10 @@
     padding-top: 55px;
 }
 
+.event-info .date-block-wrapper.expired{
+    color: #cccccc;
+}
+
 .event-info .date-block-wrapper .title {
     font-size: 9px;
 }
@@ -70,15 +74,20 @@
 
 .event-info .date-block-wrapper .date-wrapper .date.wave.left {
     width: 18px;
-
     margin-right: 5px;
     background: url("../../images/left-wave.png") no-repeat center center;
+}
+.event-info .date-block-wrapper.expired .date-wrapper .date.wave.left{
+    background: url("../../images/left-wave-grey.png") no-repeat center center;
 }
 
 .event-info .date-block-wrapper .date-wrapper .date.wave.right {
     background: url("../../images/right-wave.png") no-repeat center center;
     width: 18px;
     margin-left: 5px;
+}
+.event-info .date-block-wrapper.expired .date-wrapper .date.wave.right{
+    background: url("../../images/right-wave-grey.png") no-repeat center center;
 }
 
 .event-info .title-wrapper {

@@ -25,7 +25,8 @@
             eventInfoClass = 'event-info',
             orderButtonText,
             orderButton,
-            eventExpiredClass='';
+            eventExpiredClass='',
+            dateWrapperClass;
 
         if(eventData.expired){
             eventExpiredClass=' expired';
@@ -84,8 +85,13 @@
             })
         }
 
+        dateWrapperClass ='date-block-wrapper';
+        if(eventData.expired){
+            dateWrapperClass+=' expired';
+        }
+
         eventInfo.push({
-            c: 'date-block-wrapper', C: [
+            c: dateWrapperClass, C: [
                 {c: 'title', t: l10n('eventWillBe')},
                 {
                     c: 'date-wrapper', C: [
