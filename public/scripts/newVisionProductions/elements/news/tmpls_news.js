@@ -18,15 +18,18 @@
     };
 
     tmpls.newsBlock = function (dataItem) {
-               var blockSize = 'news-block-'+dataItem.size;
+               var blockSize = 'news-block-'+dataItem.size,
+        controlsDescriptors = nv.settings.controlsDescriptors;
 
         return {
-            c: 'news-block '+blockSize, C: {
+            c: 'news-block '+blockSize, C: [
+                {e: 'img', a: {src: controlsDescriptors.site.contentImagesPath + dataItem.imageSrc}},
+                {
                 c: 'title-wrapper '+dataItem.titlePosition, C: [
                     {c: 'date', t: dataItem.date},
                     {c: 'title', t: dataItem.title}
                 ]
-            }
+            }]
         }
     };
 

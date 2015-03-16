@@ -42,7 +42,9 @@
 }
 
 .media-items .media-item .description .title{
-    font-family: 'Museo Sans Cyrl 900';
+    /*font-family: 'Museo Sans Cyrl 900';*/
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
     font-size: 22px;
     text-transform: uppercase;
     padding-bottom: 30px;

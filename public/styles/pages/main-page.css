@@ -144,21 +144,25 @@
     text-align: left;
     padding: 35px 40px;
     position: relative;
-    width: 550px;
-    margin: 200px auto 0;
+
+    margin: 200px 100px 0;
 }
 
 .content-block .description .description-content-wrapper .title
 {
-    font-family: 'Museo Sans Cyrl 900';
+    /*font-family: 'Museo Sans Cyrl 900';*/
+    font-family: 'Ubuntu', sans-serif;
     text-transform: uppercase;
+    font-weight: 700;
     font-size: 22px;
 }
 
 .content-block .description .description-content-wrapper .text
 {
     /*font-family: 'Museo Sans Cyrl 300';*/
+    font-family: 'Ubuntu', sans-serif;
     margin-top: 25px;
+    line-height: 23px;
 }
 
 
@@ -167,7 +171,7 @@
     color: #ffffff;
     position: absolute;
     right: 50px;
-    width: 50%;
+    width: 500px;
     height: 300px;
     top: 400px;
     text-align: right;

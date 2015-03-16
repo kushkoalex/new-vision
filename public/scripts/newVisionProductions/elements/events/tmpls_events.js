@@ -26,7 +26,8 @@
             orderButtonText,
             orderButton,
             eventExpiredClass='',
-            dateWrapperClass;
+            dateWrapperClass,
+            eventDateText;
 
         if(eventData.expired){
             eventExpiredClass=' expired';
@@ -86,13 +87,19 @@
         }
 
         dateWrapperClass ='date-block-wrapper';
+
+
         if(eventData.expired){
             dateWrapperClass+=' expired';
+            eventDateText=l10n('eventPass');
+        }
+        else{
+            eventDateText=l10n('eventWillBe');
         }
 
         eventInfo.push({
             c: dateWrapperClass, C: [
-                {c: 'title', t: l10n('eventWillBe')},
+                {c: 'title', t: eventDateText},
                 {
                     c: 'date-wrapper', C: [
                     {c: 'date wave left'},

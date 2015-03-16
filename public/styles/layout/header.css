@@ -67,3 +67,6 @@ a.join-us div{
     text-transform: uppercase;
 }
 
+.main-menu li div{
+    color: #f00;
+}
