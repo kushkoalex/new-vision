@@ -27,6 +27,11 @@
     background-color: #000000;
 }
 
+.media-items .media-item .media-content img{
+    width: 560px;
+    height: 338px;
+}
+
 .media-items .media-item .description{
     margin-left: 620px;
     position: relative;
@@ -54,3 +59,4 @@
     font-size: 14px;
     line-height: 21px;
 }
+
