@@ -48,6 +48,7 @@
 
 .news-block .title-wrapper.top {
     margin-top: 12px;
+    position: absolute;
 }
 
 .news-block .title-wrapper.bottom {
