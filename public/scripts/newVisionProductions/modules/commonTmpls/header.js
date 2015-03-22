@@ -28,11 +28,23 @@
     tmpls.mainMenu = function (menuData) {
         var menuItems = [],
             menuItem,
-        controlsDescriptors = nv.settings.controlsDescriptors;
+        controlsDescriptors = nv.settings.controlsDescriptors,
+            isActiveMenuItem=false,
+            isSelectedMenuItem=false;
         for (var i = 0; i < menuData.length; i++) {
+            isSelectedMenuItem = (controlsDescriptors.site.activeMenuItemId&&controlsDescriptors.site.activeMenuItemId==menuData[i].id) || menuData[i].selected;
+            isActiveMenuItem = menuData[i].active;
 
-
-            if(controlsDescriptors.site.activeMenuItemId&&controlsDescriptors.site.activeMenuItemId==menuData[i].id)
+            if(isActiveMenuItem){
+                menuItem = {
+                    e: 'li', c:'active', C: {
+                        e: 'a',
+                        h: menuData[i].url,
+                        t: menuData[i].title
+                    }
+                };
+            }
+            else if(isSelectedMenuItem)
             {
                 menuItem = {
                     e: 'li', C: {

@@ -12,6 +12,7 @@ background-color: #ffffff;
 .map-wrapper
 {
     overflow: hidden;
+    background-size: cover;
 }
 
 .feedback-form-wrapper{

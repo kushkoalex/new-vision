@@ -9,8 +9,9 @@ A9.ready(function (a9, global) {
         $events = $('events'),
         $eventDetails = $('eventDetails'),
         $media = $('media'),
-        $partnership = $('partnership'),
+        $siteContent = $('siteContent'),
         $news = $('news'),
+        $newsDetails = $('newsDetails'),
         $contacts = $('contacts'),
 
     //domNodesQuery = a9.$cs('showDetails'),
@@ -37,12 +38,16 @@ A9.ready(function (a9, global) {
         nv.media($media);
     }
 
-    if ($partnership !== null) {
-        nv.partnership($partnership);
+    if ($siteContent !== null) {
+        nv.siteContent($siteContent);
     }
 
     if ($news !== null) {
         nv.news($news);
+    }
+
+    if ($newsDetails !== null) {
+        nv.newsDetails($newsDetails);
     }
 
     if ($contacts !== null) {

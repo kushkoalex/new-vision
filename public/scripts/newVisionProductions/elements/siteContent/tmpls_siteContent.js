@@ -2,16 +2,23 @@
     var tmpls = nv.tmpls,
         a9 = nv.global.A9,
         l10n = a9.l10n,
+
+
         u;
 
-    tmpls.partnership = function () {
+    tmpls.siteContent = function (siteContentData) {
+
+
         return [
             tmpls.header(),
-            tmpls.partnershipForm()
+            tmpls.siteContentForm(siteContentData)
         ];
     };
 
-    tmpls.partnershipForm = function () {
+    tmpls.siteContentForm = function (content) {
+
+        var controlsDescriptors = nv.settings.controlsDescriptors;
+
         return [
             {
                 c: 'contacts-form-wrapper', C: [
@@ -19,13 +26,13 @@
                     c: 'feedback-form-wrapper', C: {
                     c: 'feedback-form', C: {
                         c: 'feedback-form-content-wrapper', C: [
-                            {c: 'title', t: 'title is not binded to topic\'s name'},
-                            {c: 'text',H:'some long long long text some long long long text some long long long text some long long long text '}
+                            {c: 'title', t:content.title},
+                            {c: 'text',H:content.text}
                         ]
                     }
                 }
                 },
-                {c: 'map-wrapper', a: {id: 'map'}},
+                {c: 'map-wrapper', a: {style:'background-image:url('+controlsDescriptors.site.contentImagesPath + content.imageSrc+')'}},
                 {c: 'clear'}
             ]
             },
