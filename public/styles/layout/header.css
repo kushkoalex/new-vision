@@ -61,6 +61,10 @@ a.join-us div{
     color: #666666;
 }
 
+.main-menu ul li span{
+    background-color: #ffffff;
+}
+
 .main-menu ul li a{
 
     color: #666666;
@@ -72,6 +76,8 @@ a.join-us div{
     color: #f00;
 }
 
-.main-menu li div{
+.main-menu li div,
+.main-menu li span
+{
     color: #f00;
 }

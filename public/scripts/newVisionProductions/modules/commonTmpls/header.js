@@ -20,12 +20,12 @@
                     e: 'a', h: controlsDescriptors.joinUsUrl, c: 'join-us',
                     C: {H: l10n('joinUs')}
                 },
-                tmpls.mainMenu(mainMenuData)
+                tmpls.mainMenu(mainMenuData, isMainPage)
             ]
         };
     };
 
-    tmpls.mainMenu = function (menuData) {
+    tmpls.mainMenu = function (menuData, isMainPage) {
         var menuItems = [],
             menuItem,
         controlsDescriptors = nv.settings.controlsDescriptors,
@@ -36,30 +36,63 @@
             isActiveMenuItem = menuData[i].active;
 
             if(isActiveMenuItem){
-                menuItem = {
-                    e: 'li', c:'active', C: {
-                        e: 'a',
-                        h: menuData[i].url,
-                        t: menuData[i].title
-                    }
-                };
+                if(isMainPage){
+                    menuItem = {
+                        e: 'li', c:'active', C: {
+                            e: 'a',
+                            h: menuData[i].url,
+                            t: menuData[i].title
+                        }
+                    };
+                }
+                else
+                {
+                    menuItem = {
+                        e: 'li', c:'active', C: { e:'span',C:{
+                            e: 'a',
+                            h: menuData[i].url,
+                            t: menuData[i].title
+                        }}
+                    };
+                }
+
             }
             else if(isSelectedMenuItem)
             {
-                menuItem = {
-                    e: 'li', C: {
-                        t: menuData[i].title
-                    }
-                };
+                if(isMainPage){
+                    menuItem ={
+                        e: 'li', C: {
+                            t: menuData[i].title
+                        }
+                    };
+                }else{
+                    menuItem = {
+                        e: 'li', C: { e:'span',
+                            t: menuData[i].title
+                        }
+                    };
+                }
+
             }
             else {
-                menuItem = {
-                    e: 'li', C: {
-                        e: 'a',
-                        h: menuData[i].url,
-                        t: menuData[i].title
-                    }
-                };
+                if(isMainPage){
+                    menuItem = {
+                        e: 'li', C: {
+                            e: 'a',
+                            h: menuData[i].url,
+                            t: menuData[i].title
+                        }
+                    };
+                }else{
+                    menuItem = {
+                        e: 'li', C: {e:'span',C:{
+                            e: 'a',
+                            h: menuData[i].url,
+                            t: menuData[i].title
+                        }}
+                    };
+                }
+
             }
 
             menuItems.push(menuItem);

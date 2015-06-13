@@ -23,8 +23,9 @@
 
 .event-details .title-wrapper .title-mini-description {
     font-size: 13px;
-    font-family: 'Lato-Bold-Italic', Georgia;
+    /*font-family: 'Lato-Bold-Italic', Georgia;*/
     font-style: italic;
+    font-weight: 700;
 }
 
 .event-details .title-wrapper .title {
@@ -115,7 +116,7 @@ padding-top: 20px;
 
 .event-property-wrapper{
     font-size: 20px;
-    font-family: 'LatoBlack';
+    /*font-family: 'LatoBlack';*/
 }
 
 .event-property-wrapper .event-property-inner{
@@ -226,7 +227,7 @@ padding-top: 20px;
 }
 
 .event-details .event-description-container .event-description-item .title{
-    font-family: 'LatoHeavy';
+    /*font-family: 'LatoHeavy';*/
     font-size: 20px;
     color: #404040;
     text-transform: uppercase;
