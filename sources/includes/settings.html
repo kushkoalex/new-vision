@@ -1,19 +1,39 @@
 <script type="text/javascript">
-    (function(nv){
+    (function (nv) {
         var settings;
-        if (nv.settings === null){
+        if (nv.settings === null) {
             nv.settings = settings = {};
-        } else{
+        } else {
             settings = nv.settings;
         }
 
-        if (!('controlsDescriptors' in settings)){
+        if (!('controlsDescriptors' in settings)) {
             settings.controlsDescriptors = {};
         }
 
-        if (!('dataModels' in settings)){
+        if (!('dataModels' in settings)) {
             settings.dataModels = {};
         }
+
+        if (!('languages' in settings)) {
+            settings.languages = [
+                {
+                    code: 'ru',
+                    label: 'ru'
+                },
+                {
+                    code: 'ua',
+                    label: 'ukr'
+                },
+                {
+                    code: 'en',
+                    label: 'eng'
+                }
+            ];
+        }
+
+        settings.currentLanguage = 'ua';
+
 
 //        settings.hiddenToken = '6e5db10da6b6fcae366bdf4e4ce50f1b';
 //        settings.hiddenTokenAPIURL = '/api/user/';

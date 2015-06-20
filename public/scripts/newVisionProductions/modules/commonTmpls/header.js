@@ -15,7 +15,8 @@
         return {
             c: 'header',
             C: [
-                {e:'a', h:controlsDescriptors.site.mainPageUrl, c: classLogo},
+                {e: 'a', h: controlsDescriptors.site.mainPageUrl, c: classLogo},
+                tmpls.languageSwitcher(),
                 {
                     e: 'a', h: controlsDescriptors.joinUsUrl, c: 'join-us',
                     C: {H: l10n('joinUs')}
@@ -25,49 +26,108 @@
         };
     };
 
+    tmpls.languageSwitcher = function () {
+        var languages = nv.settings.languages,
+            currentLanguage = nv.settings.currentLanguage,
+            content = [],
+            languageItem,
+            location = nv.global.location,
+        //fullPath = location.protocol + '//' + location.host,
+            clearLocation = location.href.toString().split(location.host)[1],
+            locationWithoutLanguage='',
+            locationWithoutLanguageArray;
+
+        //console.log(location);
+
+
+        //location = 'http://fashion-intention.com/ua/post/10';
+        //clearLocation = '/ua/post/10';
+        //clearLocation = '/ua/';
+
+        //console.log(clearLocation.split('/ua/'));
+
+
+        if (clearLocation.length > 0) {
+            locationWithoutLanguageArray = clearLocation.split(currentLanguage);
+            if (locationWithoutLanguageArray.length > 1) {
+                locationWithoutLanguage = locationWithoutLanguageArray[1];
+            }
+        }
+        else {
+            locationWithoutLanguage = '';
+        }
+
+        if (locationWithoutLanguage.indexOf('/') == 0) {
+            locationWithoutLanguage = locationWithoutLanguage.substr(1);
+        }
+
+        console.log(locationWithoutLanguage);
+
+
+        for (var i = 0; i < languages.length; i++) {
+            if (languages[i].code == currentLanguage) {
+                languageItem = {e: 'span', t: languages[i].label}
+            } else {
+
+
+                languageItem = {
+                    e: 'a',
+                    h: '/' + languages[i].code + '/' + locationWithoutLanguage,
+                    t: languages[i].label
+                }
+            }
+            content.push(languageItem);
+        }
+
+        return {
+            c: 'language-switcher', C: content
+        }
+    };
+
     tmpls.mainMenu = function (menuData, isMainPage) {
         var menuItems = [],
             menuItem,
-        controlsDescriptors = nv.settings.controlsDescriptors,
-            isActiveMenuItem=false,
-            isSelectedMenuItem=false;
+            controlsDescriptors = nv.settings.controlsDescriptors,
+            isActiveMenuItem = false,
+            isSelectedMenuItem = false;
         for (var i = 0; i < menuData.length; i++) {
-            isSelectedMenuItem = (controlsDescriptors.site.activeMenuItemId&&controlsDescriptors.site.activeMenuItemId==menuData[i].id) || menuData[i].selected;
+            isSelectedMenuItem = (controlsDescriptors.site.activeMenuItemId && controlsDescriptors.site.activeMenuItemId == menuData[i].id) || menuData[i].selected;
             isActiveMenuItem = menuData[i].active;
 
-            if(isActiveMenuItem){
-                if(isMainPage){
+            if (isActiveMenuItem) {
+                if (isMainPage) {
                     menuItem = {
-                        e: 'li', c:'active', C: {
+                        e: 'li', c: 'active', C: {
                             e: 'a',
                             h: menuData[i].url,
                             t: menuData[i].title
                         }
                     };
                 }
-                else
-                {
+                else {
                     menuItem = {
-                        e: 'li', c:'active', C: { e:'span',C:{
-                            e: 'a',
-                            h: menuData[i].url,
-                            t: menuData[i].title
-                        }}
+                        e: 'li', c: 'active', C: {
+                            e: 'span', C: {
+                                e: 'a',
+                                h: menuData[i].url,
+                                t: menuData[i].title
+                            }
+                        }
                     };
                 }
 
             }
-            else if(isSelectedMenuItem)
-            {
-                if(isMainPage){
-                    menuItem ={
+            else if (isSelectedMenuItem) {
+                if (isMainPage) {
+                    menuItem = {
                         e: 'li', C: {
                             t: menuData[i].title
                         }
                     };
-                }else{
+                } else {
                     menuItem = {
-                        e: 'li', C: { e:'span',
+                        e: 'li', C: {
+                            e: 'span',
                             t: menuData[i].title
                         }
                     };
@@ -75,7 +135,7 @@
 
             }
             else {
-                if(isMainPage){
+                if (isMainPage) {
                     menuItem = {
                         e: 'li', C: {
                             e: 'a',
@@ -83,13 +143,15 @@
                             t: menuData[i].title
                         }
                     };
-                }else{
+                } else {
                     menuItem = {
-                        e: 'li', C: {e:'span',C:{
-                            e: 'a',
-                            h: menuData[i].url,
-                            t: menuData[i].title
-                        }}
+                        e: 'li', C: {
+                            e: 'span', C: {
+                                e: 'a',
+                                h: menuData[i].url,
+                                t: menuData[i].title
+                            }
+                        }
                     };
                 }
 
@@ -107,5 +169,6 @@
             }
         }
     };
+
 
 }(NV));

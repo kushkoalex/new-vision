@@ -14,6 +14,25 @@
     cursor: pointer;
 }
 
+.header .language-switcher{
+    position: absolute;
+    top: 17px;
+    left: 112px;
+    text-transform: uppercase;
+    font-size: 9px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.header .language-switcher a{
+    color: #ed1c24;
+    padding: 4px;
+}
+
+.header .language-switcher span{
+    color: #000000;
+    padding: 4px;
+}
+
 
 a.join-us{
     display: block;
