@@ -46,9 +46,12 @@
 
         //console.log(clearLocation.split('/ua/'));
 
+        if(clearLocation.length==3){
+            clearLocation+='/'
+        }
 
         if (clearLocation.length > 0) {
-            locationWithoutLanguageArray = clearLocation.split(currentLanguage);
+            locationWithoutLanguageArray = clearLocation.split('/'+currentLanguage+'/');
             if (locationWithoutLanguageArray.length > 1) {
                 locationWithoutLanguage = locationWithoutLanguageArray[1];
             }

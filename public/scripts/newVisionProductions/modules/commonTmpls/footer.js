@@ -9,7 +9,7 @@
         var controlsDescriptors = nv.settings.controlsDescriptors;
 
         return [
-            {c: 'copyright', H: a9.supplant(l10n('copyright'), '2014')},
+            {c: 'copyright', H: a9.supplant(l10n('copyright'), '2015')},
             {
                 c: 'em',
                 H: l10n('emMadeIn', 'firstUpper'),

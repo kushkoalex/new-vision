@@ -33,6 +33,10 @@
     padding: 4px;
 }
 
+.main-page-content-wrapper .header .language-switcher span{
+    color: #ffffff;
+}
+
 
 a.join-us{
     display: block;
