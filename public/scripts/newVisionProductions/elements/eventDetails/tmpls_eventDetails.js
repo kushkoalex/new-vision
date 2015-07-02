@@ -16,7 +16,8 @@
         var
             controlsDescriptors = nv.settings.controlsDescriptors,
             imagesContent = [],
-            eventImages = eventData.images;
+            eventImages = eventData.images,
+            tileContainer=[];
 
         for (var i = 0; i < eventImages.length; i++) {
             imagesContent.push({
@@ -25,24 +26,26 @@
             })
         }
 
+        tileContainer.push({
+            c: 'title-wrapper', C: [
+                {c: 'title-mini-description', t: eventData.titleDescription},
+                {c: 'title', t: eventData.title},
+                {c: 'location', H: eventData.location.title}
+            ]
+        });
+
+        if(eventData.ticketOrderType=='invite'){
+            tileContainer.push({
+                c: 'get-invite-wrapper', C: [
+                    {c: 'get-invite left', H: '&nbsp;'},
+                    {c: 'get-invite center', t: l10n('ticketType_getInviteFull')},
+                    {c: 'get-invite right', H: '&nbsp;'}]
+            });
+        }
 
         return [
             {
-                c: 'title-container', C: [
-                {
-                    c: 'title-wrapper', C: [
-                    {c: 'title-mini-description', t: eventData.titleDescription},
-                    {c: 'title', t: eventData.title},
-                    {c: 'location', H: eventData.location.title}
-                ]
-                },
-                {
-                    c: 'get-invite-wrapper', C: [
-                    {c: 'get-invite left', H: '&nbsp;'},
-                    {c: 'get-invite center', t: 'получить пригласительный'},
-                    {c: 'get-invite right', H: '&nbsp;'}]
-                }
-            ]
+                c: 'title-container', C: tileContainer
             },
             {
                 c: 'event-properties-container', C: {

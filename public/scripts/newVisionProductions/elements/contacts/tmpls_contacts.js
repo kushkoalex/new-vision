@@ -43,7 +43,7 @@
                     }
 
                 ]
-            }, {c: 'button', t: 'Отправить', n: 'button'}]
+            }, {c: 'button', t: l10n('feedbackBtnSend','firstUpper'), n: 'button'}]
         }
     };
 
