@@ -56,6 +56,11 @@
 
 }
 
+.authors-products .author-container .image img{
+    width: inherit;
+    height: inherit;
+}
+
 .authors-products .author-container .description{
     background-color: #ffffff;
     margin-top: 10px;

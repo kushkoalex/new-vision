@@ -1,0 +1,26 @@
+.subMenuWrapper{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.subMenu {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+    text-align: center;
+    border: 2px solid #ffffff;
+}
+
+.subMenu .item{
+    display: inline-block;
+    text-align: center;
+    /*border: 1px solid #ff0000;*/
+    padding: 0px 18px;
+
+}
+
+.subMenu .separator{
+    height: 43px;
+    display: inline-block;
+    border: 1px solid #ffffff;
+}
