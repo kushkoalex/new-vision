@@ -23,7 +23,7 @@
         return{
             c:'subMenuWrapper',C:{
             c:'subMenu',C:[
-                {c:'item',t:l10n('authors_subMenu_authors','firstUpper')},
+                {c:'item active',t:l10n('authors_subMenu_authors','firstUpper')},
                 {c:'separator'},
                 {c:'item',t:l10n('authors_subMenu_products','firstUpper')},
                 {c:'separator'},

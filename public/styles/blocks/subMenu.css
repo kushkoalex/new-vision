@@ -9,17 +9,23 @@
     padding: 5px 0;
     text-align: center;
     border: 2px solid #ffffff;
+    font-size: 12px;
 }
 
 .subMenu .item{
     display: inline-block;
     text-align: center;
     /*border: 1px solid #ff0000;*/
-    padding: 0px 18px;
+    padding: 0 18px;
+    color: #0072bc;
+}
 
+.subMenu .item.active, .subMenu .item a{
+    color: #ff3333;
 }
 
 .subMenu .separator{
+    vertical-align: middle;
     height: 43px;
     display: inline-block;
     border: 1px solid #ffffff;
