@@ -74,11 +74,21 @@
 }
 
 .authors-products .author-container .description .title{
-    padding: 20px 0;
+    padding: 20px 0 5px 0;
     font-weight: bold;
 }
 
+.authors-products .author-container .description .author{
+    font-weight: bold;
+}
+
+.authors-products .author-container .description .author a{
+    color: #0072bc;
+    font-size: 12px;
+}
+
 .authors-products .author-container .description .tags{
+    padding-top: 10px;
     padding-bottom: 20px;
     text-align: center;
 }

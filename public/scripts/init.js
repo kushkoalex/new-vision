@@ -14,6 +14,7 @@ A9.ready(function (a9, global) {
         $newsDetails = $('newsDetails'),
         $contacts = $('contacts'),
         $authors = $('authors'),
+        $products = $('products'),
 
     //domNodesQuery = a9.$cs('showDetails'),
     //$showDetails = domNodesQuery.showDetails,
@@ -57,6 +58,10 @@ A9.ready(function (a9, global) {
 
     if ($authors !== null) {
         nv.authors($authors);
+    }
+
+    if ($products !== null) {
+        nv.products($products);
     }
 
 

@@ -20,8 +20,12 @@
     color: #0072bc;
 }
 
-.subMenu .item.active, .subMenu .item a{
+.subMenu .item.active{
     color: #ff3333;
+}
+
+.subMenu .item a{
+    color: #0072bc;
 }
 
 .subMenu .separator{

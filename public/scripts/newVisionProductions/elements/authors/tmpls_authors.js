@@ -9,7 +9,7 @@
         return [
             tmpls.header(),
             tmpls.authorsTitle(),
-            tmpls.subMenu(),
+            tmpls.subMenuAuthors(),
             tmpls.authorsForm()
         ]
     };
@@ -18,14 +18,14 @@
         return {c: 'titleContainer', C: {c: 'title', t: 'мастера и работы', C: {c: 'logo'}}}
     };
 
-    tmpls.subMenu = function(){
+    tmpls.subMenuAuthors = function(){
 
         return{
             c:'subMenuWrapper',C:{
             c:'subMenu',C:[
                 {c:'item active',t:l10n('authors_subMenu_authors','firstUpper')},
                 {c:'separator'},
-                {c:'item',t:l10n('authors_subMenu_products','firstUpper')},
+                {c:'item', C:{e:'a',h:nv.settings.controlsDescriptors.site.productsPageUrl ,t:l10n('authors_subMenu_products','firstUpper')} },
                 {c:'separator'},
                 {c:'item',t:l10n('authors_subMenu_search','firstUpper')}
             ]}
