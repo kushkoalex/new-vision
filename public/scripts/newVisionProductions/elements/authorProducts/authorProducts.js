@@ -1,10 +1,11 @@
-NV.products = function ($parent) {
+NV.authorProducts = function ($parent) {
     var nv = this,
         global = nv.global,
         a9 = global.A9,
         tp = global.cnCt.tp,
         settings = nv.settings,
         productsData = settings.dataModels.products,
+        authorData = settings.dataModels.author,
         $fragment,
         $fragmentTag,
         build,
@@ -47,7 +48,7 @@ NV.products = function ($parent) {
         $products.appendChild($fragment);
     }
 
-    var $products = tp('products', $parent).productsBlocks;
+    var $products = tp('authorProducts',authorData, $parent).productsBlocks;
 
 
     buildMediaForm(productsData);

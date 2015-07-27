@@ -4,6 +4,9 @@
         l10n = a9.l10n;
 
 
+    tmpls.pageFooter = function(){
+      return {a: {id: 'footer'}, C: tmpls.footer()}
+    };
 
     tmpls.footer = function () {
         var controlsDescriptors = nv.settings.controlsDescriptors;

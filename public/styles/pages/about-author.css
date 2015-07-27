@@ -1,0 +1,45 @@
+.about-author{
+    margin-top: 40px !important;
+}
+.author-photo{
+    width: 670px;
+    height: 670px;
+    float: left;
+}
+
+.author-description{
+    width: 670px;
+    min-height: 670px;
+    background-color: #ffffff;
+    margin-left: 687px;
+}
+
+.author-description-title
+{
+    text-align: center;
+    font-size: 25px;
+    color: #3e3d3d;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.author-description .logo
+{
+    position: relative;
+    width: 26px;
+    height: 24px;
+    background: url("../../images/logo-small.png") no-repeat center;
+    margin: 0 auto;
+}
+
+.author-description .text{
+    padding: 60px  90px 100px 90px;
+}
+
+.author-title{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 47px;
+    padding-bottom: 10px;
+
+}

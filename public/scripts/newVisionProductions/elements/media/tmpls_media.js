@@ -14,7 +14,7 @@
     tmpls.mediaItems = function () {
         return [
             {c:'media-items-wrapper',C:{ c: 'media-items', n: 'mediaItems'}},
-            {a: {id: 'footer'}, C: tmpls.footer()}
+            tmpls.pageFooter()
         ]
     };
 

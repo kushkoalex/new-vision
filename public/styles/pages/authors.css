@@ -23,6 +23,10 @@
     position: relative;
 }
 
+.authors-products .titleContainer .title a{
+    color: #979797;
+}
+
 
 .authors-products .titleContainer .title .logo
 {

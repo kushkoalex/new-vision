@@ -42,6 +42,8 @@ NV.authors = function ($parent) {
 
         });
 
+        tp('clear', $fragment);
+
         $authors.appendChild($fragment);
     }
 

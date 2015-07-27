@@ -2,36 +2,25 @@
     var tmpls = nv.tmpls,
         a9 = nv.global.A9,
         l10n = a9.l10n,
-
         u;
 
     tmpls.products = function () {
+
+        var subMenuModel = [
+            {text:l10n('authors_subMenu_authors','firstUpper'),link:nv.settings.controlsDescriptors.site.authorsPageUrl},
+            {text:l10n('authors_subMenu_products','firstUpper'),isActive:true},
+            {text:l10n('authors_subMenu_search','firstUpper')}
+        ];
+
         return [
             tmpls.header(),
-            tmpls.productsTitle(),
-            tmpls.subMenuProducts(),
-            tmpls.productsForm()
+            tmpls.artsTitle(),
+            tmpls.artsSubMenu(subMenuModel),
+            tmpls.productsForm(),
+            tmpls.pageFooter()
         ]
     };
 
-    tmpls.productsTitle = function () {
-        return {c: 'titleContainer', C: {c: 'title', t: 'мастера и работы', C: {c: 'logo'}}}
-    };
-
-    tmpls.subMenuProducts = function(){
-
-        return{
-            c:'subMenuWrapper',C:{
-                c:'subMenu',C:[
-                    {c:'item', C:{e:'a',h:nv.settings.controlsDescriptors.site.authorsPageUrl ,t:l10n('authors_subMenu_authors','firstUpper')} },
-                    {c:'separator'},
-                    {c:'item active',t:l10n('authors_subMenu_products','firstUpper')},
-                    {c:'separator'},
-                    {c:'item',t:l10n('authors_subMenu_search','firstUpper')}
-                ]}
-        }
-
-    };
 
     tmpls.productsForm = function () {
         return {n: 'productsBlocks', c: 'authors-container'}
@@ -57,12 +46,5 @@
         }
     };
 
-    tmpls.tag = function (tagText) {
-        return {c: 'tag', C: {e: 'a', h: '#', t: tagText}}
-    };
-
-    tmpls.clear = function () {
-        return {c: 'clear'}
-    }
 
 }(NV));
