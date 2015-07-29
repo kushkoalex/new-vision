@@ -8,6 +8,13 @@ $(function(){
         pager:false
     });
 
+
+    $('.bxsliderProductDetails').bxSlider({
+        adaptiveHeight: true,
+        mode: 'fade',
+        pager:false
+    });
+
     $(window).scroll(function () {
         if ($(this).scrollTop() > 0) {
             $(".main-page-content-wrapper .header").css("height", "80px");

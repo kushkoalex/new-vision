@@ -17,6 +17,7 @@ A9.ready(function (a9, global) {
         $aboutAuthor = $('aboutAuthor'),
         $products = $('products'),
         $authorProducts = $('authorProducts'),
+        $authorProductsDetails = $('authorProductsDetails'),
 
     //domNodesQuery = a9.$cs('showDetails'),
     //$showDetails = domNodesQuery.showDetails,
@@ -72,6 +73,10 @@ A9.ready(function (a9, global) {
 
     if($authorProducts!==null){
         nv.authorProducts($authorProducts);
+    }
+
+    if($authorProductsDetails!==null){
+        nv.authorProductsDetails($authorProductsDetails);
     }
 
     //console.log(domNodesQuery);

@@ -26,6 +26,10 @@ NV.authorProducts = function ($parent) {
                 tp('clear', $fragment)
             }
 
+
+            productsDataItem.hasDetailsLink = true;
+            productsDataItem.authorName = authorData.name;
+
             build = tp('product', productsDataItem, $fragment);
 
             itemsCount++;

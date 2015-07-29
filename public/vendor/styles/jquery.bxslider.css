@@ -29,7 +29,7 @@
 /** THEME
 ===================================*/
 
-.bx-wrapper .bx-viewport {
+ .bx-wrapper .bx-viewport {
 	/*-moz-box-shadow: 0 0 5px #ccc;*/
 	/*-webkit-box-shadow: 0 0 5px #ccc;*/
 	/*box-shadow: 0 0 5px #ccc;*/
@@ -44,8 +44,12 @@
     	-o-transform: translatez(0);
     	transform: translatez(0);
 
-	height: 283px !important;
+
 }
+
+ .event-details .bx-wrapper .bx-viewport{
+	 height: 283px !important;
+ }
 
 
 

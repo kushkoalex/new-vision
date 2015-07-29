@@ -40,7 +40,7 @@
             if (subMenuModel[i].link) {
                 subMenuContent.push({
                     c: 'item' + (subMenuModel[i].isActive === true ? ' active' : ''),
-                    C: {e: 'a', h: subMenuModel[i].link, t: subMenuModel[i].text}
+                    C: {e: 'a', h: subMenuModel[i].link, t: subMenuModel[i].text, c:''+(subMenuModel[i].isActive === true ? ' active' : '')}
                 })
             } else {
                 subMenuContent.push({

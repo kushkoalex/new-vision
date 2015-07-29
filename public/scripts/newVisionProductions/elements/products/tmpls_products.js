@@ -30,11 +30,23 @@
     tmpls.product = function (productsDataItem) {
         var
             contentImagePath = nv.settings.controlsDescriptors.site.contentImagesPathProductsThumb,
-            photoPath = contentImagePath + productsDataItem.photo;
+            photoPath = contentImagePath + productsDataItem.photo,
+            authorName,
+            image;
+
+        if(productsDataItem.hasDetailsLink){
+            authorName = productsDataItem.authorName;
+            image = {c: 'image', C: {e:'a',h:a9.supplant(nv.settings.controlsDescriptors.site.authorProductsDetailsPageUrl,{artist:authorName}) ,C:{   e: 'img', a: {src: photoPath}}}};
+
+        }else
+        {
+            image = {c: 'image', C: {e: 'img', a: {src: photoPath}}};
+        }
+
 
         return {
             c: 'author-container', C: [
-                {c: 'image', C: {e: 'img', a: {src: photoPath}}},
+                image,
                 {
                     c: 'description', C: [
                     {c: 'title', t: productsDataItem.title},
