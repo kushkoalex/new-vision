@@ -121,6 +121,18 @@
 	background: url(../../images/arrow-right.png);
 }
 
+.authors-products .bx-wrapper .bx-prev {
+	left: 0;
+	background: url(../../images/product-details-arrow-left.png);
+}
+
+.authors-products .bx-wrapper .bx-next {
+	right: 0;
+	background: url(../../images/product-details-arrow-right.png);
+}
+
+
+
 /*.bx-wrapper .bx-prev:hover {*/
 	/*background-position: 0 0;*/
 /*}*/
@@ -136,6 +148,17 @@
 	outline: 0;
 	width: 30px;
 	height: 56px;
+	text-indent: -9999px;
+	z-index: 9999;
+}
+
+.authors-products .bx-controls-direction a {
+	position: absolute;
+	top: 50%;
+	margin-top: -28px;
+	outline: 0;
+	width: 52px;
+	height: 57px;
 	text-indent: -9999px;
 	z-index: 9999;
 }
