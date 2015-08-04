@@ -49,6 +49,7 @@ NV.authors = function ($parent) {
 
     var $authors = tp('authors', $parent).authorsBlocks;
 
+    nv.searchForm($parent);
 
     buildMediaForm(authorsData);
 };
