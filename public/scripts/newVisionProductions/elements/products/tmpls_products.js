@@ -9,7 +9,7 @@
         var subMenuModel = [
             {text:l10n('authors_subMenu_authors','firstUpper'),link:nv.settings.controlsDescriptors.site.authorsPageUrl},
             {text:l10n('authors_subMenu_products','firstUpper'),isActive:true},
-            {text:l10n('authors_subMenu_search','firstUpper')}
+            {text:l10n('authors_subMenu_search','firstUpper'),popup:true}
         ];
 
         return [

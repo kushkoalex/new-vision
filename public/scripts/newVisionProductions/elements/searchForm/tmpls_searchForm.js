@@ -7,8 +7,8 @@
     tmpls.searchForm = function (data) {
 
         return {
-            c: 'layout', C: {
-                c: 'popup', C: {
+            c: 'layout', a:{id:'searchFormLayout'}, C: {
+                c: 'popup',a:{id:'searchFormPopup'}, C: {
                     e: 'form', a: {id:'sForm', method:'POST', action: '/'}, C: [{
                         c: 'frame', C: [
                             {

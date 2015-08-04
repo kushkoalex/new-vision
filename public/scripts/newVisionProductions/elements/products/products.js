@@ -49,7 +49,7 @@ NV.products = function ($parent) {
 
     var $products = tp('products', $parent).productsBlocks;
 
-    nv.searchForm($parent);
+    nv.searchForm($parent,settings.controlsDescriptors.site.searchFilterUrlProducts);
 
     buildMediaForm(productsData);
 };

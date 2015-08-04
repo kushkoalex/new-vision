@@ -12,7 +12,7 @@
                 text: l10n('authors_subMenu_products', 'firstUpper'),
                 link: nv.settings.controlsDescriptors.site.productsPageUrl
             },
-            {text: l10n('authors_subMenu_search', 'firstUpper')}
+            {text: l10n('authors_subMenu_search', 'firstUpper'),popup:true}
         ];
 
         return [
@@ -42,7 +42,12 @@
                     c: 'item' + (subMenuModel[i].isActive === true ? ' active' : ''),
                     C: {e: 'a', h: subMenuModel[i].link, t: subMenuModel[i].text, c:''+(subMenuModel[i].isActive === true ? ' active' : '')}
                 })
-            } else {
+            } else if(subMenuModel[i].popup===true){
+                subMenuContent.push({
+                    c: 'item',
+                    C: {e: 'a', h: '#', t: subMenuModel[i].text,c:'popuplink'}
+                });
+            }else {
                 subMenuContent.push({
                     c: 'item' + (subMenuModel[i].isActive === true ? ' active' : ''),
                     t: subMenuModel[i].text

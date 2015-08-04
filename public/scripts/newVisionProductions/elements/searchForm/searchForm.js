@@ -1,4 +1,4 @@
-NV.searchForm = function ($parent) {
+NV.searchForm = function ($parent,searchUrl) {
     var nv = this,
         global = nv.global,
         a9 = global.A9,
@@ -25,8 +25,8 @@ NV.searchForm = function ($parent) {
     $artistCategorySelect = build.artistCategorySelect;
     $artCategorySelect = build.artCategorySelect;
     $artCategorySelectWrapper = build.artCategorySelectWrapper;
-    $sfTagsWrapper=build.sfTagsWrapper;
-    $btnSubmit=build.btnSubmit;
+    $sfTagsWrapper = build.sfTagsWrapper;
+    $btnSubmit = build.btnSubmit;
     //$sForm=build.sForm;
 
     function onArtistCategorySelectChange() {
@@ -36,24 +36,21 @@ NV.searchForm = function ($parent) {
             ;
 
 
-
-
-        artistCategorySelectSelectedIndex=selectedIndex;
+        artistCategorySelectSelectedIndex = selectedIndex;
         artistCategorySelectValue = this.options[selectedIndex].value;
 
         $fragment = global.document.createDocumentFragment();
 
-        artBuild =tp('vSelect', {
+        artBuild = tp('vSelect', {
             options: searchFormDataModel.authorCategories[selectedIndex].categories,
             selectedIndex: 0,
             n: 'artCategorySelect'
         }, $fragment);
 
-        artCategorySelectSelectedIndex=0;
+        artCategorySelectSelectedIndex = 0;
 
-        $artCategorySelectWrapper.innerHTML='';
+        $artCategorySelectWrapper.innerHTML = '';
         $art = artBuild.artCategorySelect;
-
 
 
         $artCategorySelectWrapper.appendChild($fragment);
@@ -68,9 +65,9 @@ NV.searchForm = function ($parent) {
 
     }
 
-    function aaa(){
-        var tags  = searchFormDataModel.authorCategories[artistCategorySelectSelectedIndex].categories[artCategorySelectSelectedIndex].tags,
-        $fragment = global.document.createDocumentFragment(),
+    function aaa() {
+        var tags = searchFormDataModel.authorCategories[artistCategorySelectSelectedIndex].categories[artCategorySelectSelectedIndex].tags,
+            $fragment = global.document.createDocumentFragment(),
 
             artBuild,
             $art
@@ -81,7 +78,7 @@ NV.searchForm = function ($parent) {
             options: tags,
             n: 'sfTags'
         }, $fragment);
-        $sfTagsWrapper.innerHTML='';
+        $sfTagsWrapper.innerHTML = '';
 
         $sfTagsWrapper.appendChild($fragment);
 
@@ -90,11 +87,8 @@ NV.searchForm = function ($parent) {
     }
 
 
-
-
-
-    artCategorySelectSelectedIndex=0;
-    artistCategorySelectSelectedIndex=0;
+    artCategorySelectSelectedIndex = 0;
+    artistCategorySelectSelectedIndex = 0;
 
     artistCategorySelectValue = $artistCategorySelect.options[0].value;
     artCategorySelectValue = $artCategorySelect.options[0].value;
@@ -105,15 +99,36 @@ NV.searchForm = function ($parent) {
     aaa.call();
 
 
+    var $layout = a9.$('searchFormLayout');
+    var $popup = a9.$('searchFormPopup');
+
+    a9.addEvent($layout, 'click', function(){
+        this.style.display ='none';
+    });
+
+    a9.addEvent($popup, 'click', function(e){
+        e.stopPropagation();
+    });
+
+
+
+    var $popuplink = a9.$c('popuplink')[0];
+
+
+    a9.addEvent($popuplink, 'click', function(){
+        $layout.style.display ='block';
+    });
+
+
     a9.addEvent($btnSubmit, 'click', formSubmit);
 
-    function formSubmit(){
+    function formSubmit() {
         var checkboxes = a9.$n('cb'),
-            tagsId =[];
+            tagsId = [];
 
-        for(var i=0, n=checkboxes.length;i<n;i++) {
+        for (var i = 0, n = checkboxes.length; i < n; i++) {
 
-            if(checkboxes[i].checked){
+            if (checkboxes[i].checked) {
                 //alert(checkboxes[i].getAttribute('data-value'));
                 tagsId.push(checkboxes[i].getAttribute('data-value'));
             }
@@ -123,11 +138,11 @@ NV.searchForm = function ($parent) {
 
         //alert(tagsId.join('-'));
 
-var form  = a9.$('sForm');
-
-        form.action = a9.supplant(settings.controlsDescriptors.site.searchFilterUrl,{tagsId:tagsId.join('-')});
-        form.submit();
-
+        var form = a9.$('sForm');
+        form.action = a9.supplant(searchUrl, {tagsId: tagsId.join('-')});
+        if(tagsId.length>0) {
+            form.submit();
+        }
 
         //console.log(checkboxes);
     }

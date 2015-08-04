@@ -49,7 +49,7 @@ NV.authors = function ($parent) {
 
     var $authors = tp('authors', $parent).authorsBlocks;
 
-    nv.searchForm($parent);
+    nv.searchForm($parent, settings.controlsDescriptors.site.searchFilterUrlArtists);
 
     buildMediaForm(authorsData);
 };
