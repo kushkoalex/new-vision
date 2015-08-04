@@ -80,9 +80,10 @@
 }
 
 .layout .popup .frame .tags .tag-wrapper input,
-.layout .popup .frame .tags .tag-wrapper label
+/*.layout .popup .frame .tags .tag-wrapper label*/
 {
     cursor: pointer;
+    font-size: 12px;
 }
 
 .layout .button{
