@@ -1,0 +1,44 @@
+.filter-container{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.filter-container .show-only{
+    background-color: #ffffff;
+    display: inline-block;
+    color: #686868;
+    font-style: italic;
+    font-size: 13px;
+    font-family: georgia, serif;
+    padding: 3px 6px;
+}
+
+.filter-container .tags{
+    margin-top: 5px;
+
+}
+
+.filter-container .tags .tag{
+display: inline-block;
+    background-color: #ffffff;
+    color: red;
+    text-transform: uppercase;
+    margin: 5px 1px;
+    padding: 1px 5px;
+    font-size: 12px;
+}
+
+.filter-container .reset{
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-style: italic;
+    color: #ffffff;
+    background-color: #0086b3;
+    font-family: georgia, serif;
+    padding: 6px 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
