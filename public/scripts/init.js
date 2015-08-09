@@ -15,6 +15,7 @@ A9.ready(function (a9, global) {
         $contacts = $('contacts'),
         $authors = $('authors'),
         $aboutAuthor = $('aboutAuthor'),
+        $authorEvents = $('authorEvents'),
         $products = $('products'),
         $authorProducts = $('authorProducts'),
         $authorProductsDetails = $('authorProductsDetails'),
@@ -67,15 +68,19 @@ A9.ready(function (a9, global) {
         nv.products($products);
     }
 
-    if($aboutAuthor!==null){
+    if ($aboutAuthor !== null) {
         nv.aboutAuthor($aboutAuthor);
     }
 
-    if($authorProducts!==null){
+    if ($authorEvents !== null) {
+        nv.authorEvents($authorEvents);
+    }
+
+    if ($authorProducts !== null) {
         nv.authorProducts($authorProducts);
     }
 
-    if($authorProductsDetails!==null){
+    if ($authorProductsDetails !== null) {
         nv.authorProductsDetails($authorProductsDetails);
     }
 

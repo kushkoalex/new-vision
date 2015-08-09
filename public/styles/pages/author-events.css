@@ -1,0 +1,20 @@
+.author-event {
+margin-bottom: 40px;
+}
+
+.author-event .author-event-date span {
+    background-color: #f2f2f2;
+    padding: 4px;
+    font-size: 10px;
+    color: #9f9f9f;
+}
+
+.author-event .author-event-title {
+    margin-top: 8px;
+    display: block;
+}
+
+.author-event a.author-event-title {
+    color: #0054a6;
+    font-size: 17px;
+}

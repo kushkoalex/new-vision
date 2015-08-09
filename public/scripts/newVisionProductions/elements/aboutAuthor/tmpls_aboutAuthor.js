@@ -12,7 +12,10 @@
                 text: l10n('authors_subMenu_authorProducts', 'firstUpper'),
                 link:a9.supplant( nv.settings.controlsDescriptors.site.authorProductsPageUrl,{artist:authorInfo.name})
             },
-            {text: l10n('authors_subMenu_authorEvents', 'firstUpper')}
+            {
+                text: l10n('authors_subMenu_authorEvents', 'firstUpper'),
+                link: a9.supplant(nv.settings.controlsDescriptors.site.authorEventsPageUrl,{artist:authorInfo.name})
+            }
         ];
 
         return [
