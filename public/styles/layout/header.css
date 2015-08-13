@@ -35,6 +35,17 @@
 
 .main-page-content-wrapper .header .language-switcher span{
     color: #ffffff;
+
+}
+
+.main-page-content-wrapper .header .language-switcher{
+    top: 44px;
+    left: 22px;
+}
+
+.main-page-content-wrapper .header .language-switcher a,
+.main-page-content-wrapper .header .language-switcher span{
+    display: block;
 }
 
 

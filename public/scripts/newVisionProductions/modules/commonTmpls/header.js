@@ -32,20 +32,10 @@
             content = [],
             languageItem,
             location = nv.global.location,
-        //fullPath = location.protocol + '//' + location.host,
+
             clearLocation = location.href.toString().split(location.host)[1],
             locationWithoutLanguage='',
             locationWithoutLanguageArray;
-
-        //console.log(location);
-
-
-        //location = 'http://fashion-intention.com/ua/post/10';
-        //clearLocation = '/ua/post/10';
-        //clearLocation = '/ua/';
-
-        //console.log(clearLocation.split('/ua/'));
-
         if(clearLocation.length==3){
             clearLocation+='/'
         }
@@ -63,9 +53,6 @@
         if (locationWithoutLanguage.indexOf('/') == 0) {
             locationWithoutLanguage = locationWithoutLanguage.substr(1);
         }
-
-        console.log(locationWithoutLanguage);
-
 
         for (var i = 0; i < languages.length; i++) {
             if (languages[i].code == currentLanguage) {
