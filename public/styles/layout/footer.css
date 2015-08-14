@@ -23,9 +23,10 @@
 
 #footer .em{
     position: absolute;
-    height: 37px;
+    height: 40px;
     width: 205px;
-    background: url("../../images/em-logo.png") no-repeat;
+    /*background: url("../../images/em-logo.png") no-repeat;*/
+    background: url("../../images/mbs-logo.svg") no-repeat;
     top: 60px;
     right: 86px;
     padding-left: 60px;
