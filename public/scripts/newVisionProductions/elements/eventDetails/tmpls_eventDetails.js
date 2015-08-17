@@ -74,18 +74,18 @@
                         }
                     ]
                     },
-                    {
-                        c: 'event-property', C: [
-                        {c:'property-title',t:'количество антрактов:'},
-                        {
-                            c: 'event-property-wrapper', C: [
-                            {c: 'event-property-inner left', H: '&nbsp;'},
-                            {c: 'event-property-inner center', t: eventData.intervalQuantity},
-                            {c: 'event-property-inner right', H: '&nbsp;'}
-                        ]
-                        }
-                    ]
-                    },
+                    //{
+                    //    c: 'event-property', C: [
+                    //    {c:'property-title',t:'количество антрактов:'},
+                    //    {
+                    //        c: 'event-property-wrapper', C: [
+                    //        {c: 'event-property-inner left', H: '&nbsp;'},
+                    //        {c: 'event-property-inner center', t: eventData.intervalQuantity},
+                    //        {c: 'event-property-inner right', H: '&nbsp;'}
+                    //    ]
+                    //    }
+                    //]
+                    //},
                     {
                         c: 'event-property', C: [
                         {c: 'property-title', t: 'цены на билеты:'},

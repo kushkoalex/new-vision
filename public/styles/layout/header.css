@@ -78,7 +78,7 @@ a.join-us div{
 .main-menu ul{
     position: absolute;
     left: 120px;
-    right: 100px;
+    right: 0;
     top: 44px;
     text-align: center;
 }
@@ -88,7 +88,7 @@ a.join-us div{
     display: inline-block;
     list-style: none;
     width: 103px;
-    margin: 0 43px;
+    margin: 0 35px;
     vertical-align: top;
     line-height: 16px;
     text-transform: uppercase;

@@ -30,7 +30,7 @@
                         c: 'details', n: 'showDetails',
                         C: [
                             {c: 'arrow'},
-                            {c: 'text', t: l10n('mainPageDetails')},
+                            {c: 'text', t: l10n('mainPageDetails'), a:{data:mainBanner.order}},
                             {c: 'arrow'}]
 
                     }
@@ -112,7 +112,7 @@
         }
 
         return {
-            c: 'content-block', C: [
+            c: 'content-block', a:{id:'contentBlock'+eventAnnouncement.order}, C: [
                 imageDescriptionPair,
                 {c: 'clear'}
             ]

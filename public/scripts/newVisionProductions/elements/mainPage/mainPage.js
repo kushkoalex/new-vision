@@ -14,6 +14,7 @@ NV.mainPage = function ($parent) {
         $mainImageContents,
         $contentImages = [],
         $showDetails,
+        $showDetailsItems=[],
         i,
         currentVisibleFrameIndex = -1,
         controlsDescriptors = settings.controlsDescriptors,
@@ -35,12 +36,24 @@ NV.mainPage = function ($parent) {
         var $sliderItem;
         $fragment = global.document.createDocumentFragment();
 
+        var j=0;
+
         a9.each(mainPageData.mainBanners, function (mainBanner) {
+            mainBanner.order=j;
             build = tp('mainImageContent', mainBanner, $fragment);
             $showDetails = build.showDetails;
-            a9.addEvent($showDetails, eventOnPointerEnd, showDetails);
+            $showDetailsItems.push($showDetails);
+            //a9.addEvent($showDetails, eventOnPointerEnd, showDetails);
             $contentImages.push(build.r);
+            j++;
         });
+
+        //for(var i=0; i< $showDetailsItems.length; i++){
+        //    console.log($showDetailsItems[i]);
+        //    a9.addEvent($showDetailsItems[i], eventOnPointerEnd, showDetails);
+        //}
+
+
 
         var $mainImageContentWrapper = tp('imageFrame', $mainPageContentWrapper).mainImageContentWrapper;
         $mainImageContentWrapper.appendChild($fragment);
@@ -52,6 +65,7 @@ NV.mainPage = function ($parent) {
         for (i = 0; i < mainPageData.eventAnnouncements.length; i++) {
             eventAnnouncement = mainPageData.eventAnnouncements[i];
             eventAnnouncement.odd = i % 2 == 0;
+            eventAnnouncement.order = i;
             build = tp('announcement', eventAnnouncement, $fragment);
 
 
@@ -82,6 +96,7 @@ NV.mainPage = function ($parent) {
     function setInactiveImages() {
         for (i = 0; i < $contentImages.length; i++) {
             a9.removeClass($contentImages[i], "active");
+            a9.removeEvent($showDetailsItems[i], eventOnPointerEnd, showDetails);
         }
     }
 
@@ -96,6 +111,8 @@ NV.mainPage = function ($parent) {
         for (i = 0; i < $contentImages.length; i++) {
             if (i == currentVisibleFrameIndex) {
                 a9.addClass($contentImages[i], "active");
+                a9.addEvent($showDetailsItems[i], eventOnPointerEnd, showDetails);
+                //console.log('$showDetailsItems[i]:'+ $showDetailsItems[i].innerHTML)
             }
         }
     }
@@ -108,8 +125,9 @@ NV.mainPage = function ($parent) {
     }
 
 
-    function showDetails() {
-        scrollToTop();
+    function showDetails(e) {
+
+        scrollToTop(e.target.getAttribute("data"));
     }
 
     function interpolate(source, target, shift) {
@@ -127,8 +145,9 @@ NV.mainPage = function ($parent) {
         (now > finishT) || setTimeout(animate, 15);
     }
 
-    function scrollToTop() {
-        finishY = (a9.$('contentBlocks').offsetTop || 0);
+    function scrollToTop(index) {
+        //finishY = (a9.$('contentBlocks').offsetTop || 0);
+        finishY = (a9.$('contentBlock'+index).offsetTop || 0);
         startY = ((global.pageYOffset || doc.scrollTop) || 0) - (doc.clientTop || 0);
         startT = +(new Date());
         finishT = startT + duration;
