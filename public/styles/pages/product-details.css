@@ -95,13 +95,13 @@
     width: 20px;
     height: 20px;
     border: 20px solid transparent;
-    border-right-color: #0086b3;
+    border-right-color: #002157;
     margin-top: 55px;
     margin-left: -10px;
 }
 
 .productDetailsAuthorInfoTextContent{
-    background-color: #0086b3;
+    background-color: #002157;
     float: left;
     min-height: 150px;
     width: 560px;
@@ -116,8 +116,9 @@
 
 .productDetailsAuthorInfoTextContentCloseBtn{
     width: 20px;
-    height: 20px;
-    background-color: white;
+    height: 21px;
+    background: url("../../images/close-btn.png") no-repeat;
+
     position: absolute;
     right: 10px;
     top: 10px;
@@ -133,4 +134,9 @@
 
 .productDetailsAuthorInfoTextContentText{
     margin-top: 10px;
+    color: #fffbb3;
+    font-family: Georgia,serif;
+    font-size: 14px;
+    font-style: italic;
+
 }
