@@ -26,6 +26,7 @@
             tmpls.artsTitle(nv.settings.controlsDescriptors.site.authorsPageUrl),
             tmpls.authorTitle(authorInfo),
             tmpls.artsSubMenu(subMenuModel),
+            tmpls.tagsFilter(a9.supplant(nv.settings.controlsDescriptors.site.authorProductsPageUrl,{artist:authorInfo.name})),
             tmpls.productsForm(),
             tmpls.pageFooter()
         ]

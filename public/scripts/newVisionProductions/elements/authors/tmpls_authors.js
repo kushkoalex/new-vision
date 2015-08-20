@@ -131,7 +131,7 @@
         var currentTags = [],
             u;
 
-        console.log(tag);
+        //console.log(tag);
         //a9.copyArray(nv.settings.dataModels.currentTags,currentTags);
         if (nv.settings.dataModels.currentTags !== u) {
             for (var i = 0; i < nv.settings.dataModels.currentTags.length; i++) {
@@ -145,7 +145,12 @@
             currentTags.push(tag.id);
         }
         var separatedTagsIds = currentTags.join('-');
-        var href = a9.supplant(nv.settings.controlsDescriptors.site.searchFilterUrlArtists, {tagsId: separatedTagsIds});
+
+
+        //var href = a9.supplant(nv.settings.controlsDescriptors.site.searchFilterUrlArtists, {tagsId: separatedTagsIds});
+        var href = tag.isSearchFilterUrlArtistProducts
+            ? a9.supplant(tag.pageUrl, {tagsId: separatedTagsIds,id:tag.authorName})
+            : a9.supplant(tag.pageUrl, {tagsId: separatedTagsIds});
         return {c: 'tag', C: {e: 'a', h: href, t: tag.title}}
     };
 

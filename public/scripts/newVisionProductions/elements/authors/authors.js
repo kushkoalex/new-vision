@@ -35,6 +35,7 @@ NV.authors = function ($parent) {
             a9.each(authorsDataItem.tags, function (tag) {
                 //console.log(tag);
 
+                tag.pageUrl = nv.settings.controlsDescriptors.site.searchFilterUrlArtists;
                 buildTag = tp('tag', tag, $fragmentTag);
 
                 $tags.appendChild($fragmentTag);

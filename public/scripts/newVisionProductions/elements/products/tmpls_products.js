@@ -52,7 +52,7 @@
                 {
                     c: 'description', C: [
                     {c: 'title', t: productsDataItem.title},
-                    {c: 'author', C:{e:'a',h:'#'+productsDataItem.author.name,t: productsDataItem.author.title} },
+                    {c: 'author', C:{e:'a',h:a9.supplant(nv.settings.controlsDescriptors.site.authorAboutPageUrl,{artist:productsDataItem.author.name}), t: productsDataItem.author.title} },
                     {c: 'tags', n: 'tags'}
                 ]
                 }

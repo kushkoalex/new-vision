@@ -43,7 +43,9 @@ NV.authorProducts = function ($parent) {
 
             a9.each(productsDataItem.tags, function (tag) {
                 //console.log(tag);
-
+                tag.pageUrl =  nv.settings.controlsDescriptors.site.searchFilterUrlArtistProducts;
+                tag.isSearchFilterUrlArtistProducts = true;
+                tag.authorName = productsDataItem.author.name;
                 buildTag = tp('tag', tag, $fragmentTag);
 
                 $tags.appendChild($fragmentTag);
