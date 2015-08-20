@@ -52,3 +52,85 @@
     display: inline-block;
     font-size: 30px;
 }
+
+.productDetailsAuthorInfo{
+
+    /*height: 100px;*/
+
+    width: 760px;
+
+    position: relative;
+    margin: 0 auto;
+
+    /*background-color: #0072bc;*/
+
+    /*text-align: center;*/
+}
+
+.productDetailsAuthorInfo .authorAvatar{
+    width: 150px;
+    height: 150px;
+    /*border-radius: 75px;*/
+    /*-webkit-border-radius: 75px;*/
+    /*-moz-border-radius: 75px;*/
+    float: left;
+}
+
+.productDetailsAuthorInfo .authorAvatar img{
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    -webkit-border-radius: 75px;
+    -moz-border-radius: 75px;
+}
+
+.productDetailsAuthorInfoTextWrapper{
+
+    margin-top: 20px;
+
+}
+
+.productDetailsAuthorInfoTextTriangle{
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 20px solid transparent;
+    border-right-color: #0086b3;
+    margin-top: 55px;
+    margin-left: -10px;
+}
+
+.productDetailsAuthorInfoTextContent{
+    background-color: #0086b3;
+    float: left;
+    min-height: 150px;
+    width: 560px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    position: relative;
+
+    text-align: left;
+    padding: 30px;
+}
+
+.productDetailsAuthorInfoTextContentCloseBtn{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.productDetailsAuthorInfoTextContentTitle{
+
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.productDetailsAuthorInfoTextContentText{
+    margin-top: 10px;
+}

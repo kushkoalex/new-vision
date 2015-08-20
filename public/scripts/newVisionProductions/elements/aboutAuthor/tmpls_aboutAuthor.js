@@ -47,7 +47,7 @@
                     C: [
                         {c: 'author-description-title', t: l10n('authors_subMenu_aboutAuthor').toUpperCase()},
                         {c: 'logo'},
-                        {c:'text',H:authorInfo.description}
+                        {c:'text',H:authorInfo.about}
                     ]
                 },
                 {c: 'clear'}

@@ -34,11 +34,12 @@
     tmpls.authorProductsDetailsForm = function (authorInfo) {
         var
             contentImagePath = nv.settings.controlsDescriptors.site.contentImagesPathAuthorsOrig,
+            avatarPath = nv.settings.controlsDescriptors.site.contentImagesPathAuthorsAvatar,
             imagesContent = [],
             products = nv.settings.dataModels.products;
-            ;
 
-            //authorImages = authorInfo.images;
+
+        //authorImages = authorInfo.images;
 
 
         for (var i = 0; i < products.length; i++) {
@@ -49,13 +50,34 @@
         }
 
         return {
-            c: 'bxsliderProductDetailsContainer', C: [{
-                c: 'productDetailsInfo', C: [
+            c: 'bxsliderProductDetailsContainer', C: [
+                {
+                    c: 'productDetailsInfo', C: [
                     {c: 'title', a: {id: 'productDescriptionTitle'}, t: ''},
-                    {c:'tags', a: {id: 'productDescriptionTags'}},
-                    {c:'price',a: {id: 'productDescriptionPrice'}}
+                    {c: 'tags', a: {id: 'productDescriptionTags'}},
+                    {c: 'price', a: {id: 'productDescriptionPrice'}},
+                    {
+                        c: 'productDetailsAuthorInfo', a: {id: 'productDetailsAuthorInfo'}, C: [
+                        {c: 'authorAvatar', C: {e: 'img', a: {src: avatarPath + authorInfo.avatar}}},
+                        {
+                            c: 'productDetailsAuthorInfoTextWrapper',
+                            C: [
+                                {c: 'productDetailsAuthorInfoTextTriangle'},
+                                {
+                                    c: 'productDetailsAuthorInfoTextContent', C: [
+                                    {c: 'productDetailsAuthorInfoTextContentCloseBtn', n:'productDetailsAuthorInfoTextContentCloseBtn'},
+                                    {c: 'productDetailsAuthorInfoTextContentTitle', t: authorInfo.title},
+                                    {c: 'productDetailsAuthorInfoTextContentText', H: authorInfo.description}
+                                ]
+                                }]
+                        }, {
+                            c: 'clear'
+                        }]
+                    }
                 ]
-            }, {c: 'image-slider', C: {e: 'ul', c: 'bxsliderProductDetails', C: imagesContent}}]
+                },
+
+                {c: 'image-slider', C: {e: 'ul', c: 'bxsliderProductDetails', C: imagesContent}}]
         }
     }
 
