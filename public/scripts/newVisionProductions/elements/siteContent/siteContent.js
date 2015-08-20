@@ -14,7 +14,7 @@ NV.siteContent = function($parent){
 
         $partnership.appendChild($fragment);
     }
-console.log(settings.dataModels);
+//console.log(settings.dataModels);
     var $partnership = tp('siteContent', siteContentData, $parent).r;
     //buildForm();
 };

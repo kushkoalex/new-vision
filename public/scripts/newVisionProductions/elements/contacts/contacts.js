@@ -96,7 +96,7 @@ NV.contacts = function ($parent) {
             });
         }
         else {
-            console.log(a9.l10n('feedbackFields_checkEntries', 'firstUpper'))
+            //console.log(a9.l10n('feedbackFields_checkEntries', 'firstUpper'))
         }
     }
 

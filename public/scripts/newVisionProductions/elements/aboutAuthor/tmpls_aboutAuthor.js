@@ -29,6 +29,7 @@
     };
 
     tmpls.authorTitle = function(authorInfo){
+        //console.log('authorTitle');
         return{c:'author-title',t:authorInfo.title}
     };
 

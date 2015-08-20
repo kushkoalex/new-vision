@@ -5,6 +5,8 @@
 
 
     tmpls.header = function (isMainPage) {
+        //console.log('header');
+
         var controlsDescriptors = nv.settings.controlsDescriptors,
             mainMenuData = nv.settings.dataModels.mainMenu,
             classLogo = 'logo';

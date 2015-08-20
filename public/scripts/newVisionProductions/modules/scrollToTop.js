@@ -9,7 +9,7 @@ NV.scrollToTop = function(){
         startT,
         finishT;
 
-    console.log('111');
+    //console.log('111');
 
 
     function interpolate(source, target, shift) {

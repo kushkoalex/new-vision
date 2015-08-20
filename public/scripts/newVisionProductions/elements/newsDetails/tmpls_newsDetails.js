@@ -19,7 +19,7 @@
             textContent,
             content=[];
 
-        console.log(newsData.videoSrc);
+        //console.log(newsData.videoSrc);
 
         if (newsData.videoSrc !== u && newsData.videoSrc != '' && newsData.videoSrc !== null) {
             textContent = [{

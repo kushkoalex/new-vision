@@ -24,6 +24,7 @@
 
 
     tmpls.productsForm = function () {
+        //console.log('productsForm');
         return {n: 'productsBlocks', c: 'authors-container'}
     };
 

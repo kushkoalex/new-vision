@@ -5,6 +5,7 @@
 
 
     tmpls.pageFooter = function(){
+        //console.log('pageFooter');
       return {a: {id: 'footer'}, C: tmpls.footer()}
     };
 

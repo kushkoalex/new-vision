@@ -26,6 +26,7 @@
     };
 
     tmpls.artsTitle = function (link) {
+        //console.log('artsTitle');
         if (link) {
             return {
                 c: 'titleContainer',
@@ -36,7 +37,7 @@
     };
 
     tmpls.artsSubMenu = function (subMenuModel) {
-
+        //console.log('artsSubMenu');
         var subMenuContent = [];
 
         for (var i = 0; i < subMenuModel.length; i++) {
@@ -79,8 +80,8 @@
         var currentTags = nv.settings.dataModels.currentTags,
             tags = [];
 
-        if(currentTags.length==0){
-            return{}
+        if (currentTags.length == 0) {
+            return {}
         }
 
         for (var i = 0; i < currentTags.length; i++) {
@@ -90,8 +91,8 @@
         return {
             c: 'filter-container', C: [
                 {c: 'show-only', H: l10n('tagsFilterShowOnly', 'firstUpper')},
-                {c:'tags',C:tags},
-                {c:'reset', e:'a',h:link, t:l10n('tagsFilterReset', 'firstUpper')}
+                {c: 'tags', C: tags},
+                {c: 'reset', e: 'a', h: link, t: l10n('tagsFilterReset', 'firstUpper')}
             ]
         }
     };
@@ -127,12 +128,18 @@
     };
 
     tmpls.tag = function (tag) {
-        var currentTags = [];
-        //a9.copyArray(nv.settings.dataModels.currentTags,currentTags);
+        var currentTags = [],
+            u;
 
-        for (var i = 0; i < nv.settings.dataModels.currentTags.length; i++) {
-            currentTags.push(nv.settings.dataModels.currentTags[i].id)
+        console.log(tag);
+        //a9.copyArray(nv.settings.dataModels.currentTags,currentTags);
+        if (nv.settings.dataModels.currentTags !== u) {
+            for (var i = 0; i < nv.settings.dataModels.currentTags.length; i++) {
+                currentTags.push(nv.settings.dataModels.currentTags[i].id)
+            }
         }
+
+
 
         if (!a9.contains(currentTags, tag.id)) {
             currentTags.push(tag.id);

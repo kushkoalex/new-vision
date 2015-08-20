@@ -16,15 +16,17 @@ NV.authorProducts = function ($parent) {
     function buildMediaForm(productsData) {
         $fragment = global.document.createDocumentFragment();
         $fragmentTag = global.document.createDocumentFragment();
-        //console.log(authorsData);
+
+        //console.log('productsDataItem '+productsData);
 
         a9.each(productsData, function (productsDataItem) {
 
-            //console.log(authorsDataItem);
+            //console.log(productsDataItem);
 
             if (itemsCount % itemsInRow == 0) {
                 tp('clear', $fragment)
             }
+
 
 
             productsDataItem.hasDetailsLink = true;
@@ -36,6 +38,8 @@ NV.authorProducts = function ($parent) {
 
 
             var $tags = build.tags;
+
+            //console.log(productsDataItem.tags);
 
             a9.each(productsDataItem.tags, function (tag) {
                 //console.log(tag);
