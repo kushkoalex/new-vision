@@ -105,7 +105,8 @@
     tmpls.author = function (authorsDataItem) {
         var
             contentImagePath = nv.settings.controlsDescriptors.site.contentImagesPathAuthorsThumb,
-            photoPath = contentImagePath + authorsDataItem.photo;
+            photoPath = contentImagePath + authorsDataItem.photo,
+            productsThumbPath = nv.settings.controlsDescriptors.site.contentImagesPathProductsThumb;
 
         return {
             c: 'author-container', C: [

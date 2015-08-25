@@ -9,6 +9,7 @@ NV.authors = function ($parent) {
         $fragmentTag,
         build,
         buildTag,
+        //$authorProducts=[],
         itemsInRow = settings.controlsDescriptors.site.authorProductItemsInRowCount,
         itemsCount = 0;
 
@@ -21,12 +22,12 @@ NV.authors = function ($parent) {
 
             //console.log(authorsDataItem);
 
-            if (itemsCount % itemsInRow == 0) {
+            if (itemsCount !== 0 && itemsCount % itemsInRow == 0) {
                 tp('clear', $fragment)
             }
 
             build = tp('author', authorsDataItem, $fragment);
-
+            //$authorProducts.push(build.r);
             itemsCount++;
 
 
