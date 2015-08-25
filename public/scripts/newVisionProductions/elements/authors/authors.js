@@ -73,7 +73,7 @@ NV.authors = function ($parent) {
                 }
                 else {
                     for (i = 0; i < $authorImagesSet.length; i++) {
-                        if (i == currentAuthorIndex) {
+                        if (i == currentAuthorIndex && $authorImagesSet[currentAuthorIndex].length > 1) {
                             currentAuthorProductImageIndex[currentAuthorIndex]++;
                             if (currentAuthorProductImageIndex[currentAuthorIndex] >= $authorImagesSet[currentAuthorIndex].length) {
                                 currentAuthorProductImageIndex[currentAuthorIndex] = 1;
@@ -87,6 +87,8 @@ NV.authors = function ($parent) {
             }
 
             function showActiveImage() {
+
+
                 for (j = 0; j < $authorImagesSet.length; j++) {
                     for (i = 0; i < $authorImagesSet[j].length; i++) {
                         if (currentAuthorProductImageIndex[j] == i) {
@@ -130,6 +132,7 @@ NV.authors = function ($parent) {
             }, $fragmentImage);
 
             $authorImages.push($authorImagePreview.r);
+            $images.appendChild($fragmentImage);
             imageIndex++;
 
             a9.each(authorsDataItem.productImagePreviews, function (image) {
@@ -159,6 +162,9 @@ NV.authors = function ($parent) {
 
                 $tags.appendChild($fragmentTag);
             });
+
+
+            showActiveImage();
 
         });
 
