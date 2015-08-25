@@ -102,20 +102,20 @@
     };
 
 
-    tmpls.author = function (authorsDataItem) {
-        var
-            contentImagePath = nv.settings.controlsDescriptors.site.contentImagesPathAuthorsThumb,
-            photoPath = contentImagePath + authorsDataItem.photo,
-            productsThumbPath = nv.settings.controlsDescriptors.site.contentImagesPathProductsThumb;
+    tmpls.authorImagePreview = function(obj){
 
+        return {e: 'img', c:obj.isActive?'active':'', n:'image'+obj.index, a: {src: obj.imgSrc}}
+    };
+
+    tmpls.author = function (authorsDataItem) {
         return {
-            c: 'author-container', C: [
+            c: 'author-container', a:{index:authorsDataItem.index}, C: [
                 {
                     c: 'image',
                     C: {
                         e: 'a',
                         h: a9.supplant(nv.settings.controlsDescriptors.site.authorAboutPageUrl, {artist: authorsDataItem.name}),
-                        C: {e: 'img', a: {src: photoPath}}
+                        n:'images'
                     }
                 },
                 {
@@ -141,7 +141,6 @@
         }
 
 
-
         if (!a9.contains(currentTags, tag.id)) {
             currentTags.push(tag.id);
         }
@@ -150,7 +149,7 @@
 
         //var href = a9.supplant(nv.settings.controlsDescriptors.site.searchFilterUrlArtists, {tagsId: separatedTagsIds});
         var href = tag.isSearchFilterUrlArtistProducts
-            ? a9.supplant(tag.pageUrl, {tagsId: separatedTagsIds,id:tag.authorName})
+            ? a9.supplant(tag.pageUrl, {tagsId: separatedTagsIds, id: tag.authorName})
             : a9.supplant(tag.pageUrl, {tagsId: separatedTagsIds});
         return {c: 'tag', C: {e: 'a', h: href, t: tag.title}}
     };
