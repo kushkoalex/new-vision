@@ -10,12 +10,12 @@
 
 .productDetailsInfo
 {
-    width: 900px;
+    width: 750px;
     /*height: 100px;*/
     position: absolute;
     left: 50%;
     top: 20px;
-    margin-left: -450px;
+    margin-left: -375px;
     /*background-color: #0072bc;*/
     z-index: 10000;
     text-align: center;

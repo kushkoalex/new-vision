@@ -8,6 +8,12 @@ $(function () {
         pager: false
     });
 
+    var elements = document.querySelectorAll( '.intense' );
+    if(elements.length>0) {
+        Intense(elements);
+    }
+    //Intense(document.querySelectorAll('.demo-link'));
+
     var products = NV.settings.dataModels.products;
     var tagsContainer = document.getElementById('productDescriptionTags');
     var titleContainer = document.getElementById('productDescriptionTitle');

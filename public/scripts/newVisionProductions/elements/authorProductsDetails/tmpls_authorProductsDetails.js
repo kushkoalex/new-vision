@@ -46,7 +46,8 @@
         for (var i = 0; i < products.length; i++) {
             imagesContent.push({
                 e: 'li',
-                C: {e:'a' ,h:contentImagePathOrig + products[i].photo, a:{target:'_blank'},C:{  e: 'img', a: {src: contentImagePath + products[i].photo}}}
+                //C:{e:'a', c:'intense' ,h:contentImagePathOrig + products[i].photo, a:{'data-image':contentImagePathOrig + products[i].photo,  target:'_blank'},
+                    C:{  e: 'img',c:'intense', a: {'data-image':contentImagePathOrig + products[i].photo, src: contentImagePath + products[i].photo}}//}
             })
         }
 

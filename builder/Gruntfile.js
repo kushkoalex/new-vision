@@ -114,6 +114,7 @@ module.exports = function (grunt) {
                     '<%= scriptsDir %>newVisionProductions/**/*.js',
                     '<%= vendorDir %>scripts/jquery-1.11.2.min.js',
                     '<%= vendorDir %>scripts/jquery.bxslider.min.js',
+                    '<%= vendorDir %>scripts/intense.min.js',
                     '<%= vendorDir %>scripts/init.js',
                     '<%= scriptsDir %>init.js'
                 ],

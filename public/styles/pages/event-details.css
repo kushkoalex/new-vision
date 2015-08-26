@@ -317,3 +317,8 @@ padding-top: 20px;
     background: linear-gradient(transparent, rgba(231,227,218,.9)); /* Standard syntax */
     margin-bottom: 20px;
 }
+
+
+.intense{
+    cursor: pointer;
+}
