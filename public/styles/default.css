@@ -15,6 +15,10 @@ body {
     margin: 0 auto;
 }
 
+.page.fixed-width{
+    width: 1200px;
+}
+
 .clear
 {
     clear: both;

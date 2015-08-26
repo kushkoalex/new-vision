@@ -14,7 +14,7 @@ $(function () {
     var  productDescriptionPrice = document.getElementById('productDescriptionPrice');
 
     productDetailsSlider = $('.bxsliderProductDetails').bxSlider({
-        adaptiveHeight: true,
+        adaptiveHeight: false,
         mode: 'fade',
         pager: false,
         onSliderLoad: function (currentIndex) {

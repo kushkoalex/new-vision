@@ -5,6 +5,12 @@
     min-width: 1440px;
 }
 
+.fixed-width .authors-products
+{
+    min-width: 1200px !important;
+    width: 1200px !important;
+}
+
 .authors-products .titleContainer{
     height: 120px;
     background-color: rgba(255,255,255,.8);

@@ -33,7 +33,8 @@
 
     tmpls.authorProductsDetailsForm = function (authorInfo) {
         var
-            contentImagePath = nv.settings.controlsDescriptors.site.contentImagesPathAuthorsOrig,
+            contentImagePathOrig = nv.settings.controlsDescriptors.site.contentImagesPathAuthorsOrig,
+            contentImagePath = nv.settings.controlsDescriptors.site.contentImagesPathProducts,
             avatarPath = nv.settings.controlsDescriptors.site.contentImagesPathAuthorsAvatar,
             imagesContent = [],
             products = nv.settings.dataModels.products;
@@ -45,7 +46,7 @@
         for (var i = 0; i < products.length; i++) {
             imagesContent.push({
                 e: 'li',
-                C: {e: 'img', a: {src: contentImagePath + products[i].photo}}
+                C: {e:'a' ,h:contentImagePathOrig + products[i].photo, a:{target:'_blank'},C:{  e: 'img', a: {src: contentImagePath + products[i].photo}}}
             })
         }
 
