@@ -150,6 +150,7 @@ module.exports = function (grunt) {
                     '<%= prodBuildDir %>scripts/main.min.js',
                     '<%= prodBuildDir %>scripts/vendor/jquery-1.11.2.min.js',
                     '<%= prodBuildDir %>scripts/vendor/jquery.bxslider.min.js',
+                    '<%= prodBuildDir %>scripts/vendor/intense.min.js',
                     '<%= prodBuildDir %>scripts/vendor/init.js'
 
                 ],
