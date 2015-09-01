@@ -8,20 +8,22 @@ $(function () {
         pager: false
     });
 
-    var elements = document.querySelectorAll( '.intense' );
-    if(elements.length>0) {
+    var elements = document.querySelectorAll('.intense');
+    if (elements.length > 0) {
         Intense(elements);
     }
     //Intense(document.querySelectorAll('.demo-link'));
 
-    var products = NV.settings.dataModels.products;
-    var tagsContainer = document.getElementById('productDescriptionTags');
-    var titleContainer = document.getElementById('productDescriptionTitle');
-    var  productDescriptionPrice = document.getElementById('productDescriptionPrice');
+    var products = NV.settings.dataModels.products,
+        tagsContainer = document.getElementById('productDescriptionTags'),
+        titleContainer = document.getElementById('productDescriptionTitle'),
+        productDescriptionPrice = document.getElementById('productDescriptionPrice'),
+        startSlide = NV.settings.controlsDescriptors.site.startSlide | 0;
 
     productDetailsSlider = $('.bxsliderProductDetails').bxSlider({
         adaptiveHeight: false,
         mode: 'fade',
+        startSlide: startSlide,
         pager: false,
         onSliderLoad: function (currentIndex) {
             // do funky JS stuff here

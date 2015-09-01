@@ -9,6 +9,7 @@ NV.authorProducts = function ($parent) {
         $fragment,
         $fragmentTag,
         build,
+        i,
         buildTag,
         itemsInRow = settings.controlsDescriptors.site.authorProductItemsInRowCount,
         itemsCount = 0;
@@ -18,7 +19,7 @@ NV.authorProducts = function ($parent) {
         $fragmentTag = global.document.createDocumentFragment();
 
         //console.log('productsDataItem '+productsData);
-
+        i=0;
         a9.each(productsData, function (productsDataItem) {
 
             //console.log(productsDataItem);
@@ -31,6 +32,7 @@ NV.authorProducts = function ($parent) {
 
             productsDataItem.hasDetailsLink = true;
             productsDataItem.authorName = authorData.name;
+            productsDataItem.index=i;
 
             build = tp('product', productsDataItem, $fragment);
 
@@ -50,7 +52,7 @@ NV.authorProducts = function ($parent) {
 
                 $tags.appendChild($fragmentTag);
             });
-
+            i++;
         });
 
         tp('clear', $fragment);

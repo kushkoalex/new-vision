@@ -47,8 +47,21 @@
             imagesContent.push({
                 e: 'li',
                 //C:{e:'a', c:'intense' ,h:contentImagePathOrig + products[i].photo, a:{'data-image':contentImagePathOrig + products[i].photo,  target:'_blank'},
-                    C:{  e: 'img',c:'intense', a: {'data-image':contentImagePathOrig + products[i].photo, src: contentImagePath + products[i].photo}}//}
+                C: {
+                    e: 'img',
+                    c: 'intense',
+                    a: {
+                        'data-image': contentImagePathOrig + products[i].photo,
+                        src: contentImagePath + products[i].photo
+                    }
+                }//}
             })
+        }
+
+
+        var className = 'productDetailsAuthorInfo';
+        if (!authorInfo.description || authorInfo.description == '') {
+            className += ' hidden';
         }
 
         return {
@@ -59,7 +72,7 @@
                     {c: 'tags', a: {id: 'productDescriptionTags'}},
                     {c: 'price', a: {id: 'productDescriptionPrice'}},
                     {
-                        c: 'productDetailsAuthorInfo', a: {id: 'productDetailsAuthorInfo'}, C: [
+                        c: className, a: {id: 'productDetailsAuthorInfo'}, C: [
                         {c: 'authorAvatar', C: {e: 'img', a: {src: avatarPath + authorInfo.avatar}}},
                         {
                             c: 'productDetailsAuthorInfoTextWrapper',
@@ -67,7 +80,10 @@
                                 {c: 'productDetailsAuthorInfoTextTriangle'},
                                 {
                                     c: 'productDetailsAuthorInfoTextContent', C: [
-                                    {c: 'productDetailsAuthorInfoTextContentCloseBtn', n:'productDetailsAuthorInfoTextContentCloseBtn'},
+                                    {
+                                        c: 'productDetailsAuthorInfoTextContentCloseBtn',
+                                        n: 'productDetailsAuthorInfoTextContentCloseBtn'
+                                    },
                                     {c: 'productDetailsAuthorInfoTextContentTitle', t: authorInfo.title},
                                     {c: 'productDetailsAuthorInfoTextContentText', H: authorInfo.description}
                                 ]

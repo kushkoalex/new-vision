@@ -38,7 +38,7 @@
 
         if(productsDataItem.hasDetailsLink){
             authorName = productsDataItem.authorName;
-            image = {c: 'image', C: {e:'a',h:a9.supplant(nv.settings.controlsDescriptors.site.authorProductsDetailsPageUrl,{artist:authorName}) ,C:{   e: 'img', a: {src: photoPath}}}};
+            image = {c: 'image', C: {e:'a',h:a9.supplant(nv.settings.controlsDescriptors.site.authorProductsDetailsPageUrl,{artist:authorName,startSlide:productsDataItem.index}) ,C:{   e: 'img', a: {src: photoPath}}}};
 
         }else
         {

@@ -67,6 +67,10 @@
     /*text-align: center;*/
 }
 
+.productDetailsAuthorInfo.hidden{
+    display: none;
+}
+
 .productDetailsAuthorInfo .authorAvatar{
     width: 150px;
     height: 150px;
