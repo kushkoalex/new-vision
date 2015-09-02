@@ -16,7 +16,7 @@
             tmpls.header(),
             tmpls.artsTitle(),
             tmpls.artsSubMenu(subMenuModel),
-            tmpls.tagsFilter(nv.settings.controlsDescriptors.site.productsPageUrl),
+            tmpls.tagsFilter(nv.settings.controlsDescriptors.site.productsPageUrl,nv.settings.controlsDescriptors.site.searchFilterUrlProducts),
             tmpls.productsForm(),
             tmpls.pageFooter()
         ]

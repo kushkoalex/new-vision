@@ -19,7 +19,7 @@
             tmpls.header(),
             tmpls.artsTitle(),
             tmpls.artsSubMenu(subMenuModel),
-            tmpls.tagsFilter(nv.settings.controlsDescriptors.site.authorsPageUrl),
+            tmpls.tagsFilter(nv.settings.controlsDescriptors.site.authorsPageUrl,nv.settings.controlsDescriptors.site.searchFilterUrlArtists),
             tmpls.authorsForm(),
             tmpls.pageFooter()
         ]
@@ -76,16 +76,48 @@
         };
     };
 
-    tmpls.tagsFilter = function (link) {
-        var currentTags = nv.settings.dataModels.currentTags,
-            tags = [];
+    tmpls.tagsFilter = function (link,filterLink,isSearchFilterUrlArtistProducts,authorName) {
+        var currentTags = [],
+            tags = [],
+            separatedTagsIds,
+            i,
+            j,
+            tagLink;
 
-        if (currentTags.length == 0) {
+        if (nv.settings.dataModels.currentTags.length == 0) {
             return {}
         }
 
-        for (var i = 0; i < currentTags.length; i++) {
-            tags.push({c: 'tag', H: currentTags[i].title});
+
+
+        //console.log(currentTags);
+
+
+
+        //console.log(filterLink);
+
+
+        for (i = 0; i < nv.settings.dataModels.currentTags.length; i++) {
+
+            currentTags = [];
+            for (j = 0; j < nv.settings.dataModels.currentTags.length; j++) {
+                if (nv.settings.dataModels.currentTags[i].id!=nv.settings.dataModels.currentTags[j].id) {
+                    currentTags.push(nv.settings.dataModels.currentTags[j].id);
+                }
+            }
+            separatedTagsIds = currentTags.join('-');
+
+            //console.log(separatedTagsIds);
+
+
+
+            tagLink = currentTags.length==0 ? link : isSearchFilterUrlArtistProducts
+                ? a9.supplant(filterLink, {tagsId: separatedTagsIds, id: authorName})
+                : a9.supplant(filterLink, {tagsId: separatedTagsIds});
+            //console.log(tagLink);
+
+
+            tags.push({e:'a', h: tagLink, c: 'tag', H: nv.settings.dataModels.currentTags[i].title});
         }
 
         return {
