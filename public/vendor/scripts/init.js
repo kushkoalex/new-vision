@@ -18,6 +18,7 @@ $(function () {
         tagsContainer = document.getElementById('productDescriptionTags'),
         titleContainer = document.getElementById('productDescriptionTitle'),
         productDescriptionPrice = document.getElementById('productDescriptionPrice'),
+        productDescriptionText = document.getElementById('productDescriptionText'),
         startSlide = NV.settings.controlsDescriptors.site.startSlide | 0;
 
     productDetailsSlider = $('.bxsliderProductDetails').bxSlider({
@@ -32,16 +33,17 @@ $(function () {
 
             //console.log(products);
 
-            titleContainer.innerHTML = '&laquo' + products[0].title + '&raquo';
-            productDescriptionPrice.innerHTML = products[0].price;
+            titleContainer.innerHTML = '&laquo' + products[startSlide].title + '&raquo';
+            productDescriptionPrice.innerHTML = products[startSlide].price;
+            productDescriptionText.innerHTML= products[startSlide].description;
 
-            for (var i = 0; i < products[0].tags.length; i++) {
+            for (var i = 0; i < products[startSlide].tags.length; i++) {
                 var item = document.createElement('span');
                 var att = document.createAttribute("class");
                 att.value = "product-description-tag";
                 item.setAttributeNode(att);
 
-                item.innerHTML = products[0].tags[i];
+                item.innerHTML = products[startSlide].tags[i];
                 tagsContainer.appendChild(item);
             }
 
@@ -58,10 +60,12 @@ $(function () {
             if (products && products[newIndex] && products[newIndex].title) {
                 titleContainer.innerHTML = '&laquo' + products[newIndex].title + '&raquo';
                 productDescriptionPrice.innerHTML = products[newIndex].price;
+                productDescriptionText.innerHTML= products[newIndex].description;
             }
             else {
                 titleContainer.innerHTML = '';
-                productDescriptionPrice.innerHTML = products[newIndex].price;
+                productDescriptionPrice.innerHTML = '';
+                productDescriptionText.innerHTML= '';
             }
 
             tagsContainer.innerHTML = '';

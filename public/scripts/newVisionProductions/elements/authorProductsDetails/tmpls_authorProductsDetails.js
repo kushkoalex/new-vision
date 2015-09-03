@@ -63,9 +63,9 @@
 
 
         var className = 'productDetailsAuthorInfo';
-        if (!authorInfo.description || authorInfo.description == '') {
-            className += ' hidden';
-        }
+        //if (!authorInfo.description || authorInfo.description == '') {
+        //    className += ' hidden';
+        //}
 
         return {
             c: 'bxsliderProductDetailsContainer', C: [
@@ -88,7 +88,7 @@
                                         n: 'productDetailsAuthorInfoTextContentCloseBtn'
                                     },
                                     {c: 'productDetailsAuthorInfoTextContentTitle', t: authorInfo.title},
-                                    {c: 'productDetailsAuthorInfoTextContentText', H: authorInfo.description}
+                                    {c: 'productDetailsAuthorInfoTextContentText', a: {id: 'productDescriptionText'}}
                                 ]
                                 }]
                         }, {
