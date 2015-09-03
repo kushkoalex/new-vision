@@ -35,6 +35,7 @@
 .productDetailsInfo .tags{
     position: relative;
     margin-top: 15px;
+    line-height: 30px;
 }
 
 .productDetailsInfo .product-description-tag{
