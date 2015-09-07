@@ -17,7 +17,7 @@
             controlsDescriptors = nv.settings.controlsDescriptors,
             imagesContent = [],
             eventImages = eventData.images,
-            tileContainer=[];
+            tileContainer = [];
 
         for (var i = 0; i < eventImages.length; i++) {
             imagesContent.push({
@@ -34,7 +34,7 @@
             ]
         });
 
-        if(eventData.ticketOrderType=='invite'){
+        if (eventData.ticketOrderType == 'invite') {
             tileContainer.push({
                 c: 'get-invite-wrapper', C: [
                     {c: 'get-invite left', H: '&nbsp;'},
@@ -42,6 +42,12 @@
                     {c: 'get-invite right', H: '&nbsp;'}]
             });
         }
+
+
+        var price = (eventData.price === u || eventData.price == null || eventData.price == '')
+            ? l10n('ticketType_eventIsFree')
+            : eventData.price;
+
 
         return [
             {
@@ -92,7 +98,7 @@
                         {
                             c: 'event-property-wrapper', C: [
                             {c: 'event-property-inner left', H: '&nbsp;'},
-                            {c: 'event-property-inner center', t: eventData.price},
+                            {c: 'event-property-inner center', t: price},
                             {c: 'event-property-inner right', H: '&nbsp;'}
                         ]
                         }
