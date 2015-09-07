@@ -19,7 +19,9 @@ $(function () {
         titleContainer = document.getElementById('productDescriptionTitle'),
         productDescriptionPrice = document.getElementById('productDescriptionPrice'),
         productDescriptionText = document.getElementById('productDescriptionText'),
-        startSlide = NV.settings.controlsDescriptors.site.startSlide | 0;
+        startSlide = NV.settings.controlsDescriptors.site.startSlide | 0,
+        productDetailsAuthorInfo = A9.$('productDetailsAuthorInfo');
+
 
     productDetailsSlider = $('.bxsliderProductDetails').bxSlider({
         adaptiveHeight: false,
@@ -29,6 +31,14 @@ $(function () {
         onSliderLoad: function (currentIndex) {
             // do funky JS stuff here
             //alert('Slider has finished loading. Click OK to continue!');
+
+
+            if (!products[startSlide].description || products[startSlide].description == null || products[startSlide].description == '') {
+                productDetailsAuthorInfo.style.display = 'none';
+            }
+            else {
+                productDetailsAuthorInfo.style.display = 'block';
+            }
 
 
             //console.log(products);
@@ -67,6 +77,15 @@ $(function () {
                 productDescriptionPrice.innerHTML = '';
                 productDescriptionText.innerHTML= '';
             }
+
+
+            if (!products[newIndex].description || products[newIndex].description == null || products[newIndex].description == '') {
+                productDetailsAuthorInfo.style.display = 'none';
+            }
+            else {
+                productDetailsAuthorInfo.style.display = 'block';
+            }
+
 
             tagsContainer.innerHTML = '';
 
