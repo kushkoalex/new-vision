@@ -52,7 +52,7 @@
                 c: 'event-properties-wrapper', C: [
                     {
                         c: 'event-property', C: [
-                        {c: 'property-title', t: 'проект состоится:'},
+                        {c: 'property-title', t: l10n('eventDetails_date')},
                         {
                             c: 'event-property-wrapper', C: [
                             {c: 'event-property-inner left', H: '&nbsp;'},
@@ -64,7 +64,7 @@
                     },
                     {
                         c: 'event-property', C: [
-                        {c: 'property-title', t: 'длительность действа:'},
+                        {c: 'property-title', t: l10n('eventDetails_duration')},
                         {
                             c: 'event-property-wrapper', C: [
                             {c: 'event-property-inner left', H: '&nbsp;'},
@@ -88,7 +88,7 @@
                     //},
                     {
                         c: 'event-property', C: [
-                        {c: 'property-title', t: 'цены на билеты:'},
+                        {c: 'property-title', t: l10n('eventDetails_prices')},
                         {
                             c: 'event-property-wrapper', C: [
                             {c: 'event-property-inner left', H: '&nbsp;'},
@@ -106,7 +106,7 @@
                 c: 'event-description-container', C: [
                 {
                     c: 'event-description-item', C: [
-                    {c: 'title', t: 'действо'},
+                    {c: 'title', t: l10n('eventDetails_event')},
                     {c: 'text', H: eventData.content.action},
                     {c: 'show-more-button-container', C: [{c: 'grad-panel'}, {c: 'show-more-button'}]},
                     {c: 'bottom-logo-container', C: {c: 'bottom-logo'}}
@@ -115,7 +115,7 @@
                 },
                 {
                     c: 'event-description-item', C: [
-                    {c: 'title', t: 'локация'},
+                    {c: 'title', t: l10n('eventDetails_location')},
                     {c: 'text', H: eventData.content.location},
                     {c: 'show-more-button-container', C: [{c: 'grad-panel'}, {c: 'show-more-button'}]},
                     {c: 'bottom-logo-container', C: {c: 'bottom-logo'}}
@@ -124,7 +124,7 @@
                 },
                 {
                     c: 'event-description-item', C: [
-                    {c: 'title', t: 'арт группа'},
+                    {c: 'title', t: l10n('eventDetails_artGroup')},
                     {c: 'text', H: eventData.content.artGroup},
                     {c: 'show-more-button-container', C: [{c: 'grad-panel'}, {c: 'show-more-button'}]},
                     {c: 'bottom-logo-container', C: {c: 'bottom-logo'}}
