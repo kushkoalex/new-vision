@@ -30,7 +30,7 @@
                         c: 'details', n: 'showDetails',
                         C: [
                             {c: 'arrow'},
-                            {c: 'text', t: l10n('mainPageDetails'), a:{data:mainBanner.order}},
+                            {c: 'text', t: l10n('mainPageDetails'), a: {data: mainBanner.order}},
                             {c: 'arrow'}]
 
                     }
@@ -47,9 +47,14 @@
         ]
     };
 
-    tmpls.imageControls = function () {
+    tmpls.imageControls = function (imagesLength) {
+        var className = 'image-slider-controls';
+        if (!imagesLength || imagesLength === 1) {
+            className += ' hidden';
+        }
+
         return {
-            c: 'image-slider-controls',
+            c: className,
             C: [
                 {c: 'left', n: 'slideLeft'},
                 {c: 'right', n: 'slideRight'}
@@ -75,8 +80,8 @@
 
             if (i == 0) {
                 activeClassName = ' active';
-            }else{
-                activeClassName='';
+            } else {
+                activeClassName = '';
             }
 
             images.push({
@@ -91,7 +96,7 @@
             n: 'imagesContainer',
             C: [
                 images,
-                tmpls.imageControls()
+                tmpls.imageControls(images.length)
             ]
         };
 
@@ -112,7 +117,7 @@
         }
 
         return {
-            c: 'content-block', a:{id:'contentBlock'+eventAnnouncement.order}, C: [
+            c: 'content-block', a: {id: 'contentBlock' + eventAnnouncement.order}, C: [
                 imageDescriptionPair,
                 {c: 'clear'}
             ]
