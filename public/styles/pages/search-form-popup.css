@@ -73,7 +73,7 @@
 
 .layout .popup .frame .tags {
     margin-top: 15px;
-    padding: 20px;
+    padding: 20px 20px 50px;
 }
 
 .layout .popup .frame .tags .tag-wrapper
@@ -96,7 +96,7 @@
 
 .layout .button{
     text-align: center;
-    background-color: green;
+    background-color: #ccc;
     height: 45px;
     width: 120px;
     margin: -22px auto 0;
@@ -106,6 +106,10 @@
     border-radius: 10px;
     color: #ffffff;
     cursor: pointer;
+}
+
+.layout .button.active{
+    background-color: green;
 }
 
 .layout .button .button-title{

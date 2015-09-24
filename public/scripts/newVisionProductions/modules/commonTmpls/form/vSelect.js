@@ -28,6 +28,8 @@
                     }]
             })
         });
+
+        tags.push({c:'clear'});
         return tags;
     }
 

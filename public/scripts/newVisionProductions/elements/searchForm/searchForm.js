@@ -5,12 +5,13 @@ NV.searchForm = function ($parent,searchUrl) {
         tp = global.cnCt.tp,
         settings = nv.settings,
         searchFormDataModel = settings.dataModels.searchForm,
+        eventOnPointerEnd = a9.deviceInfo.eventOnPointerEnd,
         $fragment,
         $artistCategorySelect,
         $artCategorySelect,
         $artCategorySelectWrapper,
         build,
-
+        selectedTags=[],
         artistCategorySelectSelectedIndex,
         artistCategorySelectValue,
         artCategorySelectSelectedIndex,
@@ -27,7 +28,17 @@ NV.searchForm = function ($parent,searchUrl) {
     $artCategorySelectWrapper = build.artCategorySelectWrapper;
     $sfTagsWrapper = build.sfTagsWrapper;
     $btnSubmit = build.btnSubmit;
-    //$sForm=build.sForm;
+
+    var $tags = a9.$n('cb');
+
+
+
+
+    a9.addEvent($sfTagsWrapper, eventOnPointerEnd, function(){
+        collectSelectedTags()
+    });
+
+
 
     function onArtistCategorySelectChange() {
         var selectedIndex = this.selectedIndex,
@@ -68,7 +79,6 @@ NV.searchForm = function ($parent,searchUrl) {
     function aaa() {
         var tags = searchFormDataModel.authorCategories[artistCategorySelectSelectedIndex].categories[artCategorySelectSelectedIndex].tags,
             $fragment = global.document.createDocumentFragment(),
-
             artBuild,
             $art
             ;
@@ -96,6 +106,9 @@ NV.searchForm = function ($parent,searchUrl) {
     a9.addEvent($artistCategorySelect, 'change', onArtistCategorySelectChange);
     a9.addEvent($artCategorySelect, 'change', onArtCategorySelectChange);
 
+
+
+
     aaa.call();
 
 
@@ -110,41 +123,44 @@ NV.searchForm = function ($parent,searchUrl) {
         e.stopPropagation();
     });
 
-
-
     var $popuplink = a9.$c('popuplink')[0];
-
 
     a9.addEvent($popuplink, 'click', function(){
         $layout.style.display ='block';
     });
 
-
     a9.addEvent($btnSubmit, 'click', formSubmit);
 
-    function formSubmit() {
-        var checkboxes = a9.$n('cb'),
-            tagsId = [];
 
+    function collectSelectedTags(){
+        selectedTags=[];
+        var checkboxes = a9.$n('cb');
         for (var i = 0, n = checkboxes.length; i < n; i++) {
 
             if (checkboxes[i].checked) {
                 //alert(checkboxes[i].getAttribute('data-value'));
-                tagsId.push(checkboxes[i].getAttribute('data-value'));
+                selectedTags.push(checkboxes[i].getAttribute('data-value'));
             }
-
         }
 
+        if(selectedTags.length>0){
+            a9.addClass($btnSubmit,'active');
+        }
+        else{
+            a9.removeClass($btnSubmit,'active');
+        }
+    }
 
-        //alert(tagsId.join('-'));
 
+    function formSubmit() {
+        console.log(selectedTags);
+
+        collectSelectedTags();
         var form = a9.$('sForm');
-        form.action = a9.supplant(searchUrl, {tagsId: tagsId.join('-')});
-        if(tagsId.length>0) {
+        form.action = a9.supplant(searchUrl, {tagsId: selectedTags.join('-')});
+        if(selectedTags.length>0) {
             form.submit();
         }
-
-        //console.log(checkboxes);
     }
 
 };
