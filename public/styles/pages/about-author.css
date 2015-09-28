@@ -34,6 +34,8 @@
 
 .author-description .text{
     padding: 60px  90px 100px 90px;
+    line-height: 23px;
+    font-size: 14px;
 }
 
 .author-title{
