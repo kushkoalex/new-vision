@@ -12,13 +12,14 @@
 {
     width: 750px;
     /*height: 100px;*/
-    position: absolute;
+    /*position: absolute;*/
     left: 50%;
-    top: 20px;
-    margin-left: -375px;
+    /*top: 20px;*/
+    /*margin-left: -375px;*/
     /*background-color: #0072bc;*/
     z-index: 10000;
     text-align: center;
+    margin: 0 auto 20px;
 }
 
 .productDetailsInfo .title{
