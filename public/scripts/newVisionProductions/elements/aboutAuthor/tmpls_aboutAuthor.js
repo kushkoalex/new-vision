@@ -7,11 +7,11 @@
 
     tmpls.aboutAuthor = function (authorInfo) {
         var subMenuModel = [
-            {text: l10n('authors_subMenu_aboutAuthor', 'firstUpper'), isActive: true},
             {
                 text: l10n('authors_subMenu_authorProducts', 'firstUpper'),
                 link:a9.supplant( nv.settings.controlsDescriptors.site.authorProductsPageUrl,{artist:authorInfo.name})
             },
+            {text: l10n('authors_subMenu_aboutAuthor', 'firstUpper'), isActive: true},
             {
                 text: l10n('authors_subMenu_authorEvents', 'firstUpper'),
                 link: a9.supplant(nv.settings.controlsDescriptors.site.authorEventsPageUrl,{artist:authorInfo.name})

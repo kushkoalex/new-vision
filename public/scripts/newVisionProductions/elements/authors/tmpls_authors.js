@@ -7,11 +7,11 @@
 
     tmpls.authors = function () {
         var subMenuModel = [
-            {text: l10n('authors_subMenu_authors', 'firstUpper'), isActive: true},
             {
                 text: l10n('authors_subMenu_products', 'firstUpper'),
                 link: nv.settings.controlsDescriptors.site.productsPageUrl
             },
+            {text: l10n('authors_subMenu_authors', 'firstUpper'), isActive: true},
             {text: l10n('authors_subMenu_search', 'firstUpper'), popup: true}
         ];
 

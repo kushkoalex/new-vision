@@ -9,13 +9,13 @@
 
         var subMenuModel = [
             {
-                text: l10n('authors_subMenu_aboutAuthor', 'firstUpper'),
-                link: a9.supplant(nv.settings.controlsDescriptors.site.authorAboutPageUrl, {artist: authorInfo.name})
-            },
-            {
                 text: l10n('authors_subMenu_authorProducts', 'firstUpper'),
                 link: a9.supplant(nv.settings.controlsDescriptors.site.authorProductsPageUrl, {artist: authorInfo.name}),
                 isActive: true
+            },
+            {
+                text: l10n('authors_subMenu_aboutAuthor', 'firstUpper'),
+                link: a9.supplant(nv.settings.controlsDescriptors.site.authorAboutPageUrl, {artist: authorInfo.name})
             },
             {
                 text: l10n('authors_subMenu_authorEvents', 'firstUpper'),
