@@ -34,10 +34,12 @@ $(function () {
 
 
             if (!products[startSlide].description || products[startSlide].description == null || products[startSlide].description == '') {
-                productDetailsAuthorInfo.style.display = 'none';
+                A9.addClass(productDetailsAuthorInfo, 'hidden');
+                //productDetailsAuthorInfo.style.display = 'none';
             }
             else {
-                productDetailsAuthorInfo.style.display = 'block';
+                A9.removeClass(productDetailsAuthorInfo, 'hidden');
+                //productDetailsAuthorInfo.style.display = 'block';
             }
 
 
@@ -80,10 +82,12 @@ $(function () {
 
 
             if (!products[newIndex].description || products[newIndex].description == null || products[newIndex].description == '') {
-                productDetailsAuthorInfo.style.display = 'none';
+                A9.addClass(productDetailsAuthorInfo, 'hidden');
+                //productDetailsAuthorInfo.style.display = 'none';
             }
             else {
-                productDetailsAuthorInfo.style.display = 'block';
+                A9.removeClass(productDetailsAuthorInfo, 'hidden');
+                //productDetailsAuthorInfo.style.display = 'block';
             }
 
 

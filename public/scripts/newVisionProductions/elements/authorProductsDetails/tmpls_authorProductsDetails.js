@@ -62,7 +62,7 @@
         }
 
 
-        var className = 'productDetailsAuthorInfo';
+        var className = 'productDetailsAuthorInfo hidden';
         //if (!authorInfo.description || authorInfo.description == '') {
         //    className += ' hidden';
         //}
