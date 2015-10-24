@@ -71,6 +71,12 @@
     cursor: default;
 }
 
+.main-page-content-wrapper .header .logo{
+    width: 127px;
+    height: 63px;
+    background: url("../../images/logo-white.svg");
+}
+
 .main-page-content-wrapper .main-menu ul{
     top: 66px;
 }

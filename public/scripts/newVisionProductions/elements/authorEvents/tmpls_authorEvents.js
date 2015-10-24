@@ -36,15 +36,20 @@
         var
             contentImagePath = nv.settings.controlsDescriptors.site.contentImagesPathAuthors,
             photoPath = contentImagePath + authorInfo.photo,
-            authorEvents = [];
+            authorEvents = [],
+            content;
 
         a9.each(authorInfo.events, function (aEvent) {
+            content=[];
+
+            if(aEvent.date!=null){
+                content.push({c: 'author-event-date',C:{e:'span',t: aEvent.date} });
+            }
+            content.push({c: 'author-event-title', e: 'a', h: aEvent.url,t:aEvent.title});
+
             authorEvents.push({
                 c: 'author-event',
-                C: [
-                    {c: 'author-event-date',C:{e:'span',t: aEvent.date} },
-                    {c: 'author-event-title', e: 'a', h: aEvent.url,t:aEvent.title}
-                ]
+                C: content
             });
         });
 
