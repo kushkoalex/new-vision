@@ -25,7 +25,7 @@ background-color: #ffffff;
 }
 
 .feedback-form-wrapper .feedback-form .feedback-form-content-wrapper{
-    background: url("../../images/logo-medium.png") no-repeat;
+    /*background: url("../../images/logo-medium.png") no-repeat;*/
     text-align: left;
     padding: 35px 40px;
     position: relative;

@@ -65,7 +65,7 @@
 .main-page-content-wrapper .header .logo{
     width: 89px;
     height: 71px;
-    background: url("../../images/logo-white.png") no-repeat;
+    /*background: url("../../images/logo-white.png") no-repeat;*/
     top: 50px;
     left: 60px;
     cursor: default;
@@ -74,7 +74,7 @@
 .main-page-content-wrapper .header .logo{
     width: 127px;
     height: 63px;
-    background: url("../../images/logo-white.svg");
+    /*background: url("../../images/logo-white.svg");*/
 }
 
 .main-page-content-wrapper .main-menu ul{
@@ -155,7 +155,7 @@
 /*}*/
 
 .content-block .description .description-content-wrapper{
-    background: url("../../images/logo-medium.png") no-repeat;
+    /*background: url("../../images/logo-medium.png") no-repeat;*/
     text-align: left;
     padding: 35px 40px;
     position: relative;

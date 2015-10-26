@@ -41,7 +41,7 @@
     position: absolute;
     width: 38px;
     height: 35px;
-    background: url("../../images/logo-medium.png");
+    /*background: url("../../images/logo-medium.png");*/
     top: -25px;
     left: -35px;
 }
