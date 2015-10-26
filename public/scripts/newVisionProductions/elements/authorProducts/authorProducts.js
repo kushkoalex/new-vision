@@ -28,11 +28,15 @@ NV.authorProducts = function ($parent) {
                 tp('clear', $fragment)
             }
 
-
-
             productsDataItem.hasDetailsLink = true;
-            productsDataItem.authorName = authorData.name;
-            productsDataItem.index=i;
+            //productsDataItem.authorName = authorData.name;
+            //productsDataItem.index=i;
+
+            productsDataItem.h =  a9.supplant(nv.settings.controlsDescriptors.site.authorProductsDetailsPageUrl, {
+                artist: authorData.name,
+                startSlide: i
+            });
+
 
             build = tp('product', productsDataItem, $fragment);
 

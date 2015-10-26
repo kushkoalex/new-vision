@@ -7,16 +7,19 @@
     tmpls.products = function () {
 
         var subMenuModel = [
-            {text:l10n('authors_subMenu_products','firstUpper'),isActive:true},
-            {text:l10n('authors_subMenu_authors','firstUpper'),link:nv.settings.controlsDescriptors.site.authorsPageUrl},
-            {text:l10n('authors_subMenu_search','firstUpper'),popup:true}
+            {text: l10n('authors_subMenu_products', 'firstUpper'), isActive: true},
+            {
+                text: l10n('authors_subMenu_authors', 'firstUpper'),
+                link: nv.settings.controlsDescriptors.site.authorsPageUrl
+            },
+            {text: l10n('authors_subMenu_search', 'firstUpper'), popup: true}
         ];
 
         return [
             tmpls.header(),
             tmpls.artsTitle(),
             tmpls.artsSubMenu(subMenuModel),
-            tmpls.tagsFilter(nv.settings.controlsDescriptors.site.productsPageUrl,nv.settings.controlsDescriptors.site.searchFilterUrlProducts),
+            tmpls.tagsFilter(nv.settings.controlsDescriptors.site.productsPageUrl, nv.settings.controlsDescriptors.site.searchFilterUrlProducts),
             tmpls.productsForm(),
             tmpls.pageFooter()
         ]
@@ -33,15 +36,20 @@
         var
             contentImagePath = nv.settings.controlsDescriptors.site.contentImagesPathProductsThumb,
             photoPath = contentImagePath + productsDataItem.photo,
-            authorName,
+            //authorName,
             image;
 
-        if(productsDataItem.hasDetailsLink){
-            authorName = productsDataItem.authorName;
-            image = {c: 'image', C: {e:'a',h:a9.supplant(nv.settings.controlsDescriptors.site.authorProductsDetailsPageUrl,{artist:authorName,startSlide:productsDataItem.index}) ,C:{   e: 'img', a: {src: photoPath}}}};
+        if (productsDataItem.hasDetailsLink) {
+            //authorName = productsDataItem.authorName;
+            image = {
+                c: 'image', C: {
+                    e: 'a',
+                    h: productsDataItem.h,
+                    C: {e: 'img', a: {src: photoPath}}
+                }
+            };
 
-        }else
-        {
+        } else {
             image = {c: 'image', C: {e: 'img', a: {src: photoPath}}};
         }
 
@@ -52,7 +60,14 @@
                 {
                     c: 'description', C: [
                     {c: 'title', t: productsDataItem.title},
-                    {c: 'author', C:{e:'a',h:a9.supplant(nv.settings.controlsDescriptors.site.authorAboutPageUrl,{artist:productsDataItem.author.name}), t: productsDataItem.author.title} },
+                    {
+                        c: 'author',
+                        C: {
+                            e: 'a',
+                            h: a9.supplant(nv.settings.controlsDescriptors.site.authorAboutPageUrl, {artist: productsDataItem.author.name}),
+                            t: productsDataItem.author.title
+                        }
+                    },
                     {c: 'tags', n: 'tags'}
                 ]
                 }

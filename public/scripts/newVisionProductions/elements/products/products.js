@@ -25,6 +25,12 @@ NV.products = function ($parent) {
                 tp('clear', $fragment)
             }
 
+            productsDataItem.hasDetailsLink = true;
+            productsDataItem.h = a9.supplant(nv.settings.controlsDescriptors.site.authorProductsDetailsPageUrl, {
+                artist: productsDataItem.author.name,
+                startSlide: productsDataItem.photoIndex || 0
+            });
+
             build = tp('product', productsDataItem, $fragment);
 
             itemsCount++;
@@ -51,7 +57,7 @@ NV.products = function ($parent) {
 
     var $products = tp('products', $parent).productsBlocks;
 
-    nv.searchForm($parent,settings.controlsDescriptors.site.searchFilterUrlProducts);
+    nv.searchForm($parent, settings.controlsDescriptors.site.searchFilterUrlProducts);
 
     buildMediaForm(productsData);
 };
