@@ -146,7 +146,8 @@
                     c: 'image',
                     C: {
                         e: 'a',
-                        h: a9.supplant(nv.settings.controlsDescriptors.site.authorAboutPageUrl, {artist: authorsDataItem.name}),
+                        //h: a9.supplant(nv.settings.controlsDescriptors.site.authorAboutPageUrl, {artist: authorsDataItem.name}),
+                        h: a9.supplant(nv.settings.controlsDescriptors.site.authorProductsPageUrl, {artist: authorsDataItem.name}),
                         n:'images'
                     }
                 },
