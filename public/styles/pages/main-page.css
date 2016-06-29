@@ -21,6 +21,8 @@
     filter: alpha(opacity=0);
 
     overflow: hidden;
+
+    text-shadow: 4px 4px 8px #000000;
 }
 
 
