@@ -90,8 +90,10 @@ NV.contacts = function ($parent) {
                     build = tp('thanks', $fragment);
                     $contacts.appendChild($fragment);
                 },
-                onError: function () {
+                onError: function (res) {
+                    console.log(res);
                     alert('sent message failed');
+                    $feedbackForm.style.display = 'block';
                 }
             });
         }
